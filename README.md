@@ -14,10 +14,20 @@ Properties.
 L3. Martingales: discrete time + continuous time.
 
 B1. Use MGF to calculate some Var/Cov/E.
+E(tW_t^4)
+Var(tW_t^4 + t^2)
+Cov(tW_t, W_s^2), s < t
+P(3W_4 - W_3 > 0)
 
 B2. Some conditional expected values. 
+E(7W_6^2 | W_4)
+Var(2W_6 + W_5 | W_4)
+P(3W_6 > 2 | W_4)
 
 B3. Check smth is martingale!
+Find a, X_t = 6W_t^2 + a t
+Find b, Y_t = exp(6W_t + b t)
+that X_t, Y_t are martingales. 
 
 P1. Simulate Wiener trajectory. 
 Estimate probability that it will hit smth. 
@@ -38,10 +48,13 @@ L3. Short-long form notation.
 Martingale criterion: informal theorem!
 
 B1. Calculation of stochastic integrals. 
+One with discrete jumps, the second $\int_0^5 2W_u + 3 dW_u$.
 
 B2. Calculate some expected value / variance / Covariance for integrals. 
+E(I_t), Var(I_t), Cov(I_t, W_t^2), E(I_6 | I_4)
 
-B3. Check martingale property for linear combinations of table integrals?
+B3. vasicek expected value
+Calculate expected value of return in Vasicek model with specified parameters.
 
 P1. Simulate stochastic integral. 
 Draw trajectories. 
@@ -60,10 +73,12 @@ Girsanov inside black and sholes: replace mu with any value.
 Let's say r.
 
 B1. Apply Ito's.
+X_t = W_t^2 * t^3
+X_t = t^3 * S_t^2 where dS_t = ...
 
 B2. Check smth is a martingale using Ito's
 
-B3. Vasicek model. 
+B3. Vasicek model. solution of sde
 
 P1. Simulate SDE (Vasicek) path. 
 
@@ -84,10 +99,19 @@ L3. PDE + Delta-hedging.
 
 
 B1. No arbitrage condition problem. 
+A: pays you 1 dollar if S_T < 10
+S: share
+B: pays you 1 share if S_T < 10
+What is the price of Call option with strike 10?
+
 
 B2. Calculate price. 
+S_T^2
 
 B3. Calculate replicating strategy?
+S_t = ... (prev calc)
+
+How much shares and money to replicate this?
 
 
 P1. Simulation pricing of complex option.
