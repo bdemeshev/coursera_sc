@@ -3,7 +3,7 @@
 """
 Stochastic Calculus
 
-Week 1. Simulations of Wiener process
+Week 3. SDE solution
 
 @author: boris
 """
@@ -65,53 +65,60 @@ def get_wiener_trajectory(T=1, n=1000, seed=None):
     -------
     Vector of (n+1) Wiener process values
     """
-    delta_w = get_wiener_increments(T=T, seed=seed, n=n+1)
-    delta_w[0] = 0
-    return np.cumsum(delta_w)
+    delta_w = get_wiener_increments(T=T, seed=seed, n=n)
+    w = np.zeros(n+1)
+    w[1:(n+1)] = np.cumsum(delta_w)
+    return w
 
 
 
-get_wiener_trajectory()
-
-
-
-T = 2
-n = 1000
-seed = 777
-data = pd.DataFrame({'t': get_time(T, n), 'W': get_wiener_trajectory(T, n, seed=seed)})
-
-data['wp_drift'] = 2 * data['t'] + 4 * data['W']
-data['exp_wp'] = exp(data['wp_drift'])
-
-data
-sns.lineplot(data=data, x='t', y='exp_wp')
-
-
-
-# What is the probability that W_t will hit 3 before T=2?
-
-n_sim = 10000
-n_success = 0
-for _ in range(n_sim):
-    w = get_wiener_trajectory(T=2, n=1000)
-    if max(w) > 3:
-        n_success += 1
+def get_integral_trajectory(integrand_fun, T=1, n=1000, seed=None):
+    delta_w = get_wiener_increments(T=T, seed=seed, n=n)
+    w = np.zeros(n+1)
+    w[1:(n+1)] = np.cumsum(delta_w)
+    t = get_time(T=T, n=n)
+    integrand = integrand_fun(w, t)
+    
+    delta_integral = integrand[0:n] * delta_w
+    
+    integral = np.zeros(n+1)
+    integral[0] = 0
         
-n_success / n_sim
+    integral[1:(n+1)] = np.cumsum(delta_integral)
 
-# Average time to hit 0.2 or -0.4 for W_t?
-n_sim = 10000
-sum_of_times = 0
-T = 3
-n = 1000
-for _ in range(n_sim):
-    w = get_wiener_trajectory(T=T, n=n)
-    where = np.where((w > 0.2) | (w < -0.4))
-    if where[0].size == 0:
-        new_time = T
-    else:
-        new_time = min(where[0]) * T / n
-    sum_of_times += new_time
+    return integral
 
-sum_of_times / n_sim
+
+T=1
+n=1000
+seed=None
+def get_sde_trajectory(integrand_dw, integrand_dt, T=1, n=1000, seed=None, y0=0):
+    delta_w = get_wiener_increments(T=T, seed=seed, n=n)
+    w = np.zeros(n+1)
+    w[1:(n+1)] = np.cumsum(delta_w)
+    
+    t = get_time(T=T, n=n)
+    dt = T/n
+    
+    y = np.zeros(n+1)
+    y[0] = y0
+    
+    for i in range(n):
+        delta_y = integrand_dw(y[i], w[i], t[i]) * delta_w[i] + integrand_dt(y[i], w[i], t[i]) * dt
+        y[i+1] = y[i] + delta_y
+
+    return y
+
+T = 1
+n = 10000
+y = get_sde_trajectory(lambda y, w, t : 0.02 * y, lambda y, w, t : 0.03 * y, y0=100, T=T, n=n)
+t =  get_time(T=T, n=n)
+
+r = get_sde_trajectory(lambda r, w, t : 0.01, lambda r, w, t : 0.05 - r, y0=0.07, n=n)
+
+sns.lineplot(x=t, y=y)
+
+for i in range(5):
+    print(i)
+
 

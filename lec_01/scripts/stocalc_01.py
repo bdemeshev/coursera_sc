@@ -3,7 +3,7 @@
 """
 Stochastic Calculus
 
-Week 1. Simulations of Wiener process
+Week 1. Wiener process
 
 @author: boris
 """
@@ -65,9 +65,10 @@ def get_wiener_trajectory(T=1, n=1000, seed=None):
     -------
     Vector of (n+1) Wiener process values
     """
-    delta_w = get_wiener_increments(T=T, seed=seed, n=n+1)
-    delta_w[0] = 0
-    return np.cumsum(delta_w)
+    delta_w = get_wiener_increments(T=T, seed=seed, n=n)
+    w = np.zeros(n+1)
+    w[1:(n+1)] = np.cumsum(delta_w)
+    return w
 
 
 
@@ -87,6 +88,25 @@ data
 sns.lineplot(data=data, x='t', y='exp_wp')
 
 
+
+# many trajectories
+n_sim = 10 
+n = 1000
+W_matrix = np.zeros((n+1, n_sim))
+for i in range(n_sim):
+    W_matrix[:, i] = get_wiener_trajectory(n=n)
+
+W_matrix    
+
+W_df = pd.DataFrame(W_matrix)
+
+t = get_time()
+W_df['t'] = t
+
+W_long = W_df.melt(id_vars='t', var_name='trajectory_no', value_name='w')
+W_long
+
+sns.lineplot(y='w', x='t', hue='trajectory_no', data=W_long, legend=False)
 
 # What is the probability that W_t will hit 3 before T=2?
 
