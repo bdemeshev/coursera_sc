@@ -1,0 +1,287 @@
+% !TEX root = ../coursera_sc_01.tex
+
+\begin{frame} % название фрагмента
+
+\videotitle{Wiener process}
+
+\end{frame}
+
+
+\begin{frame}{Stochastic calculus course}
+  The goal: price an option in the framework of Black and Scholes model. 
+
+  \begin{itemize}[<+->]
+    \item Very short: \alert{4 weeks} only.
+    \item Mathematics is \alert{hard}.
+    \item \alert{Informal} definitions and theorems. 
+    \item \alert{Problem solving} and computer \alert{simulations}. 
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Wiener process}
+
+  Here goes the plot!
+
+\end{frame}
+
+
+\begin{frame}{Stochastic process}
+
+  \begin{block}{Definition}
+    \alert{Stochastic} or \alert{random process} is a collection of random variables indexed by time variable $t$. 
+    \pause
+
+    \alert{Continuous time}: $(X_t, t\geq 0)$.
+    \pause 
+    
+    \alert{Discrete time}: $(X_t, t\in \{0, 1, 2, 3, \ldots \})$. 
+\end{block}
+
+\pause 
+Notation remark:
+\begin{itemize}[<+->]
+  \item $(X_t, t\geq 0)$ or $(X_t)$ — the collection of random variables;
+  \item $X_t$ — one particular random variable. 
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Wiener process}
+
+  \begin{block}{Definition}
+    Stochastic process $(W_t, t\geq 0)$ is called \alert{Wiener process} or \alert{Brownian motion} if 
+    \begin{enumerate}[<+->]
+      \item $W_0 = 0$;
+      \item Increments $W_t - W_s$ are normally distributed $\cN(0; t-s)$. 
+      \item Increment $W_t - W_s$ is independent of the past values $(W_u, u\leq s)$.
+      \item $\P(\text{trajectory of } (W_t) \text{ is continuous} ) = 1$.
+  \end{enumerate}
+  
+  \end{block}
+
+  \pause 
+  Tradition: when we consider two arbitrary moments of time, $s$ and $t$, we usually assume $s \leq t$. 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Divide and conquer}
+
+  The main trick to study properties:
+  \[
+  \text{\alert{Future value}} = \text{\alert{Known value}} + \text{\alert{Unpredictable change}}  
+  \]
+  \pause 
+  Seems trivial \dSmiley
+  \[
+  W_t = W_s + (W_t - W_s)  
+  \]
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conditional probability exercise}
+Exercise \Coffeecup. Calculate $\P(W_{10} > 2 \mid W_6 = 3)$.
+\begin{align*}
+  \onslide<2->{&\P(W_{10} > 2 \mid W_6 = 3) = \P(W_{10} - W_6 + W_6 >2 \mid W_6 = 3) = } \\
+  \onslide<3->{&= \P(W_{10} - W_6 + 3 >2 \mid W_6 = 3) = \P(W_{10} - W_6 > -1)}.
+\end{align*}
+\[
+\onslide<4->{W_{10} - W_6 \sim \cN(0;4), \pause \text{ hence } \frac{W_{10} - W_6 - 0 }{\sqrt{4}} \sim \cN(0;1)}. 
+\]
+
+\onslide<5->{We will use standard normal distribution function $F(u) = \P(Z \leq u)$, where $Z\sim \cN(0;1)$.}
+\begin{align*}
+  \onslide<6->{\P(W_{10} - W_6 > -1) = \P\left(\frac{W_{10} - W_6}{2} > -\frac{1}{2}\right)  = }\\
+  \onslide<7>{= \P(Z > -0.5) = \P(Z < 0.5) = F(0.5) \pause \approx 0.69.}
+\end{align*}
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{More gentlemen's agreements}
+
+  To avoid writing $\forall t \in [0;\infty)$ we will follow these agreements:
+  \begin{itemize}[<+->]
+    \item $s$ and $t$ denote two arbitrary time moments with $0 \leq s \leq t$.
+    \item $(W_t)$ denotes a Wiener process.
+    \item $Z$ denotes standard normal random variable, $Z \sim \cN(0;1)$.
+    \item $F(u)$ denotes standard normal distribution function $F(u) = \P(Z \leq u)$.
+  \end{itemize}
+  
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Independence of increments: example}
+  \begin{block}{Property}
+    Increment $W_t - W_s$ is independent of the past values $(W_u, u\leq s)$.  
+  \end{block}
+
+  \pause 
+  $W_6 - W_4$ is independend of $W_4$, $W_{3}$, $W_{2.5}$, $W_1$, \ldots 
+
+  \pause 
+  $W_6 - W_4$ is independent $W_4 - W_3$, $W_{2.5} - W_{1}$.
+
+  \pause
+  Increments $W_6 - W_4$, $W_4 - W_3$, $W_{2.5} - W_1$ are independent. 
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Independence of increments: full glory}
+
+
+  If time intervals $[s_1, t_1]$, $[s_2, t_2]$, \ldots, $[s_k, t_k]$ are
+  \alert{non overlapping},
+
+  Here will be a small picture 
+
+  \pause 
+  then increments $W(t_1) - W(s_1)$, $W(t_2) - W(s_2)$, \ldots, $W(t_k) - W(s_k)$ are independent. 
+
+  \pause
+  Remark: the right border of an interval \alert{may touch} the left border of the next one,
+  but \alert{may not exceed} it, $t_j \leq s_{j+1}$. 
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Expectation and variance}
+
+  Exercise \Coffeecup. Find $\E(W_t)$, $\Var(W_t)$, $\Cov(W_s, W_t)$.
+  \begin{align*}
+    \onslide<2->{&\E(W_t) = \E(W_t - W_0) = 0}    
+  \end{align*}
+  \begin{align*}
+  \onslide<3->{&\Var(W_t) = \Var(W_t - W_0) = t - 0 = t}
+\end{align*}  
+  \onslide<4->{For $t\geq s$:}
+  \begin{align*}  
+  \onslide<5->{&\Cov(W_s, W_t) = \Cov(W_s, W_s + (W_t - W_s)) = \Cov(W_s,W_s) = s}
+\end{align*}
+\begin{align*}
+    \onslide<6>{&\Cov(W_7, W_3) = 3.}  
+  \end{align*}
+
+\end{frame}
+
+
+\begin{frame}{Two friends}
+
+  \begin{block}{Definition}
+    Stochastic proсess $(X_t, t\geq 0)$ that may be written as
+    \[
+    X_t = a W_t + b t,  
+    \]
+    is called \alert{brownian motion with drift and scaling}.
+  \end{block}
+
+  \pause
+  \begin{block}{Definition}
+    Stochastic proсess $(S_t, t\geq 0)$ that may be written as
+    \[
+    S_t = S_0 \exp(a W_t + b t),
+    \]
+    is called \alert{geometric brownian motion}.
+  \end{block}
+  
+\end{frame}
+
+
+\begin{frame}{Two plots}
+
+here will be the plots of BM with drift and geometric BM
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{BM with drift and scaling}
+
+  Exercise \Coffeecup. Find $\E(5W_t + 6t)$ and $\Var(5W_t + 6t)$.
+  
+  \[
+  \onslide<2->{\E(5W_t + 6t) = 0 + 6t = 6t}
+  \]
+  \[
+  \onslide<3->{\Var(5W_t + 6t) = \Var(5W_t) = 25t}
+  \]
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Frequently used expected values}
+
+  \begin{itemize}
+    \item $\E(\exp(aZ)) = $ for $Z \sim \cN(0;1)$.
+    \item $\E(\exp(aW_t)) = $ for Wiener process $W_t$.
+  \end{itemize}
+  
+  \begin{block}{How these are obtained?}
+    \begin{align*}
+      &\E(\exp(aZ)) = \int_{-\infty}^{+\infty} \exp(az) f(z) \,dz = \\
+      & = \int_{-\infty}^{+\infty} \exp(az) \frac{1}{\sqrt{2\pi}}\exp(-z^2/2) \,dz
+    \end{align*}
+  \end{block}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Moment generating function}
+
+\begin{block}{Definition}
+    The \alert{moment generating function} (MGF) of a random variable $X$ is defined as 
+  \[
+  M_X(a) = \E(\exp(a X)).
+  \] 
+\end{block}
+
+\pause 
+
+\begin{itemize}
+  \item $M_Z(a) = $ for $Z \sim \cN(0;1)$.
+  \item $M_{W_t}(a)= $ for Wiener process $W_t$.
+\end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+  
+    
+  
+  \end{frame}
+
+\begin{frame}{Wiener process: summary}
+
+\begin{itemize}[<+->]
+  \item Точечные результаты без доверительных интервалов. 
+  \item 
+  \item Stochastic process with \alert{normal} and \alert{independent increments}.
+\end{itemize}
+  
+STL, градиентный бустинг, случайный лес, \ldots
+
+\end{frame}
+
+\begin{frame}{Фокус курса}
+
+Прогнозирование одномерных рядов с помощью моделей. 
+
+\end{frame}
+
+
+

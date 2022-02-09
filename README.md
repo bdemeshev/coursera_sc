@@ -46,6 +46,7 @@ And Riemann integrals?
 
 L3. Short-long form notation. 
 Martingale criterion: informal theorem!
+No derivative! Symbolic language!
 
 B1. Calculation of stochastic integrals. 
 One with discrete jumps, the second $\int_0^5 2W_u + 3 dW_u$.
@@ -74,11 +75,16 @@ Let's say r.
 
 B1. Apply Ito's.
 X_t = W_t^2 * t^3
-X_t = t^3 * S_t^2 where dS_t = ...
+X_t = S_t^2 where dS_t = ...
+conclusion: not martingales!
 
 B2. Check smth is a martingale using Ito's
+When is a martingale?
+X_t = W_t^2 + at
+Y_t = exp(a W_t + bt)
 
 B3. Vasicek model. solution of sde
+
 
 P1. Simulate SDE (Vasicek) path. 
 
@@ -102,11 +108,12 @@ B1. No arbitrage condition problem.
 A: pays you 1 dollar if S_T < 10
 S: share
 B: pays you 1 share if S_T < 10
+r = 0.05
 What is the price of Call option with strike 10?
 
 
 B2. Calculate price. 
-S_T^2
+S_2^3
 
 B3. Calculate replicating strategy?
 S_t = ... (prev calc)
