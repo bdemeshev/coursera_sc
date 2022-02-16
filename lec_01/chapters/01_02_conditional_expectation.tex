@@ -136,19 +136,18 @@
     \frametitle{The case of known variable}
 
     If $Z$ is \alert{known} (measurable with respect to $\cF$), 
-    then we may treat it \textit{like} a constant:
+    then we may treat $Z$ \textit{like} a constant:
 
     \[
-    \onslide<2->{\E(Z \mid \cF ) = Z;}
+        \onslide<2->{\E(Z \mid \cF ) = Z;}
+    \]
+    \[
+        \onslide<3->{\E(2\exp(5W_t) \mid W_t) = 2\exp(5W_t);}
+    \]
+    \[
+        \onslide<4->{\E(2Z R + Z^2 \mid \cF ) = 2Z \E(R\mid \cF) + Z^2.}
     \]
 
-    \[
-        \onslide<3->{\E(2Z R + Z^2 \mid \cF ) = 2Z \E(R\mid \cF) + Z^2;}
-    \]
-
-    \[
-        \onslide<4->{\E(2\exp(5W_t) \mid W_t) = 2\exp(5W_t).}
-    \]
 
 \end{frame}
 
@@ -186,16 +185,14 @@
         
 
         \item If $Z$ is \alert{known} (measurable with respect to $\cF$), 
-        then we may treat it \textit{like} a constant:
-    
+        then we may treat $Z$ \textit{like} a constant:
         \[
-            \onslide<3->{\Var(Z^3  + 3Z R \mid \cF ) = 0 + (3Z)^2\Var(R \mid \cF);}
+            \onslide<3->{\Var(2\exp(5W_t) \mid W_t) = 0;}
         \]
-        
         \[
-            \onslide<4->{\Var(2\exp(5W_t) \mid W_t) = 0.}
+            \onslide<4->{\Var(Z^3  + 3Z R \mid \cF ) = 0 + (3Z)^2\Var(R \mid \cF).}
         \]
-    
+            
     \end{itemize}
 
 
