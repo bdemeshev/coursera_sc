@@ -1,2 +1,184 @@
 % !TEX root = ../coursera_sc_01.tex
 
+
+\begin{frame} % название фрагмента
+
+    \videotitle{Martingales}
+    
+\end{frame}
+    
+    
+\begin{frame}{Martingales: short plan}
+    
+      \begin{itemize}[<+->]
+        \item \alert{Filtration} models the information acquisition.
+        \item Definition of a \alert{martingale}.
+        \item \alert{Examples} of martingales.
+      \end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Filtration}
+
+    \pause
+    The $\sigma$-algebra $\cF_t$ describes all the information available at time $t$. 
+
+    \pause
+    \begin{block}{Definition \formalduck}
+        The family of sigma-algebras $(\cF_t, t\geq 0)$ is called \alert{filtration} if it grows in time, 
+        $\cF_s \subset \cF_t$ for $s \leq t$.
+    \end{block}
+
+    \pause 
+    Reminder: Sigma-algebra $\cF_t$ is the collection of events. 
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Natural filtration}
+
+    \pause
+    \begin{block}{Definition \formalduck}
+        The filtration $(\cF_t, t\geq 0)$ is called a \alert{natural filtration} of a process $(X_t, t\geq 0)$ if
+        at time $t$ you have only the information about past values of the process, 
+        \[
+                \cF_t = \sigma(X_u, u\in [0;t]).  
+        \]
+    \end{block}
+
+    \pause 
+    \begin{block}{Examples}
+        Let $(\cF_t)$ be a natural filtration of a Wiener process $(W_t)$. \pause
+        
+        $\{W_2 < 5\} \in \cF_2$, \pause $\{W_2 > W_5\} \in \cF_6$, \pause 
+        
+        $\{W_2 < 5\} \not\in \cF_1$, \pause $\{W_2 > W_5 \} \not\in \cF_2$.
+    \end{block}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Martingale}
+
+    \begin{block}{Definition \formalduck}
+        Consider a filtration $(\cF_t, t\geq 0)$ and a process $(M_t, t\geq 0)$.
+
+        If the best prediction of the future value $M_t$ of a process is its current value $M_s$ for $s\leq t$,
+        \[
+          \E(M_t \mid \cF_s) = M_s,  
+        \] 
+        then $(M_t)$ is called a \alert{martingale} with respect to the filtration $(\cF_t)$.
+    \end{block}
+
+    \pause
+    Usually we consider natural filtration $(\cF_t)$ of the process $(M_t)$.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Simple examples}
+
+    \alert{Constant process}. \pause 
+    
+    If $M_t = 777$ for all $t$ then $\E(M_t \mid \cF_s) = 777 = M_s$.
+
+
+    \pause
+    \vspace*{14pt}
+
+
+    \alert{Wiener process}. \pause 
+    \[
+    \E(W_t \mid \cF_s) = \pause  \E(W_s + (W_t - W_s) \mid \cF_s) = \pause W_s + \E(W_t - W_s) = W_s.   
+    \]
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{More examples}
+
+    \begin{block}{Theorem \formalduck}
+        The process $Z_t = W_t^2 - t$ is a \alert{martingale}.
+    \end{block}
+
+    \pause
+    \begin{block}{Proof \formalduck}
+        \begin{flalign*}
+            \onslide<6->{\E(W_t^2 - t \mid \cF_s) & = }
+            \onslide<7->{ \E((W_s + (W_t - W_s))^2  \mid \cF_s) - t& =}
+            \onslide<8->{ \E(W_s^2 + (W_t - W_s)^2 + 2W_s(W_t-W_s) \mid \cF_s) - t =\\}
+            \onslide<9->{ W_s^2 + \E((W_t - W_s)^2 \mid \cF_s) + 2W_s \E(W_t-W_s \mid \cF_s) -t & =\\}
+            \onslide<10->{ W_s^2 + \E((W_t - W_s)^2) + 2W_s \E(W_t-W_s) -t & =\\}
+            \onslide<11->{ W_s^2 + (t-s) + 2W_s \cdot 0 - t& = W_s^2  - s}
+        \end{flalign*}
+        
+    \end{block}
+
+    
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Martingales in discrete time}
+
+    \begin{block}{Theorem \formalduck}
+        Consider a filtration $(\cF_t, t\in \{0, 1, 2, \ldots\})$ and a process $(M_t, t \in \{0, 1, 2, \ldots\})$.
+        
+        \pause
+        In discrete time the condition
+        \[
+            \E(M_t \mid \cF_s) = M_s \text{ for all } s \leq t      
+        \]
+        \pause
+        is completely equivalent to 
+        \[
+            \E(M_{t+1} \mid \cF_t) = M_t. 
+        \]
+    \end{block}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Random walk}
+    
+    Consider independent and identically distributed  $Z_1$, $Z_2$, \ldots{ } with $\E(Z_t) = 0$.
+    \pause
+    The cumulative sum
+    \[
+        S_t = Z_1 + Z_2 + \ldots + Z_t, \text{ with } S_0 = 0
+    \]
+    is a called a \alert{random walk}. 
+    \pause
+
+    \begin{block}{Theorem \formalduck}
+    The random walk process is a martingale.     
+
+    \pause
+    \begin{flalign*}
+        \cF_t &= & \sigma(Z_1, Z_2, Z_3, \ldots, Z_t)        
+    \end{flalign*}
+    
+    \begin{flalign*}
+        \E(S_{t+1} \mid \cF_t) & = & \pause \E(S_t + Z_{t+1} \mid \cF_t) = \pause S_t + \E(Z_{t+1}) = S_t.    
+    \end{flalign*}
+\end{block}
+    
+\end{frame}
+
+
+
+
+\begin{frame}{Martingales: summary}
+
+    \begin{itemize}[<+->]
+        \item \alert{Filtration} models the information acquisition.
+        \item The best prediction of a \alert{martingale} is its current value.
+        \item Martingales related to \alert{Wiener process}, \alert{random walk}.
+    \end{itemize}
+      
+\end{frame}
+    
