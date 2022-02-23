@@ -1,0 +1,97 @@
+% !TEX root = ../coursera_sc_02.tex
+
+
+% !TEX root = ../coursera_sc_02.tex
+
+\begin{frame} % название фрагмента
+
+    \videotitle{Itô integral properties}
+    
+    \end{frame}
+    
+    
+    \begin{frame}{Itô integral properties: short plan}
+    
+      \begin{itemize}[<+->]
+        \item Common properties with Riemann integral.
+        \item Zero expected value.
+        \item Itô isometry.
+      \end{itemize}
+    
+    \end{frame}
+
+
+\begin{frame}
+        \frametitle{Common properties}
+
+        \[
+        \int_a^b X_u \, dW_u  + \int_b^c X_u \, dW_u =  \int_a^c X_u \, dW_u    
+        \]
+        \pause 
+        \[
+        \int_a^a X_u \, dW_u = 0    
+        \]
+        \pause
+        \[
+        \int_0^t c X_u \, dW_u = c\int_0^t X_u \, dW_u    
+        \]
+    
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Zero expected value}
+
+    Intuition: we buy and sell Wiener process, hence, expected net cash flow should be zero.
+
+    \pause
+\begin{block}{Informal theorem\informalduck}
+For any reasonable process $(X_t)$ measurable with respect to the natural filtration $(\cF_t)$ of the process $(W_t)$
+\[
+\E\left(\int_0^t X_u \, dW_u \right)  = 0.   
+\]
+\end{block}
+
+\end{frame}
+
+    
+\begin{frame}
+    \frametitle{Itô isometry}
+
+\begin{block}{Informal theorem\informalduck}
+        For any reasonable process $(X_t)$ measurable with respect to the natural filtration $(\cF_t)$ of the process $(W_t)$
+        \[
+        \Var\left(\int_0^t X_u \, dW_u \right)  = \int_0^t \E(X_u^2) \, du.   
+        \]
+\end{block}
+            
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Exercise}
+
+    Find $\E(I_t)$ and $\Var(I_t)$ for $I_t = \int_0^t W_u^2 \, dW_u$\knightduck
+
+    \begin{flalign*}
+        \onslide<2->{\E(I_t) &=}\onslide<3->{0;&}  
+    \end{flalign*} 
+
+    \begin{flalign*}
+        \onslide<4->{\Var(I_t) & =}\onslide<5->{\int_0^t \E(W_u^4) \, du = }
+        \onslide<6->{\int_0^t 3 u^2  \, du =  }\onslide<7->{ t^3.&}
+    \end{flalign*} 
+    
+\end{frame}
+
+
+\begin{frame}{Itô properties: summary}
+        
+\begin{itemize}[<+->]
+          \item \alert{Zero} expected value.
+          \item Using \alert{Itô isometry} one may calculate variance.
+          \item \alert{Some common properties} with Riemann integral.
+\end{itemize}
+        
+\end{frame}
+      

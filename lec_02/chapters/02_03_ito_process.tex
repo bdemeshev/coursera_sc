@@ -1,0 +1,148 @@
+% !TEX root = ../coursera_sc_02.tex
+
+
+% !TEX root = ../coursera_sc_02.tex
+
+\begin{frame} % название фрагмента
+
+    \videotitle{Itô process}
+    
+    \end{frame}
+    
+    
+    \begin{frame}{Itô process: short plan}
+    
+      \begin{itemize}[<+->]
+        \item Definition.
+        \item Short and full form notation.
+        \item When Itô process is a martingale?
+      \end{itemize}
+    
+    \end{frame}
+
+\begin{frame}
+    \frametitle{Itô process}
+
+    \begin{block}{Definition\formalduck}
+        Stochastic process $(Y_t, t\geq 0)$ is called \alert{Itô process} if it can be written in the form 
+        \[
+        Y_t = Y_0 + \int_0^t A_u \, dW_u + \int_0^t B_u \, du,
+        \]
+        where $Y_0$ is a constant.
+    \end{block}
+
+    \pause
+    A wide class of continuous stochastic processes that behave \alert{locally} like a Wiener process with drift. 
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Itô integral is a martingale}
+
+    \begin{block}{Informal theorem\informalduck}
+        Itô process $(Y_t)$ is a martingale if and only if it has only Itô integral in the representation
+        \[
+        Y_t = Y_0 + \int_0^t A_u \, dW_u.
+        \]
+    \end{block}
+
+    \pause
+    The best guess of a future value of an Itô integral is its current value:
+    \pause
+    \[
+    \E(Y_t \mid \cF_s) = Y_t \text{ for } s \leq t.
+    \]
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Expected value of Itô process}
+    \begin{block}{Informal theorem\informalduck}
+        For any reasonable process $(B_t)$ 
+        \[
+        \E\left(\int_0^t B_u \, du\right) = \int_0^t \E(B_u) \, du.
+        \]
+    \end{block}
+
+    \pause
+    
+    \begin{block}{Informal theorem\informalduck}
+        If $(Y_t)$ is an Itô process with $Y_t = Y_0 + \int_0^t A_u \, dW_u + \int_0^t B_u \, du$, 
+        then
+        \[
+        \E(Y_t) = Y_0 + \int_0^t \E(B_u) \, du.
+        \]
+    \end{block}    
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Short form notation}
+
+    Full form:
+    \[
+        Y_t = Y_0 + \int_0^t A_u \, dW_u + \int_0^t B_u \, du.
+    \]
+    \pause
+    Short form:
+    \[
+        dY_t = A_t \, dW_t + B_t \, dt.
+    \]
+    \pause
+    $dW_t$ and $dY_t$ have \alert{no meaning}!
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Short form in simulations}
+    We need to simulate a path of 
+    \[
+        Y_t = Y_0 + \int_0^t A_u \, dW_u + \int_0^t B_u \, du.        
+    \]
+    \pause
+    In short form:
+    \[
+    dY_t = A_t \, dW_t + B_t \, dt. 
+    \]
+    \pause
+    In simulations:
+    \[
+    Y_{t+\Delta} - Y_t \approx A_t \cdot (W_{t + \Delta} - W_t) + B_t \cdot \Delta,     
+    \]
+    where $W_{t + \Delta} - W_t \sim \cN(0; \Delta)$.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Short form: examples}
+    \begin{flalign*}
+        \onslide<1->{dY_t = W_t^4 dW_t & }\onslide<2->{ \quad Y_t = Y_0 + \int_0^t W_u^4 \, dW_u.&}
+    \end{flalign*} 
+    \begin{flalign*}
+        \onslide<3->{dY_t = \cos(W_t) dt & }\onslide<4->{ \quad Y_t = Y_0 + \int_0^t \cos(W_u) \, du.&}
+    \end{flalign*} 
+
+    \onslide<5->{
+    \begin{block}{Informal theorem\informalduck}
+        Itô process $(Y_t)$ is a martingale if and only if 
+        \[
+        dY_t = A_t \, dW_t.
+        \]
+    \end{block}
+    }
+\end{frame}
+
+
+\begin{frame}{Itô process: summary}
+        
+\begin{itemize}[<+->]
+          \item A \alert{sum three terms}: constant, Itô integral and Riemann integral.
+          \item Will be a martingale \alert{without Riemann integral}.
+          \item Often written using \alert{short form} with $dt$ and $dW_t$.
+\end{itemize}
+        
+\end{frame}
+      

@@ -1,0 +1,130 @@
+% !TEX root = ../coursera_sc_02.tex
+
+\begin{frame} % название фрагмента
+
+\videotitle{Itô integral}
+
+\end{frame}
+
+
+\begin{frame}{Itô integral: short plan}
+
+  \begin{itemize}[<+->]
+    \item Intuitive definition.
+    \item Examples.
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Itô integral}
+
+  \begin{block}{Definition\informalduck}
+    The Itô integral $I_t = \int_0^t A_u \, dW_u$ is defined as the \alert{total net cash flow} of a strategy if we treat 
+    $W_u$ as the price of the asset and $A_u$ as the quantity of the asset at time moment $u$. 
+\end{block}
+
+\pause 
+$(W_t)$ is a poor model for the price, but the intuition is ok:
+\pause
+\[
+\text{Net cash flow} = \int_0^t \text{Quantity}_u \, d\text{Price}_u  
+\]
+\end{frame}
+
+\begin{frame}
+  \frametitle{Simple deterministic example}
+  
+  Let's calculate $\int_2^8 7 \, du$\knightduck
+
+  \onslide<2->{Transaction 1. At time $u=2$ \alert{we buy 7 units}. The price is $u=2$.}
+
+  \onslide<3->{Cash flow: $-7 \cdot 2$.}
+
+  \onslide<4->{Transaction 2. At time $u=8$ \alert{we sell 7 units}. The price is $u=8$.}
+
+  \onslide<5->{Cash flow: $7 \cdot 8$.}
+
+  \onslide<6->{$\int_2^8 7 \, dt = -14 + 56 = 42$.}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Example with Wiener process}
+  
+  Let's calculate $\int_2^8 5 \, dW_u$\knightduck
+
+  \onslide<2->{Transaction 1. At time $u=2$ \alert{we buy 5 units}. The price is $W_2$.}
+
+  \onslide<3->{Cash flow: $-5 \cdot W_2$.}
+
+  \onslide<4->{Transaction 2. At time $u=8$ \alert{we sell 5 units}. The price is $W_8$.}
+
+  \onslide<5->{Cash flow: $5 \cdot W_8$.}
+
+  \onslide<6->{$\int_2^8 5 \, dW_u = -5W_2 + 5W_8$.}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{More gentlemen's agreement\formalduck}
+
+  \[
+  I_t = \int_0^t (\text{something}_u) \, dW_u:
+  \]
+
+  $t$ — the upper limit of integration;
+
+  $u$ — time variable with range from $0$ to $t$;
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Why old integration formulas are wrong?}
+  \[
+  \int_0^t W_u \, dW_u = \harlequinduck?  
+  \]
+  \pause
+  
+  Why not $\frac{1}{2}W_t^2 - \frac{1}{2} W_0^2$?
+  \pause
+
+  The guessed value is non-negative, $\frac{1}{2}W_t^2 \geq 0$! 
+
+  \pause 
+  If you buy and sell Wiener process you can have negative cash flow!  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Small table}
+  In most cases Itô integral \alert{can not} be computed explicitely. 
+  \pause
+  \[
+    \int_0^t 1 \, dW_u = W_t
+  \]
+  \pause
+  \[
+    \int_0^t W_t \, dW_u = \frac{W_t^2 - t}{2}
+  \]
+  \pause
+  \[
+    \int_0^t \exp(aW_u -\frac{1}{2} a^2 u) \, dW_u = \frac{1}{a}\left(\exp(aW_t - \frac{1}{2}a^2 t) - 1\right) 
+  \]
+
+\end{frame}
+
+
+
+\begin{frame}{Itô integral: summary}
+    
+  \begin{itemize}[<+->]
+      \item \alert{Total net cash flow} of a strategy.
+      \item \alert{Rarely} can be computed \alert{explicitely}.
+      \item \alert{Old rules} of integration \alert{do not apply}.
+  \end{itemize}
+    
+\end{frame}
+  
