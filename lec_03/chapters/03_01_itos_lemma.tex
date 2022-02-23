@@ -1,0 +1,164 @@
+% !TEX root = ../coursera_sc_03.tex
+
+\begin{frame} % название фрагмента
+
+\videotitle{Itô's lemma}
+
+\end{frame}
+
+
+\begin{frame}{Itô's lemma: short plan}
+
+  \begin{itemize}[<+->]
+    \item Light version for functions of time and Wiener process.
+    \item Check the martingale property with Itô's lemma.
+    \item More general version.
+
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Itô's lemma: light version}
+
+  \begin{block}{Informal theorem\informalduck}
+    If $Y_t = f(W_t, t)$ then it may be written as 
+    \[
+      Y_t = Y_0 + \int_0^t f'_W \, dW_u + \int_0^t \left(f'_t + \frac{1}{2} f''_{WW}\right) \, du.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Informal theorem\informalduck}
+    If $Y_t = f(W_t, t)$ then it may be written in the short form as 
+    \[
+      dY_t = f'_W dW_t + f'_t dt + \frac{1}{2}f''_{WW} dt.
+    \]
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exercise}
+  Express $Y_t = W_t^3 \cdot t^4$ as an Itô process\knightduck.
+  \begin{flalign*}
+    \onslide<2->{dY_t & =}\onslide<3->{3W_t^2 t^4\, dW_t + 4W_t^3 t^3 \, dt +}\onslide<4->{ \frac{1}{2}6W_t t^4 dt =& }\\ 
+    \onslide<5->{=&3W_t^2 t^4\, dW_t + (4W_t^3 t^3 + 3W_t t^4)\, dt.&}
+\end{flalign*} 
+
+\begin{flalign*}
+  \onslide<6->{Y_t &= 0 + \int_0^t 3W_u^2 u^4\, dW_u + \int_0^t (4W_u^3 u^3 + 3W_u u^4)\, du. &}
+\end{flalign*} 
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exercise}
+  Check whether the process $Y_t = W_t^4 - t^2$ is a martingale\knightduck. 
+
+  \begin{flalign*}
+    \onslide<2->{dY_t & =}\onslide<3->{4W_t^3\, dW_t - 2t\, dt +}\onslide<4->{ \frac{1}{2}12W_t^2 dt =& }\\ 
+    \onslide<5->{=&4W_t^3 \, dW_t + (6W_t^2 - 2t)\, dt.&}
+\end{flalign*} 
+
+\begin{flalign*}
+  \onslide<6->{Y_t &= 0 + \int_0^t 4W_u^3 \, dW_u + \int_0^t (6W_u^2 - 2u)\, du. &}
+\end{flalign*} 
+
+\onslide<7->{$(Y_t)$ is not a martingale!}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Exercise}
+  Express $Y_t = W_t^2$ as an Itô process and prove the formula for $\int_0^t W_u \, dW_u$\knightduck.
+
+  \begin{flalign*}
+    \onslide<2->{dY_t & =}\onslide<3->{2W_t \, dW_t + 0 \, dt +}\onslide<4->{ \frac{1}{2}2 dt =}
+    \onslide<5->{2W_t \, dW_t +\, dt.&}
+\end{flalign*} 
+
+\begin{flalign*}
+  \onslide<6->{Y_t &= 0 + \int_0^t 2W_u, dW_u + \int_0^t 1\, du. & }
+\end{flalign*} 
+
+\begin{flalign*}
+  \onslide<7->{W_t^2 & = 0 + 2\int_0^t W_u\, dW_u + t. }\onslide<8->{\quad \rightarrow \quad \int_0^t W_u\, dW_u = \frac{1}{2}(W_t^2 - t). & }
+\end{flalign*} 
+
+  
+
+\end{frame}
+  
+\begin{frame}
+  \frametitle{Itô's lemma: general version}
+
+  \begin{block}{Informal theorem\informalduck}
+    If $Y_t = f(X_t, t)$ where $(X_t)$ is an Itô process then $Y_t$ may be written in the short form as 
+    \[
+      dY_t = f'_X dX_t + f'_t dt + \frac{1}{2}f''_{XX} (dX_t)^2,
+    \]
+    where $(dX_t)^2$ is calculated using symbolic rules 
+      
+    $dt \cdot dW_t = 0$, $dt \cdot dt = 0$, $dW_t\cdot dW_t =dt$.
+  \end{block}  
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Exercise}
+  Consider $dS_t =\mu S_t dt + \sigma S_t dW_t$ and $Y_t = S_t^2$.
+
+  Find $dY_t$ and recover the full form for $Y_t$\knightduck. 
+
+  \begin{flalign*}
+    \onslide<2->{dY_t & =}\onslide<3->{2S_t \, dS_t + 0 \, dt +}\onslide<4->{ \frac{1}{2}2 (dS_t)^2 =&}\\
+    \onslide<5->{=2& S_t (\mu S_t dt + \sigma S_t dW_t)  +1 \cdot (\mu S_t dt + \sigma S_t dW_t)^2=&}\\
+    \onslide<6->{=2& S_t (\mu S_t dt + \sigma S_t dW_t)  +\sigma^2 S_t^2 dt=&}\\
+    \onslide<7->{=&(2\mu S_t^2 + \sigma^2 S_t^2)dt + 2\sigma S_t^2 dW_t.&}
+  \end{flalign*} 
+
+\begin{flalign*}
+  \onslide<8->{Y_t &= S_0^2 + \int_0^t 2\sigma S_u^2\, dW_u + \int_0^t (2\mu S_u^2 + \sigma^2 S_u^2)\, du. & }
+\end{flalign*} 
+
+
+  
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Itô's lemma: a way to memorize}
+
+  \begin{block}{Informal theorem\informalduck}
+    If $Y_t = f(X_t, Z_t, t)$ where $(X_t)$ and $(Z_t)$ are Itô processes then the short form of $Y_t$ may be obtained in two steps: \pause
+    \begin{enumerate}
+    \onslide<2->{\item Calculate the \alert{second order Taylor expansion} of $f$.}
+    \onslide<3->{\item \alert{Simplify} the result using symbolic rules 
+      
+      $dt \cdot dW_t = 0$, $dt \cdot dt = 0$, $dW_t\cdot dW_t =dt$.}
+    \end{enumerate}
+  \end{block}
+  \onslide<4->{Reminder: $dW_t$, $dY_t$, $dX_t$, $dZ_t$ \alert{do not exist}! 
+  
+  It's only a \alert{quick way} to find the full form.}
+  
+\end{frame}
+
+
+
+
+\begin{frame}{Itô's lemma: summary}
+  
+  \begin{itemize}[<+->]
+      \item \alert{Basic tool} to study stochastic integrals.
+      \item \alert{Easy to check} whether the process is a martingale.
+
+      \item \alert{Easily written} in short form: 
+      
+      $dt \cdot dW_t = 0$, $dt \cdot dt = 0$, $dW_t\cdot dW_t =dt$.
+  \end{itemize}
+    
+\end{frame}
+  
