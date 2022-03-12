@@ -22,7 +22,8 @@
 
 \begin{frame}{Wiener process}
 
-  Here goes the plot!
+  \includegraphics[width=\textwidth]{pictures/wiener_process.png}
+
 
 \end{frame}
 
@@ -146,7 +147,36 @@ Exercise\knightduck. Calculate $\P(W_{10} > 2 \mid W_6 = 3)$.
   If the time intervals $[s_1, t_1]$, $[s_2, t_2]$, \ldots, $[s_k, t_k]$ are
   \alert{non overlapping},
 
-  Here will be a small picture 
+  \begin{center}
+    \begin{tikzpicture}
+      \coordinate (a) at (-3,0);
+      \coordinate (b) at (14,0);
+
+      \coordinate [label=below:$s_1$] (s1) at (0,0);
+      \coordinate [label=below:$t_1$] (t1) at (2,0);
+      \coordinate [label=below:$s_2$] (s2) at (3,0);
+      \coordinate [label=below:$t_2$] (t2) at (6,0);
+      \coordinate [label=below:$s_k$] (sn) at (10,0);
+      \coordinate [label=below:$t_k$] (tn) at (12,0);  
+
+
+
+      \draw[line width=1pt, black, -stealth] (a)--(8,0);
+      \draw[line width=1pt, black, stealth reversed-] (8.5,0)--(b);
+
+      \filldraw [blue] (s1) circle[radius=3pt];
+      \filldraw [blue] (t1) circle[radius=3pt];
+      \filldraw [blue] (s2) circle[radius=3pt];
+      \filldraw [blue] (t2) circle[radius=3pt];
+      \filldraw [blue] (sn) circle[radius=3pt];
+      \filldraw [blue] (tn) circle[radius=3pt];
+
+      \draw[line width=4pt, blue] (s1)--(t1);
+      \draw[line width=4pt, blue] (s2)--(t2);
+      \draw[line width=4pt, blue] (sn)--(tn);     
+    \end{tikzpicture}
+  \end{center}
+  
 
   \pause 
   then the increments $W(t_1) - W(s_1)$, $W(t_2) - W(s_2)$, \ldots, $W(t_k) - W(s_k)$ are independent. 
@@ -203,7 +233,7 @@ Exercise\knightduck. Calculate $\P(W_{10} > 2 \mid W_6 = 3)$.
 
 \begin{frame}{Two plots}
 
-here will be the plots of BM with drift and geometric BM
+  \includegraphics[width=\textwidth]{pictures/two_wiener_friends.png}
 
 \end{frame}
 
