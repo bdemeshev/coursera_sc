@@ -87,12 +87,15 @@ S_0 = \E^*(\exp(-rt) S_t \mid \cF_0).
   \frametitle{Replicating strategy}
 
   \begin{block}{Informal theorem \informalduck}
-    In the Black and Scholes model every \alert{european type} asset can be replicated by  
+    In the Black and Scholes model every \alert{European type} asset can be replicated by  
     a \alert{self-financing} stategy that trades shares and risk free bonds. 
-    \begin{flalign*}
-      &X_t = y_t S_t + z_t B_t,& \\
-      &dX_t = y_t dS_t + z_t dB_t. & 
-    \end{flalign*}    
+    At time $t$ the portfolio contains $y_t$ shares and $z_t$ bonds and
+    \[
+      \begin{cases}
+      X_t = y_t S_t + z_t B_t, \\
+      dX_t = y_t dS_t + z_t dB_t. 
+      \end{cases}
+    \]
   \end{block}
   \pause 
   European type asset gives payoff at a \alert{fixed time moment} $T$.
@@ -106,7 +109,7 @@ S_0 = \E^*(\exp(-rt) S_t \mid \cF_0).
 \begin{frame}
   \frametitle{The pricing formula}
   \begin{block}{Informal theorem \informalduck}
-    In the Black and Scholes model the discounted price of every \alert{european type} asset
+    In the Black and Scholes model the discounted price of every \alert{European type} asset
     is a martingale under probability $\P^*$, hence
     \[
     X_0 = \E^*(\exp(-rt)X_t\mid \cF_0) = \exp(-rt) \E^*(X_t \mid \cF_0).  
@@ -123,7 +126,7 @@ S_0 = \E^*(\exp(-rt) S_t \mid \cF_0).
   
   \begin{itemize}[<+->]
       \item \alert{European claim} gives payoff at a fixed moment of time $T$.
-      \item The \alert{discounted price} of any european type claim is 
+      \item The \alert{discounted price} of any European type claim is 
       a martingale under $\P^*$.
       \item Every European claim may be \alert{replicated}.
       \item The \alert{pricing formula} is

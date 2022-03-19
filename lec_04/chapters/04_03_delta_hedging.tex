@@ -1,2 +1,145 @@
-% !TEX root = ../coursera_sc_01.tex
+% !TEX root = ../coursera_sc_04.tex
 
+\begin{frame} % название фрагмента
+
+    \videotitle{Delta hedging}
+    
+    \end{frame}
+    
+    
+    \begin{frame}{Delta hedging: plan}
+    
+      \begin{itemize}[<+->]
+        \item $dX_t$ using \alert{Itô's lemma}.
+        \item $dX_t$ using \alert{replicating strategy}.
+        \item The \alert{receipt} for replication.
+      \end{itemize}
+    
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Claim price as Itô process}
+        The price of a claim $X_t$ is a function of $S_t$ and $t$,
+        \[
+            X_t = X(S_t, t).
+        \]
+        \pause
+        We need to do some investments to start \alert{replicating} strategy.
+        
+        \pause 
+        Using Itô's lemma, 
+        \[
+        dX_t = \frac{\partial X}{\partial t} dt + \frac{\partial X}{\partial S} dS_t + \frac{1}{2}\frac{\partial^2 X}{\partial S^2} (dS_t)^2
+        \]
+        \pause 
+        The structure of the answer is
+        \[
+        dX_t = (\ldots) dt + (\ldots)dW_t.    
+        \]
+    \end{frame}
+    
+
+    \begin{frame}
+        \frametitle{Focus on $dW_t$}
+        Using Itô's lemma, 
+        \[
+        dX_t = \frac{\partial X}{\partial t} dt + \frac{\partial X}{\partial S} dS_t + \frac{1}{2}\frac{\partial^2 X}{\partial S^2} (dS_t)^2
+        \]
+        The structure of the answer is
+        \[
+        dX_t = (\ldots) dt + (\ldots)dW_t.    
+        \]
+        \pause
+        There are no $dW_t$ in $(dS_t)^2$, only in $dS_t = \mu S_t dt + \sigma S_t dW_t$.
+        \pause 
+        Hence,
+        \[
+        dX_t =   (\ldots) dt +  \frac{\partial X}{\partial S} \sigma S_t dW_t.   
+        \]
+    
+    \end{frame}
+
+
+\begin{frame}
+    \frametitle{Replicating portfolio idea}
+
+    We have $y_t$ shares and $z_t$ bonds in portfolio, 
+    \[
+    X_t = y_t S_t + z_t B_t.    
+    \]
+    \pause 
+    Stochastic integral represents the net cash-flow,
+    \[
+    X_t = X_0 + \int_0^t y_u \, dS_u + \int_0^t z_u dB_u
+    \]
+    In short form, 
+    \[
+    dX_t = y_t dS_t + z_t dB_t.    
+    \]
+    \pause 
+    In Black and Scholes model,
+    \[
+        dS_t = \mu S_t dt + \sigma S_t dW_t, \quad dB_t = B_t dt.
+    \]
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Focus on $dW_t$ again }
+    In short form, 
+    \[
+    dX_t = y_t dS_t + z_t dB_t.    
+    \]
+    In Black and Scholes model,
+    \[
+        dS_t = \mu S_t dt + \sigma S_t dW_t, \quad dB_t = B_t dt.
+    \]
+    \pause
+    Hence,
+    \[
+    dX_t =   (\ldots) dt +  y_t \sigma S_t dW_t.   
+    \]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Delta hedging rule}
+    \begin{block}{Informal theoerm \informalduck}
+        To replicate a european type claim with price $X(S_t, t)$ we should hold $y_t$ shares and $z_t$ bonds, 
+        where 
+        \[
+            \begin{cases}
+                y_t = \frac{\partial X}{\partial S}; \\
+                z_t = \frac{X_t - y_t S_t}{B_t}.    
+            \end{cases}
+        \]
+    \end{block}
+\end{frame}
+
+
+
+    \begin{frame}{Delta hedging: summary}
+      
+      \begin{itemize}[<+->]
+          \item From \alert{Itô's lemma}
+          \[
+          dX_t = \ldots \cdot  dt + \frac{\partial X}{\partial S} \sigma S_t \, dW_t.    
+          \]
+
+          \item From \alert{self-financing} assumptions
+          \[
+          dX_t = \ldots \cdot  dt + y_t \sigma S_t \, dW_t,    
+          \]
+          where $y_t$  is the amount of shares we hold at $t$.
+
+          \item The \alert{delta-hedging} rule
+          \[
+          y_t =  \frac{\partial X}{\partial S}.
+          \]
+
+      \end{itemize}
+      \pause
+      Thank you! \knightduck \formalduck \informalduck \harlequinduck
+
+    \end{frame}
+      

@@ -61,7 +61,7 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Call option price}
+        \frametitle{Call option price \knightduck\knightduck}
         The pricing formula,
         \[
             C_0 = \exp(-rT) \E^*(C_T \mid \cF_0).            
@@ -81,7 +81,7 @@
 
 
 \begin{frame}
-    \frametitle{The second term}
+    \frametitle{The second term \knightduck\knightduck}
     Strike price $K$ is constant,
     \[
         \E^*(I \cdot K \mid \cF_0) = K  \E^*(I\mid \cF_0) = K \P^*(S_T > K \mid \cF_0).
@@ -122,10 +122,11 @@
 
 
 \begin{frame}
-    \frametitle{The final answer}
+    \frametitle{The final answer \knightduck\knightduck}
 The first term, 
 \begin{flalign*}
-    \E^*(I\cdot S_T  \mid \cF_0) & =  \E^*( I(W_T^* < d \sqrt{T}) \cdot S_0 \cdot \exp((r- \sigma^2/2)T + \sigma W_T^*)\mid \cF_0) = &\\
+    \E^*( & I\cdot S_T  \mid \cF_0)  = & \\
+    =& \E^*( I(W_T^* < d \sqrt{T}) \cdot S_0 \cdot \exp((r- \sigma^2/2)T + \sigma W_T^*)\mid \cF_0) = &\\
     =& S_0 \exp((r- \sigma^2/2)T) \E^*(I(W_T^* < d \sqrt{T})  \cdot \exp(\sigma W_T^*)) =& \\
     =& S_0 F(d + \sigma \sqrt{T}).&
 \end{flalign*}
@@ -150,8 +151,7 @@ where $d = \frac{\ln S_0 - \ln K + (r - \sigma^2/2)T }{\sigma\sqrt{T}}$.
           \[
             C_0 - P_0 = S_0 - \exp(-rT) K.    
             \]        
-        \item The \alert{call price} is 
-        The \alert{call option price}, 
+        \item The \alert{call option price} is 
         \begin{flalign*}
             C_0 &= \exp(-rT) \E^*(C_T \mid \cF_0) = & \\
             &= \exp(-rT)(S_0 F(d + \sigma \sqrt{T}) - K F(d)),&
