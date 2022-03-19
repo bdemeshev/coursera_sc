@@ -1,2 +1,164 @@
-% !TEX root = ../coursera_sc_01.tex
+% !TEX root = ../coursera_sc_04.tex
 
+\begin{frame} % название фрагмента
+
+    \videotitle{Call option price}
+    
+    \end{frame}
+    
+    
+    \begin{frame}{Call option price: plan}
+    
+      \begin{itemize}[<+->]
+        \item Definition of \alert{call} and \alert{put} options. 
+        \item Put-call option \alert{parity}. 
+        \item The price of a \alert{call} option. 
+      \end{itemize}
+    
+    \end{frame}
+    
+    \begin{frame}
+      \frametitle{Classic options}
+    
+      \begin{block}{Definition \formalduck}
+        The call option gives a \alert{right} to \alert{buy} one share at a specified strike price $K$ on a specified date $T$.   
+
+        The put option gives a \alert{right} to \alert{sell} one share at a specified strike price $K$ on a specified date $T$.   
+      \end{block}
+      \pause 
+      \[
+      C_T = \begin{cases}
+          S_T - K, \text{ if } S_T > K; \\
+          0, \text{ otherwise.}
+      \end{cases}  \quad
+      P_T = \begin{cases}
+        K - S_T, \text{ if } S_T < K; \\
+        0, \text{ otherwise.}        
+      \end{cases}  
+      \]
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Put-call parity}
+        \[
+      C_T = \begin{cases}
+          S_T - K, \text{ if } S_T > K; \\
+          0, \text{ otherwise.}
+      \end{cases}  \quad
+      P_T = \begin{cases}
+        K - S_T, \text{ if } S_T < K; \\
+        0, \text{ otherwise.}        
+      \end{cases}  
+      \]
+    \pause 
+    \[
+    C_T - P_T = S_T - K    
+    \]
+    \pause 
+    \[
+    C_0 - P_0 = S_0 - \exp(-rT) K    
+    \]        
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Call option price}
+        The pricing formula,
+        \[
+            C_0 = \exp(-rT) \E^*(C_T \mid \cF_0).            
+        \]
+        \pause
+        We rewrite $C_T$ using \alert{indicator} $I = I(S_T > K)$,
+        \[
+        C_T = I \cdot (S_T - K) = I\cdot S_T - I \cdot K.    
+        \]
+        \pause 
+        Let's split into two terms,
+        \begin{flalign*}
+            \E^*(C_T \mid \cF_0) &= \E^*(I\cdot S_T - I \cdot K \mid \cF_0) = &\\
+         = &\E^*(I\cdot S_T  \mid \cF_0) - \E^*(I \cdot K \mid \cF_0);&
+    \end{flalign*}
+    \end{frame}
+
+
+\begin{frame}
+    \frametitle{The second term}
+    Strike price $K$ is constant,
+    \[
+        \E^*(I \cdot K \mid \cF_0) = K  \E^*(I\mid \cF_0) = K \P^*(S_T > K \mid \cF_0).
+    \]
+    \pause
+    Let's go down to $W_T^*$,
+    \[
+    \{S_T > K \} = \{\ln S_t > \ln K \} = \{ \ln S_0 + (r - \sigma^2/2)T + \sigma W_T^* > \ln K\}    
+    \]
+    \pause
+    Or,
+    \[
+    \{S_T > K \} = \left\{ W_T^* > \frac{\ln K - \ln S_0 - (r - \sigma^2/2)T }{\sigma }  \right\}
+    \]
+    \pause
+    Let's standardise and reverse the inequality,
+    \[
+        \{S_T > K \} = \left\{ \frac{0 - W_T^*}{\sqrt{T}} < d = \frac{\ln S_0 - \ln K + (r - \sigma^2/2)T }{\sigma\sqrt{T} } \right\}.
+    \]
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{The second term\ldots}
+    We've done one half of the job, 
+    \[
+        \E^*(I \cdot K \mid \cF_0) = K \P^*(S_T > K \mid \cF_0) = K F(d),
+    \]
+    where 
+    \[
+    d = \frac{\ln S_0 - \ln K + (r - \sigma^2/2)T }{\sigma\sqrt{T} }.
+    \]
+
+\end{frame}
+
+
+
+
+\begin{frame}
+    \frametitle{The final answer}
+The first term, 
+\begin{flalign*}
+    \E^*(I\cdot S_T  \mid \cF_0) & =  \E^*( I(W_T^* < d \sqrt{T}) \cdot S_0 \cdot \exp((r- \sigma^2/2)T + \sigma W_T^*)\mid \cF_0) = &\\
+    =& S_0 \exp((r- \sigma^2/2)T) \E^*(I(W_T^* < d \sqrt{T})  \cdot \exp(\sigma W_T^*)) =& \\
+    =& S_0 F(d + \sigma \sqrt{T}).&
+\end{flalign*}
+\pause
+The \alert{call option price}, 
+\begin{flalign*}
+    C_0 &= \exp(-rT) \E^*(C_T \mid \cF_0) = & \\
+    &= \exp(-rT)(S_0 F(d + \sigma \sqrt{T}) - K F(d)),&
+\end{flalign*}
+where $d = \frac{\ln S_0 - \ln K + (r - \sigma^2/2)T }{\sigma\sqrt{T}}$.
+    
+
+\end{frame}
+
+
+
+    \begin{frame}{Call option price: summary}
+      
+      \begin{itemize}[<+->]
+          \item Call option is the right to \alert{buy} a share, put option is the right to \alert{sell} a share. 
+          \item \alert{Put-call} parity between their prices,
+          \[
+            C_0 - P_0 = S_0 - \exp(-rT) K.    
+            \]        
+        \item The \alert{call price} is 
+        The \alert{call option price}, 
+        \begin{flalign*}
+            C_0 &= \exp(-rT) \E^*(C_T \mid \cF_0) = & \\
+            &= \exp(-rT)(S_0 F(d + \sigma \sqrt{T}) - K F(d)),&
+        \end{flalign*}
+        where $d = \frac{\ln S_0 - \ln K + (r - \sigma^2/2)T }{\sigma\sqrt{T}}$.
+                                      
+      \end{itemize}
+        
+    \end{frame}
+      
