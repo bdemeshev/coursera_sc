@@ -10,19 +10,137 @@
     \begin{frame}{Girsanov theorem: short plan}
     
       \begin{itemize}[<+->]
-        \item Idea of an alternative probability measure.
-        \item Girsanov theorem.
-        \item 
+        \item The \alert{wrong answer} to the pricing problem. 
+        \item Idea of \alert{alternative probability}. 
+        \item \alert{Girsanov theorem}.
       \end{itemize}
     
     \end{frame}
 
+\begin{frame}
+  \frametitle{The wrong answer}
+
+  \begin{block}{Wrong intuition \harlequinduck}
+    The future payoff $X_T$ is random, we just need to calculate the expected payoff
+    given all available information,
+    \[
+    X_0 \stackrel{???}{=} \E(X_T \mid \mathcal F_0).
+    \]
+  \end{block}
+
+  \pause 
+  This is true for a martingale, but the claim price is \alert{not a martingale}. 
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Alternative probability}
+  \begin{center}
+  \begin{tabular}{@{}cccc@{}}
+    \toprule
+     $A$ & $X=-2$ & $X=0$ & $X=4$  \\ 
+     \midrule
+     $\P(A)$ & 0.3 & 0.4 & 0.3  \\
+     $\P^*(A)$ & 0.4 & 0.1 & 0.5 \\
+     \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \pause
+  \[
+    \E(X) = 0.6
+  \]
+  \pause
+  \[
+    \E^*(X) = 1.2
+  \]
+\end{frame}
+
+\begin{frame}
+  \frametitle{Idea}
+  We will introduce a \alert{new probability} $\P^*$ 
+  in the Black and Scholes model to simplify the calculation of prices. 
+\end{frame}
+
+
+\begin{frame}{Girsanov theorem}
+
+  \begin{block}{Theorem \formalduck}
+    If $(W_t)$ is a Wiener process under probability $\P$ and $W_t^* = b\cdot t + W_t$,
+    then there is a probability $\P^*$ such that $(W_t^*)$ is a Wiener process under $\P^*$.
+  \end{block}
+
+  \pause
+  \[
+  \E(W_t) = 0, \pause \quad \E(W_t^*) = b\cdot t, \pause \quad \E^*(W_t^*) = 0.
+  \]
+        
+\end{frame}
+
+\begin{frame}{Girsanov theorem in BS model}
+
+  \begin{block}{Theorem \formalduck}
+    In the Black and Scholes model there is an alternative probability $\P^*$ such that
+    $(W_t^*)$ is a Wiener process under $\P^*$ and 
+    \[
+      S_t = S_0 \exp  \left(  \left( \alert{r} - \frac{\sigma^2}{2}\right)t + \sigma W^*_t \right).  
+    \]
+  \end{block}
+  \pause 
+  Old formula is still valid,
+  \[
+    S_t = S_0 \exp  \left(  \left( \alert{\mu} - \frac{\sigma^2}{2}\right)t + \sigma W_t \right), 
+  \]
+  where $(W_t)$ is a Wiener process under probability $\P$.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Link between $(W_t)$ and $(W^*_t)$}
+
+  Equivalent formula for share price means that 
+  \[
+    \left( \alert{\mu} - \frac{\sigma^2}{2}\right)t + \sigma W_t =  \left( \alert{r} - \frac{\sigma^2}{2}\right)t + \sigma W_t^*
+  \]
+  \pause
+  We simplify, 
+  \[
+    (\mu - r) t  + \sigma W_t = \sigma W_t^* 
+  \]
+  \pause 
+  In \alert{short} form 
+  \[
+    (\mu - r)dt + \sigma dW_t = \sigma dW_t^*.
+  \]
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The meaning of probabilities:}
+  \begin{itemize}
+    \onslide<1->{\item $\P$ — \alert{real world} probability;}
+    \onslide<2->{\item $\P^*$ — \alert{artificial} probability to simplify formulas.}
+  \end{itemize}
+
+
+
+\end{frame}
+
 \begin{frame}{Girsanov theorem: summary}
         
 \begin{itemize}[<+->]
-          \item A \alert{sum three terms}: constant, Itô integral and Riemann integral.
-          \item Will be a martingale \alert{without Riemann integral}.
-          \item Often written using \alert{short form} with $dt$ and $dW_t$.
+\item Fair price is not a \alert{simple} expected value.
+\item \alert{Girsanov theorem} gives equivalent formula for $S_t$:
+\begin{flalign*}
+  S_t = &S_0  \exp  \left(  \left( \alert{r} - \frac{\sigma^2}{2}\right)t + \sigma W^*_t \right) =& \\
+  = & S_0 \exp  \left(  \left( \alert{\mu} - \frac{\sigma^2}{2}\right)t + \sigma W_t \right).&
+\end{flalign*}
+\item $(W_t^*)$ is a Wiener process under \alert{artificial} probability $\P^*$,
+\[
+  (\mu - r)dt + \sigma dW_t = \sigma dW_t^*.
+\]
+
 \end{itemize}
         
 \end{frame}

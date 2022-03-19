@@ -1,30 +1,135 @@
-% !TEX root = ../coursera_sc_02.tex
+% !TEX root = ../coursera_sc_03.tex
 
 \begin{frame} % название фрагмента
 
-    \videotitle{Stochastic differential equations}
+    \videotitle{Black and Scholes model}
     
     \end{frame}
     
     
-    \begin{frame}{Stochastic differential equations: short plan}
+    \begin{frame}{Black and Scholes model: short plan}
     
       \begin{itemize}[<+->]
-        \item Common properties with Riemann integral.
-        \item Zero expected value.
-        \item Itô isometry.
+        \item \alert{Assumptions} of the model.
+        \item The main \alert{question}.
+        \item Solving the price \alert{stochastic differential equation}.
       \end{itemize}
     
     \end{frame}
 
 
-\begin{frame}{Stochastic differential equations: summary}
+\begin{frame}{BS-model: assumptions \informalduck}
         
 \begin{itemize}[<+->]
-          \item \alert{Zero} expected value.
-          \item Using \alert{Itô isometry} one may calculate variance.
-          \item \alert{Some common properties} with Riemann integral.
+          \item \alert{Unique} share type is traded. The share price $S_t$ satisfies 
+          \[
+          dS_t = \mu S_t \, dt + \sigma S_t  \, dW_t.
+          \]
+          \item The \alert{risk free} interest rate $r$ is constant and unique for all horizons. 
+          \[
+          dB_t = r B_t \, dt  \quad B_t = B_0 \exp(rt), \; B_0 =1.
+          \]
+          \item No taxes, no dividends, \alert{no transaction costs}. 
+          \item Time is continuous, shares are \alert{infinitely divisible}.
+          \item \alert{Short selling} is allowed.  
+          \item \alert{No arbitrage} opportunities.
+          \item The parameters $r$, $\sigma$, $\mu$ \alert{are known}.
 \end{itemize}
         
 \end{frame}
-      
+
+\begin{frame}{BS-model}
+
+\begin{block}{The Question}
+  How can we calculate the price of a particular financial claim?  
+\end{block}
+
+\pause
+
+\alert{Example}. At time moment $T=2$ John would like to get $10$ if the $S_2 > 100$ and nothing otherwise. 
+
+\pause 
+
+What is the fair price John should pay at $t=0$?
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{SDE for the price}
+  
+  \alert{Stochastic differential equation} for the price:
+  \[
+  dS_t = \mu S_t \, dt + \sigma S_t \, dW_t.
+  \]
+
+  \pause
+
+  In \alert{full} form:
+  \[
+  S_t = S_0 + \int_0^t \mu S_u \, du + \int_0^t \sigma S_u \, dW_u.  
+  \]
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Solving the SDE \knightduck}
+  \alert{Stochastic differential equation} for the price:
+  \[
+  dS_t = \mu S_t \, dt + \sigma S_t \, dW_t.
+  \]
+  
+  \onslide<2-> {By \alert{mnemonic} rules, }
+  \begin{flalign*}
+    \onslide<3-> {(dS_t)^2 = (\mu S_t \, dt + \sigma S_t \, dW_t)^2 =}\onslide<4->{ 0 + 0 + \sigma^2 S_t^2 dt.}
+  \end{flalign*} 
+
+  \onslide<5->{Let's consider $Y_t = \ln S_t$. Accordign to \alert{Itô's lemma},}
+\begin{flalign*}
+    \onslide<6->{dY_t & = }\onslide<7->{\frac{1}{S_t} \, dS_t + 0 \, dt + }\onslide<8->{ \frac{1}{2}\left(\frac{-1}{S_t^2}\right) (dS_t)^2 =&}\\
+    \onslide<9->{=\mu \, dt + \sigma dW_t - \frac{1}{2}\sigma^2 \, dt.&}
+\end{flalign*} 
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Solving the SDE\ldots}
+
+  The log-price $Y_t = \ln S_t$ in \alert{short} form,
+  \[
+  dY_t = \left( \mu - \frac{\sigma^2}{2}\right)\, dt + \sigma \, dW_t.  
+  \]
+\pause
+  In \alert{full} form,
+  \[
+    Y_t = Y_0 + \int_0^t\left( \mu - \frac{\sigma^2}{2}\right)\, du + \int_0^t \sigma \, dW_u
+  \]
+\pause
+  Without integrals, 
+  \[
+  \ln S_t = \ln S_0 +   \left( \mu - \frac{\sigma^2}{2}\right)t + \sigma W_t.
+  \]
+\pause
+  \alert{Finally}, 
+  \[
+  S_t = S_0 \exp  \left(  \left( \mu - \frac{\sigma^2}{2}\right)t + \sigma W_t \right).
+  \]
+
+\end{frame}
+
+\begin{frame}{Itô's lemma: summary}
+  
+  \begin{itemize}[<+->]
+      \item With BS model we will calculate the \alert{fair} price.
+      \item The share price follows \alert{geometric} brownian motion, 
+      \[
+        S_t = S_0 \exp  \left(  \left( \mu - \frac{\sigma^2}{2}\right)t + \sigma W_t \right).
+      \]
+
+      \item \alert{Risk free rate} $r$ is constant.
+      \item There are \alert{no arbitrage} opportunities.
+  \end{itemize}
+    
+\end{frame}
+  

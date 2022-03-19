@@ -1,0 +1,135 @@
+% !TEX root = ../coursera_sc_01.tex
+
+\begin{frame} % название фрагмента
+
+\videotitle{Discounted price process}
+
+\end{frame}
+
+
+\begin{frame}{Discounted price process: plan}
+
+  \begin{itemize}[<+->]
+    \item Discounting in \alert{discrete} and \alert{continuous time}. 
+    \item Every asset can be \alert{replicated}.
+    \item The \alert{pricing formula}. 
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Discounting}
+
+  \begin{block}{Definition in discrete time \formalduck}
+    If $X_t$ is the price of a claim at time $t$ and $r$ is the interest rate then the value
+    \[
+    \frac{X_t}{(1 + r)^t} = (1 + r)^{-t} X_t 
+    \]
+    is called \alert{discounted} price. 
+  \end{block}
+  \pause
+  \begin{block}{Definition in continuous time \formalduck}
+    If $X_t$ is the price of a claim at time $t$ and $r$ is the interest rate then the value
+    \[
+    \frac{X_t}{(\exp r)^t} =  \frac{X_t}{\exp (rt)} = \exp(-rt) X_t
+    \]
+    is called \alert{discounted} price. 
+  \end{block}
+  \pause 
+  For small $r$ the definitions are close, as $\exp(r) \approx 1 + r$.
+
+  \pause 
+  For $t=0$ discounted price and price are equal. 
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Is the discounted share price a martingale?}
+
+\begin{flalign*}
+  d(\exp(-rt)S_t)= -r \exp(-rt) S_t dt + \exp(-rt) dS_t + \frac{1}{2} \cdot 0 \cdot (dS_t)^2 =
+  = -r \exp(-rt) S_t dt + \exp(-rt) (\mu S_t dt + \sigma S_t dW_t) = 
+  = \exp(-rt) S_t \left( (\mu - r) dt + \sigma dW_t \right).
+\end{flalign*}
+
+\pause
+\alert{No}, under $\P$ short form has $dt$ term inside!
+\[
+S_0 \neq \E(\exp(-rt) S_t \mid \cF_0).
+\]
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Is the discounted share price a martingale?}
+
+\begin{flalign*}
+  d(\exp(-rt)S_t)=\exp(-rt) S_t \left( (\mu - r) dt + \sigma dW_t \right).
+\end{flalign*}
+
+\pause
+But wait, $(\mu - r) dt + \sigma dW_t = \sigma dW_t^*$!
+\begin{flalign*}
+  d(\exp(-rt)S_t)=\exp(-rt) S_t \sigma dW^*_t.
+\end{flalign*}
+
+\pause
+\alert{Yes}, under $\P^*$ short form has no $dt$ term inside!
+\[
+S_0 = \E^*(\exp(-rt) S_t \mid \cF_0).
+\]
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Replicating strategy}
+
+  \begin{block}{Informal theorem \informalduck}
+    In the Black and Scholes model every \alert{european type} asset can be replicated by  
+    a \alert{self-financing} stategy that trades shares and risk free bonds. 
+    \begin{flalign*}
+      X_t &= y_t S_t + z_t B_t& \\
+      dX_t &= y_t dS_t + z_t dB_t. & \\ 
+    \end{flalign*}    
+  \end{block}
+  \pause 
+  European type asset gives you some payoff at a \alert{fixed time moment} $T$.
+
+  \pause
+  Self-financing strategy means \alert{no} exogenous capital inflow or outflow.
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The pricing formula}
+  \begin{block}{Informal theorem \informalduck}
+    In the Black and Scholes model the discounted price of every \alert{european type} asset
+    is a martingale under probability $\P^*$, hence
+    \[
+    X_0 = \E^*(\exp(-rt)X_t\mid \cF_0) = \exp(-rt) \E^*(X_t \mid \cF_0).  
+    \] 
+  \end{block}
+  \begin{itemize}
+    \onslide<2->{\item $(W_t^*)$ is a Wiener process under $\P^*$.}
+    \onslide<3->{\item $(\mu - r) dt + \sigma dW_t = \sigma dW_t^*$.}
+    \onslide<4->{\item Discounted share price $\exp(-rt)S_t$ is also a martingale under $\P^*$.}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Discounted price process: summary}
+  
+  \begin{itemize}[<+->]
+      \item \alert{European claim} gives payoff at a fixed moment of time $T$.
+      \item The \alert{discounted price} of any european type claim is 
+      a martingale under $\P^*$.
+      \item Every European claim may be \alert{replicated}.
+      \item The \alert{pricing formula} is
+      \[
+        X_0 = \E^*(\exp(-rt)X_t\mid \cF_0) = \exp(-rt) \E^*(X_t \mid \cF_0).  
+      \] 
+  \end{itemize}
+    
+\end{frame}
+  
