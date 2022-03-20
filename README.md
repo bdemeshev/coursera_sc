@@ -73,47 +73,47 @@ Estimate probability.
 # Week 3
 
 
-L1. Ito's lemma. V1 + V2.
+Video 1 (slides). Ito's lemma. V1 + V2.
 
 
-B1. Apply Ito's.
+Video 2 (board). Apply Ito's.
 X_t = W_t^2 * t^3
 X_t = S_t^2 where dS_t = ...
 conclusion: not martingales!
 
-B2. Check smth is a martingale using Ito's
+Video 3 (board). Check smth is a martingale using Ito's
 When is a martingale?
 X_t = W_t^2 + at
 Y_t = exp(a W_t + bt)
 
 
-L2. Solve BS SDE using Ito's lemma!
+Video 4 (board). Solve BS SDE using Ito's lemma!
 
-B3. Vasicek model. solution of sde
+Video 5 (board). Vasicek model. solution of sde
 
 
-L3. Girsanov theorem.
+Video 6 (slides). Girsanov theorem.
 Informal theorem. Calculations!
 Girsanov inside black and sholes: replace mu with any value. 
 Let's say r.
 
 
-P1. Simulate SDE (Vasicek) path. 
+Video 7 (python). Simulate SDE (Vasicek) path. 
 
 
 # Week 4
 
-L1. Discounting: discrete time, continuous time. 
+Video 1 (slides). Discounting: discrete time, continuous time. 
 Find d(discounted S_t) in BS. 
 Not a martingale. 
 X_0 \neq E(X_t | F_t)
 Every discounted asset price is a martingale
 under some P*.  
 
-L2. Call option definition. 
+Video 2 (slides). Call option definition. 
 Call option price calculations. 
 
-B1. No arbitrage condition problem. 
+Video 3 (board).. No arbitrage condition problem. 
 A: pays you 1 dollar if S_T < 10
 S: share
 B: pays you 1 share if S_T < 10
@@ -121,20 +121,20 @@ r = 0.05
 What is the price of Call option with strike 10?
 
 
-B2. Calculate price. 
+Video 4 (board). Calculate price. 
 S_2^3
 
 
-L3. PDE + Delta-hedging.
+Video 5 (slides). PDE + Delta-hedging.
 
 
-B3. Calculate replicating strategy?
+Video 6 (board). Calculate replicating strategy
 S_t = ... (prev calc)
 
 How much shares and money to replicate this?
 
 
-P1. Simulation pricing of complex option.
+Video 7 (python). Simulation pricing of complex option.
 
 
 
