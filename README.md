@@ -8,65 +8,65 @@ ducks!
 
 # Week 1
 
-L1. Definition Wiener process. 
+Video 1 (slides). Definition Wiener process. 
 Table for MGF, and $E(exp(aX)I(Z<b)))$.
 W_t ~ \sqrt T Z, where Z is N(0;1).
 
-B1. Use MGF to calculate some Var/Cov/E.
+Video 2 (board). Use MGF to calculate some Var/Cov/E.
 E(tW_t^4)
 Var(tW_t^4 + t^2)
 Cov(tW_t, W_s^2), s < t
 P(3W_4 - W_3 > 0)
 
 
-L2. Conditional expected value. 
+Video 3 (slides). Conditional expected value. 
 Informal def of sigma-algebras. 
 Idea: decompose X into predictable and completely unpredictable parts. 
 Properties. 
 
-B2. Some conditional expected values. 
+Video 4 (board). Some conditional expected values. 
 E(7W_6^2 | W_4)
 Var(2W_6 + W_5 | W_4)
 P(3W_6 > 2 | W_4)
 
-L3. Martingales: discrete time + continuous time.
+Video 5 (slides). Martingales: discrete time + continuous time.
 
-B3. Check smth is martingale!
+Video 6 (board). Check smth is martingale!
 Find a, X_t = 6W_t^2 + a t
 Find b, Y_t = exp(6W_t + b t)
 that X_t, Y_t are martingales. 
 
-P1. Simulate Wiener trajectory. 
+Video 7 (python). Simulate Wiener trajectory. 
 Estimate probability that it will hit smth. 
 Estimate expected time to hit smth. 
 
 
 # Week 2
 
-L1. Stochastic integral 
+Video 1 (slides). Stochastic integral 
 Informal definition using profit. 
 Small table in continuous case. 
 Short form notation. 
 
-B1. Calculation of stochastic integrals. 
+Video 2 (board). Calculation of stochastic integrals. 
 One with discrete jumps, the second $\int_0^5 2W_u + 3 dW_u$.
 
-L2. Properties of stochastic integrals. 
+Video 3 (slides). Properties of stochastic integrals. 
 And Riemann integrals?
 
 TODO: пропустил изометрию для ковариации в слайдах! ? в доп материалы или переснять?
 
-L3. Short-long form notation. 
+Video 4 (slides). Short-long form notation. 
 Martingale criterion: informal theorem!
 No derivative! Symbolic language!
 
-B2. Calculate some expected value / variance / Covariance for integrals. 
+Video 5 (board). Calculate some expected value / variance / Covariance for integrals. 
 E(I_t), Var(I_t), Cov(I_t, W_t^2), E(I_6 | I_4)
 
-B3. vasicek expected value
+Video 6 (board). vasicek expected value
 Calculate expected value of return in Vasicek model with specified parameters.
 
-P1. Simulate stochastic integral. 
+Video 7 (python). Simulate stochastic integral. 
 Draw trajectories. 
 Estimate probability. 
 
