@@ -18,6 +18,7 @@
 \theoremstyle{definition} % прямой шрифт в условии теорем
 \newtheorem{theorem}{Теорема}[section]
 
+\usepackage{physics}
 
 \usepackage{amsmath, amssymb} % куча стандартных математических плюшек
 
@@ -85,29 +86,18 @@
 \DeclareMathOperator{\Corr}{Corr}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\E}{E}
-\DeclareMathOperator{\grad}{grad}
 \newcommand{\R}{\mathbb{R}}
 \newcommand \hb{\hat{\beta}}
 \newcommand \hs{\hat{\sigma}}
 \newcommand \htheta{\hat{\theta}}
-\newcommand \s{\sigma}
 \newcommand \hy{\hat{y}}
 \newcommand \hY{\hat{Y}}
 \newcommand \e{\varepsilon}
 \newcommand \he{\hat{\e}}
-\newcommand \z{z}
 \newcommand \hVar{\widehat{\Var}}
 \newcommand \hCorr{\widehat{\Corr}}
 \newcommand \hCov{\widehat{\Cov}}
 \newcommand \cN{\mathcal{N}}
-
-\newcommand \putyourname{\fbox{
-    \begin{minipage}{42em}
-      Name, group no:\vspace*{3ex}\par
-      \noindent\dotfill\vspace{2mm}
-    \end{minipage}
-  }
-}
 
 
 
@@ -131,6 +121,12 @@ For example, $\E(Z^7) = 0$.
 For example, $\E(Z^6) = 5 \cdot 3 \cdot 1 = 15$.
 
 \[
+MGF_Z(u) =  \exp(0.5 u^2).
+\]
+For example, $\frac{d^2}{dt^2} MGF_Z(0) = \E(Z^2)$. 
+
+
+\[
 \E(W_t^{2k+1}) = 0.
 \]
 For example, $\E(W_9^{11}) = 0$.
@@ -141,6 +137,11 @@ For example, $\E(W_9^{11}) = 0$.
 \]
 For example, $\E(W_9^8) = 9^4 \cdot 7\cdot  5 \cdot 3 \cdot 1$.
 
+
+\[
+MGF_{W_t}(u) = \exp(0.5 t u^2).
+\]
+For example, $\frac{d^2}{dt^2} MGF_{W_t}(0) = \E(W_t^2)$. 
 
 
 \section*{Three stochastic integrals}
