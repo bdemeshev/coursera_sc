@@ -85,7 +85,9 @@
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Corr}{Corr}
 \DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand \hb{\hat{\beta}}
 \newcommand \hs{\hat{\sigma}}
@@ -104,7 +106,7 @@
 \begin{document}
 
 
-We assume that $(W_t)$ is a Wiener process and $Z\sim \cN(0;1)$.
+We assume that $(W_t)$ is a Wiener process and $Z\sim \cN(0;1)$, $F(x)$ is the standard normal distribution function, $F(x) = \P(Z \leq x)$.
 
 
 \section*{Expected values and variances}
@@ -112,81 +114,81 @@ We assume that $(W_t)$ is a Wiener process and $Z\sim \cN(0;1)$.
 \[
 \E(Z^{2k+1}) = 0.
 \]
-For example, $\E(Z^7) = 0$.
+% For example, $\E(Z^7) = 0$.
 
 
 \[
 \E(Z^{2k}) = (2k-1) \cdot (2k-3) \cdot \ldots \cdot 5 \cdot 3 \cdot 1.    
 \]
-For example, $\E(Z^6) = 5 \cdot 3 \cdot 1 = 15$.
+% For example, $\E(Z^6) = 5 \cdot 3 \cdot 1 = 15$.
 
 
 \[
-\E(Z \cdot I(Z > b)) =   
+\E(Z \cdot I(Z > b)) = \frac{1}{\sqrt{2\pi}}\exp(-\frac{b^2}{2}).    
 \]
-For example, 
+% For example, 
 
 \[
-\E(Z \cdot I(Z < b)) =   
+\E(Z \cdot I(Z < b)) = - \frac{1}{\sqrt{2\pi}}\exp(-\frac{b^2}{2}).     
 \]
-For example, 
+% For example, 
 
 \[
-\E(\exp(aZ) \cdot I(Z > b)) =   
+\E(\exp(aZ) \cdot I(Z > b)) =  F(a-b)\exp(a^2/2).
 \]
-For example, 
+% For example, 
 
 \[
-\E(\exp(aZ) \cdot I(Z < b)) =   
+\E(\exp(aZ) \cdot I(Z < b)) =  F(b-a)\exp(a^2/2).
 \]
-For example, 
+% For example, 
 
 
 
 \[
 MGF_Z(u) = \E(\exp(u Z)) = \exp(0.5 u^2).
 \]
-For example, $\frac{d^2}{dt^2} MGF_Z(0) = \E(Z^2)$. 
+% For example, $\frac{d^2}{dt^2} MGF_Z(0) = \E(Z^2)$. 
 
 
 \[
 \E(W_t^{2k+1}) = 0.
 \]
-For example, $\E(W_9^{11}) = 0$.
+% For example, $\E(W_9^{11}) = 0$.
 
 
 \[
 \E(W_t^{2k}) = t^k (2k-1) \cdot (2k-3) \cdot \ldots \cdot 5 \cdot 3 \cdot 1.    
 \]
-For example, $\E(W_9^8) = 9^4 \cdot 7\cdot  5 \cdot 3 \cdot 1$.
+% For example, $\E(W_9^8) = 9^4 \cdot 7\cdot  5 \cdot 3 \cdot 1$.
 
 
 \[
-\E(W_t \cdot I(W_t > b)) =   
+\E(W_t \cdot I(W_t > b)) = \frac{\sqrt{t}}{\sqrt{2\pi}}\exp(-\frac{b^2}{2t}).    
 \]
-For example, 
+% For example, 
 
 \[
-\E(W_t \cdot I(W_t < b)) =   
+\E(W_t \cdot I(W_t < b)) = -\frac{\sqrt{t}}{\sqrt{2\pi}}\exp(-\frac{b^2}{2t}).    
 \]
-For example, 
+% For example, 
 
 \[
-\E(\exp(aW_t) \cdot I(W_t > b)) =   
+\E(\exp(aW_t) \cdot I(W_t > b)) =   F\left(a\sqrt{t}-\frac{b}{\sqrt{t}}\right)\exp(ta^2/2).
 \]
-For example, 
+% For example, 
 
 \[
-\E(\exp(aW_t) \cdot I(W_t < b)) =   
+\E(\exp(aW_t) \cdot I(W_t < b)) =   F\left(\frac{b}{\sqrt{t}}-a\sqrt{t}\right)\exp(ta^2/2).
 \]
-For example, 
+% For example, 
 
 
 
 \[
-MGF_{W_t}(u) = = \E(\exp(u W_t)) = \exp(0.5 t u^2).
+MGF_{W_t}(u) = \E(\exp(u W_t)) = \exp(0.5 t u^2).
 \]
-For example, $\frac{d^2}{dt^2} MGF_{W_t}(0) = \E(W_t^2)$. 
+% For example, $\frac{d^2}{dt^2} MGF_{W_t}(0) = \E(W_t^2)$. 
 
 
 \section*{Three stochastic integrals}
@@ -194,15 +196,17 @@ For example, $\frac{d^2}{dt^2} MGF_{W_t}(0) = \E(W_t^2)$.
 \[
     \int_0^t 1 \, dW_u = W_t
 \]
-For example, $\int_0^5 3 \, dW_u = 3 W_5$.
+% For example, $\int_0^5 3 \, dW_u = 3 W_5$.
 
 \[
     \int_0^t W_t \, dW_u = \frac{W_t^2 - t}{2}
 \]
-For example, $\int_0^5 8 W_u \, dW_u = 4 W_5^2 - 20$.
+% For example, $\int_0^5 8 W_u \, dW_u = 4 W_5^2 - 20$.
 
 \[
     \int_0^t \exp(aW_u -\frac{1}{2} a^2 u) \, dW_u = \frac{1}{a}\left(\exp(aW_t - \frac{1}{2}a^2 t) - 1\right) 
 \]
+% For example, $\int_0^5 \exp(W_u -\frac{1}{2} u) \, dW_u = \exp(W_u -\frac{1}{2} u) - 1$.
+
 
 \end{document}
