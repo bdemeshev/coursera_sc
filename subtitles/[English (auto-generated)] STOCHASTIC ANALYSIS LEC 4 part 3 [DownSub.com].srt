@@ -1,0 +1,425 @@
+
+2
+00:00:01,760 --> 00:00:04,580
+[Music]
+
+3
+00:00:04,580 --> 00:00:09,599
+The Black and Scholes model assumes no arbitrage pricing. So,
+
+4
+00:00:09,599 --> 00:00:15,259
+let's solve some non-arbitrage pricing problem. 
+
+6
+00:00:15,599 --> 00:00:19,800
+Imagine a market, when we have the risk-free rate
+
+7
+00:00:19,800 --> 00:00:24,180
+is equal to 0 0 or 5 1 3,
+
+8
+00:00:24,180 --> 00:00:29,840
+the price of a share at time zero is 7.
+
+10
+00:00:29,000 --> 00:00:31,619
+And we are interested in a call option
+
+11
+00:00:31,619 --> 00:00:34,739
+price. We strike price K equal to zero.
+
+12
+00:00:34,739 --> 00:00:37,920
+And we have two more assets, that are traded  in our market. 
+
+14
+00:00:42,000 --> 00:00:47,160
+So, for 0.8 we can buy a very interesting
+
+15
+00:00:47,160 --> 00:00:50,579
+contract, that will pay us
+
+16
+00:00:50,579 --> 00:00:54,780
+one dollar, if S2, the share price at
+
+17
+00:00:54,780 --> 00:00:56,940
+moment 2, will be less than zero. And we
+
+18
+00:00:56,940 --> 00:01:02,760
+have another strange contract. We can buy for
+
+20
+00:01:02,219 --> 00:01:05,400
+current price three dollars. We can buy a
+
+21
+00:01:05,400 --> 00:01:09,860
+contract, that will give us one share, but
+
+22
+00:01:09,860 --> 00:01:15,180
+only if the share price at moment 2
+
+23
+00:01:15,180 --> 00:01:18,119
+will be less than 10.
+
+24
+00:01:18,119 --> 00:01:21,119
+Okay, we have a market, and we need to
+
+25
+00:01:21,119 --> 00:01:24,060
+price a call option.
+
+26
+00:01:24,060 --> 00:01:27,840
+First, let's fill this table with more
+
+27
+00:01:27,840 --> 00:01:31,500
+information. Okay, if I'd like just to
+
+28
+00:01:31,500 --> 00:01:37,600
+have one share at time T equal to 2 unconditionally.
+
+30
+00:01:37,920 --> 00:01:43,100
+Then, obviously, I can just buy it now,
+
+31
+00:01:43,100 --> 00:01:47,520
+put it in a box and wait two years
+
+32
+00:01:47,520 --> 00:01:51,540
+and, oh, I have one share. So, this 
+
+33
+00:01:51,540 --> 00:01:53,640
+simple contract can be simulated with
+
+34
+00:01:53,640 --> 00:01:57,420
+one share. So, its price is just seven.
+
+35
+00:01:57,420 --> 00:02:02,060
+If I'd like to have  just one dollar
+
+36
+00:02:02,060 --> 00:02:05,579
+unconditionally at time moment two, how
+
+37
+00:02:05,579 --> 00:02:09,598
+can I simulate this contract? Oh, I
+
+38
+00:02:09,598 --> 00:02:15,560
+need to put some amount of money on a bank account,
+
+40
+00:02:15,060 --> 00:02:18,180
+but they're risk-free, interest rate is
+
+41
+00:02:18,180 --> 00:02:22,500
+0 0 5 1 3. Okay, so,
+
+42
+00:02:22,500 --> 00:02:26,160
+the current price of one dollar now
+
+43
+00:02:26,160 --> 00:02:31,980
+is exponent of minus 2 times R
+
+44
+00:02:31,980 --> 00:02:35,580
+times one dollar. And if I will calculate
+
+45
+00:02:35,580 --> 00:02:39,660
+this exponent of minus 2 times 0 0 5 1 3
+
+46
+00:02:39,660 --> 00:02:44,459
+times 1 dollar or two years later, I will
+
+47
+00:02:44,459 --> 00:02:50,260
+get roughly 0 9. Okay, so, to get one dollar,
+
+49
+00:02:50,160 --> 00:02:56,800
+I need to pay now zero nine dollars.
+
+51
+00:02:56,640 --> 00:03:00,400
+Now what is a call option?  What is a call option?
+
+53
+00:03:00,480 --> 00:03:03,660
+I don't know its price, yeah, it's some
+
+54
+00:03:03,660 --> 00:03:07,260
+C0 I'm searching for. Yeah, that is
+
+55
+00:03:07,260 --> 00:03:09,780
+C0 they call option price,
+
+56
+00:03:09,780 --> 00:03:18,019
+but the call option price has this structure of payments.
+
+58
+00:03:18,480 --> 00:03:23,700
+If S2 is less, than 10 then call option
+
+59
+00:03:23,700 --> 00:03:26,280
+price or call option is the right to buy
+
+60
+00:03:26,280 --> 00:03:31,019
+a share, so, basically, if S2 is less
+
+61
+00:03:31,019 --> 00:03:33,440
+than zero, this call option is useless
+
+62
+00:03:33,440 --> 00:03:40,159
+and its price is zero. But if S2 is
+
+63
+00:03:40,159 --> 00:03:44,099
+greater or equal than 10, then call
+
+64
+00:03:44,099 --> 00:03:46,519
+option price is in the money.
+
+65
+00:03:46,519 --> 00:03:50,420
+And its price is given by
+
+66
+00:03:50,420 --> 00:03:54,420
+S2 minus strike price, strike price is 10,
+
+67
+00:03:54,420 --> 00:03:58,580
+so, S2 minus 10.
+
+68
+00:03:58,860 --> 00:04:04,060
+Okay, and let's exploit the non-arbitrage
+
+70
+00:04:04,019 --> 00:04:07,080
+condition for these five,
+
+71
+00:04:07,080 --> 00:04:10,940
+basically, we have five assets.
+
+72
+00:04:11,220 --> 00:04:14,700
+I will replicate my option,
+
+73
+00:04:14,700 --> 00:04:18,180
+my call option using four other
+
+74
+00:04:18,180 --> 00:04:20,699
+assets. So, I will use replication
+
+75
+00:04:20,699 --> 00:04:26,940
+strategy. Oka,y let's add weights a b
+
+76
+00:04:26,940 --> 00:04:29,880
+small C, that is not a call option price,
+
+77
+00:04:29,880 --> 00:04:33,440
+that is just small C and small D. I will
+
+78
+00:04:33,440 --> 00:04:40,800
+invest A, B, C, D, I will buy a assets
+
+79
+00:04:40,800 --> 00:04:43,020
+of the first type B, assets of the second
+
+80
+00:04:43,020 --> 00:04:45,660
+type C, assets of this third type and so
+
+81
+00:04:45,660 --> 00:04:53,600
+on. And I would like to recover this payoff structure.
+
+83
+00:04:53,160 --> 00:04:55,919
+Okay, let's do it.
+
+84
+00:04:55,919 --> 00:05:01,020
+Let's work with our simulated asset.
+
+85
+00:05:01,020 --> 00:05:06,080
+What is the current price of this replication.
+
+87
+00:05:06,780 --> 00:05:16,620
+We have a times 0 8 plus b times 3, plus
+
+89
+00:05:16,320 --> 00:05:22,500
+c times 7, plus d times 0 9. Okay, and
+
+90
+00:05:22,500 --> 00:05:25,259
+what is the future payoff structure of
+
+91
+00:05:25,259 --> 00:05:27,860
+this combination?
+
+92
+00:05:27,860 --> 00:05:32,460
+The future payoff structure of this
+
+93
+00:05:32,460 --> 00:05:34,860
+combination is the following:
+
+94
+00:05:34,860 --> 00:05:40,580
+if S2 is less than 10, which one will work?
+
+96
+00:05:40,919 --> 00:05:46,360
+If S2 is less than 10, I will receive this
+
+98
+00:05:46,740 --> 00:05:50,460
+dollar, I will receive this share, I
+
+99
+00:05:50,460 --> 00:05:52,860
+will receive this and I will receive
+
+100
+00:05:52,860 --> 00:05:56,759
+that, because the third and the force are
+
+101
+00:05:56,759 --> 00:06:14,300
+unconditional. Okay, so, I will get a plus d plus S2 times b plus c.
+
+109
+00:06:14,340 --> 00:06:18,720
+What happens, if S2 is greater or equal
+
+110
+00:06:18,720 --> 00:06:23,160
+than 10? One I will get.
+
+112
+00:06:23,460 --> 00:06:31,660
+I will get unconditional assets, and that's all. So, basically, if S2
+
+114
+00:06:31,680 --> 00:06:36,380
+is greater than 10, I will get only D
+
+115
+00:06:36,380 --> 00:06:41,460
+plus S2 times C.
+
+116
+00:06:41,460 --> 00:06:44,639
+And I need to replicate my call option.
+
+117
+00:06:44,639 --> 00:06:48,660
+Okay, so, it's easy to replicate: I just
+
+118
+00:06:48,660 --> 00:06:56,680
+need to set a plus, D should be zero,
+
+120
+00:06:56,060 --> 00:07:05,539
+B plus C should be zero, D should be equal to -10,
+
+123
+00:07:05,340 --> 00:07:09,600
+and C should be equal to 1. I have a
+
+124
+00:07:09,600 --> 00:07:13,440
+very big system of four linear equations.
+
+125
+00:07:13,440 --> 00:07:16,860
+That's easy to solve them.
+
+126
+00:07:16,860 --> 00:07:24,539
+A is 10 and B is minus one.
+
+128
+00:07:24,060 --> 00:07:30,660
+So, a is 10.
+
+130
+00:07:31,319 --> 00:07:35,000
+B is -1.
+
+131
+00:07:35,220 --> 00:07:38,340
+C is one.
+
+132
+00:07:38,340 --> 00:07:42,319
+and D is -10.
+
+134
+00:07:42,479 --> 00:07:49,979
+And if I buy 10 first type assets, I
+
+135
+00:07:49,979 --> 00:07:54,960
+sell one second type asset, I buy one
+
+136
+00:07:54,960 --> 00:08:00,000
+type asset, and I sell minus, I sell
+
+137
+00:08:00,000 --> 00:08:10,000
+10 force type asset.Okay, so, the C0 should be
+
+141
+00:08:10,580 --> 00:08:26,240
+10 times 0 8, minus 1 times 3, plus 1 times 7, minus 10 times 0 9.
+

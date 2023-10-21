@@ -1,0 +1,740 @@
+1
+00:00:00,000 --> 00:00:01,760
+
+
+2
+00:00:01,760 --> 00:00:04,339
+[Music]
+
+3
+00:00:04,339 --> 00:00:07,560
+In this video we will introduce the main tool to work
+
+4
+00:00:07,560 --> 00:00:10,620
+with stochastic integrals - the Ito's lemma.
+
+5
+00:00:10,620 --> 00:00:13,559
+We will start with a light version for
+
+6
+00:00:13,559 --> 00:00:15,599
+functions of time and Wiener process. 
+
+7
+00:00:15,599 --> 00:00:19,680
+Then we will discuss, how to use Ito's lemma
+
+8
+00:00:19,680 --> 00:00:22,140
+to check, whether their processes in
+
+9
+00:00:22,140 --> 00:00:23,279
+martingale.
+
+10
+00:00:23,279 --> 00:00:25,500
+And then we will introduce a more
+
+11
+00:00:25,500 --> 00:00:28,920
+general version of Ito's lemma.
+
+12
+00:00:28,920 --> 00:00:30,960
+So, let's start.
+
+13
+00:00:30,960 --> 00:00:36,480
+If YT is a function of WT and T, then it
+
+14
+00:00:36,480 --> 00:00:40,020
+may be written in the form of a Ito
+
+15
+00:00:40,020 --> 00:00:43,340
+process. So, YT equals to Y0 plus
+
+16
+00:00:43,340 --> 00:00:47,879
+ordinary integral from 0 to T of F prime
+
+17
+00:00:47,879 --> 00:00:51,120
+with respect to T plus 1 over 2,
+
+18
+00:00:51,120 --> 00:00:55,140
+second derivative of F with respect to W
+
+19
+00:00:55,140 --> 00:01:00,120
+W times DU plus Ito integral from 0 to
+
+20
+00:01:00,120 --> 00:01:06,600
+TF Prime with respect to W times dWu.
+
+21
+00:01:06,600 --> 00:01:10,439
+Or we may write the same theorem in the
+
+22
+00:01:10,439 --> 00:01:14,040
+short form. In the short form the theorem
+
+23
+00:01:14,040 --> 00:01:17,460
+says, that if YT is a function of WT and
+
+24
+00:01:17,460 --> 00:01:20,100
+T, then it may be written in the short
+
+25
+00:01:20,100 --> 00:01:24,299
+form as dYt equals to F prime
+
+26
+00:01:24,299 --> 00:01:28,860
+with respect to W times dWt plus F prime
+
+27
+00:01:28,860 --> 00:01:33,479
+with respect to T times DT plus 1 over 2
+
+28
+00:01:33,479 --> 00:01:36,600
+times second derivative F prime prime
+
+29
+00:01:36,600 --> 00:01:42,439
+with respect to WW times DT.
+
+30
+00:01:42,720 --> 00:01:45,600
+Let's get used to this lemma, because
+
+31
+00:01:45,600 --> 00:01:48,659
+it's not that intuitive.
+
+32
+00:01:48,659 --> 00:01:52,439
+Let's express the process YT equal to WT
+
+33
+00:01:52,439 --> 00:01:56,820
+cubed times T power 4, as an Ito process.
+
+34
+00:01:56,820 --> 00:02:00,060
+Okay, let's calculate dYt.
+
+35
+00:02:00,060 --> 00:02:05,579
+First, derivatives are 3Wt squared
+
+36
+00:02:05,579 --> 00:02:08,699
+times T power 4 and we multiply it by
+
+37
+00:02:08,699 --> 00:02:11,879
+dWt. And the first derivative with
+
+38
+00:02:11,879 --> 00:02:16,940
+respect to T is 4Wt cubed times T
+
+39
+00:02:16,940 --> 00:02:21,420
+cubed, we multiply it by DT. And we add 
+
+40
+00:02:21,420 --> 00:02:25,500
+a second derivative with respect to WW, so
+
+41
+00:02:25,500 --> 00:02:32,040
+it will be 6 WT times T power 4, but we
+
+42
+00:02:32,040 --> 00:02:35,099
+divide it by 2 according to the it is
+
+43
+00:02:35,099 --> 00:02:38,640
+Lemma. We simplify this expression,
+
+44
+00:02:38,640 --> 00:02:43,920
+and, finally, we get the full form, that YT
+
+45
+00:02:43,920 --> 00:02:48,900
+equals to 0, Y0, we plug in 0 instead of
+
+46
+00:02:48,900 --> 00:02:49,980
+T,
+
+47
+00:02:49,980 --> 00:02:52,440
+plus
+
+48
+00:02:52,440 --> 00:02:57,180
+Ito integral from 0 to T 3WU squared U
+
+49
+00:02:57,180 --> 00:03:01,200
+power 4 times dWu plus ordinary integral
+
+50
+00:03:01,200 --> 00:03:06,120
+from 0 to T for WU cubed times U cubed
+
+51
+00:03:06,120 --> 00:03:12,900
+plus 3 WU times U power 4 times DU.
+
+52
+00:03:12,900 --> 00:03:15,480
+Okay, how we may use it? Let's check,
+
+53
+00:03:15,480 --> 00:03:19,400
+whether the process YT equals to
+
+54
+00:03:19,400 --> 00:03:23,099
+WT power 4 minus T squared is a
+
+55
+00:03:23,099 --> 00:03:24,060
+martingale.
+
+56
+00:03:24,060 --> 00:03:27,360
+We will calculate dYt by the same
+
+57
+00:03:27,360 --> 00:03:29,400
+lemma.
+
+58
+00:03:29,400 --> 00:03:32,220
+We take first derivatives with respect
+
+59
+00:03:32,220 --> 00:03:38,099
+to WT and T, we add 1 over 2 times the
+
+60
+00:03:38,099 --> 00:03:42,239
+second derivative with respect to WW. So,
+
+61
+00:03:42,239 --> 00:03:46,260
+it will be plus 1 over 2 times 12 WT
+
+62
+00:03:46,260 --> 00:03:47,340
+squared.
+
+63
+00:03:47,340 --> 00:03:52,620
+We simplify, we get 4 WT cubed times dWt
+
+64
+00:03:52,620 --> 00:03:58,099
+plus 6 WT squared minus 2T times DT.
+
+65
+00:03:58,099 --> 00:04:02,519
+And, hence, in the full form YT is a sum
+
+66
+00:04:02,519 --> 00:04:07,440
+of 0 plus Ito integral plus three mill
+
+67
+00:04:07,440 --> 00:04:10,140
+integral. Oh, it has Riemann integral
+68
+00:04:10,140 --> 00:04:13,739
+inside, so, it's not a martingale.
+
+69
+00:04:13,739 --> 00:04:16,079
+That's very easy. We don't need to
+
+70
+00:04:16,079 --> 00:04:18,899
+calculate conditional expected value at
+
+71
+00:04:18,899 --> 00:04:20,699
+all to check, whether the process is a
+
+72
+00:04:20,699 --> 00:04:24,300
+martingale. We calculate the short form
+
+73
+00:04:24,300 --> 00:04:28,979
+dYt using Ito's lemma. If it contains  the
+
+74
+00:04:28,979 --> 00:04:32,340
+the term with DT, it's not a martingale,
+
+75
+00:04:32,340 --> 00:04:38,160
+if the term with DT disappears, then
+
+76
+00:04:38,160 --> 00:04:42,800
+our process YT is a martingale.
+
+77
+00:04:43,860 --> 00:04:47,400
+One more exercise: let's express Yt
+
+78
+00:04:47,400 --> 00:04:49,919
+equal to WT squared as an Ito process.
+
+79
+00:04:49,919 --> 00:04:52,560
+And let's prove the formula for an
+
+80
+00:04:52,560 --> 00:04:57,060
+integral from 0 to T of WU times dWu.
+
+81
+00:04:57,060 --> 00:05:00,840
+We calculate dYt, using Ito's lemma, so, it
+
+82
+00:05:00,840 --> 00:05:06,900
+will be 2 WT times DWT plus 0 times DT,
+
+83
+00:05:06,900 --> 00:05:09,960
+plus the second derivative 1 over 2
+
+84
+00:05:09,960 --> 00:05:14,160
+times 2 times DT. We simplify it, and we
+
+85
+00:05:14,160 --> 00:05:18,479
+get 2 WT times DWT plus DT.
+
+86
+00:05:18,479 --> 00:05:22,500
+We recover the full form, YT is equal to
+
+87
+00:05:22,500 --> 00:05:27,120
+0 Y 0, I plug 0 instead of TW 0 squared
+
+88
+00:05:27,120 --> 00:05:30,840
+is zero, so, it's 0 plus Ito integral from
+
+89
+00:05:30,840 --> 00:05:37,020
+0 to T to WU times dWu plus original
+
+90
+00:05:37,020 --> 00:05:41,100
+integral from 0 to T of 1 times DU. But
+
+91
+00:05:41,100 --> 00:05:43,380
+this last integral is very easy, it's
+
+92
+00:05:43,380 --> 00:05:45,800
+just T.
+
+93
+00:05:45,800 --> 00:05:50,280
+And, hence, I get the expression for
+
+94
+00:05:50,280 --> 00:05:54,960
+integral from 0 to T of WU times dWu, it
+
+95
+00:05:54,960 --> 00:05:58,080
+will be equal one over two times WT
+
+96
+00:05:58,080 --> 00:06:02,960
+squared minus T, as in our tables.
+
+97
+00:06:03,840 --> 00:06:07,080
+And we have a more  general version of
+
+98
+00:06:07,080 --> 00:06:11,699
+it is lemma. If YT is a function of XT
+
+99
+00:06:11,699 --> 00:06:14,820
+and t, where XT, as an E to process,
+
+100
+00:06:14,820 --> 00:06:17,880
+then YT may be written in the short form,
+
+101
+00:06:17,880 --> 00:06:21,660
+as dYt is f prime with respect to X
+
+102
+00:06:21,660 --> 00:06:25,139
+times DX plus F prime with respect to T
+
+103
+00:06:25,139 --> 00:06:28,680
+times DT plus 102 times second
+
+104
+00:06:28,680 --> 00:06:32,880
+derivative with respect to X
+
+105
+00:06:32,880 --> 00:06:35,699
+times dXt squared.
+
+106
+00:06:35,699 --> 00:06:39,479
+And to calculate dXt, we use symbolic
+
+107
+00:06:39,479 --> 00:06:45,199
+rules. DT times DWT is 0. DT times DT is 0,
+
+108
+00:06:45,199 --> 00:06:50,479
+DWT times DWT is DT. Once again, 
+
+109
+00:06:50,479 --> 00:06:55,860
+these objects like DWT or dYt, or dXt,
+
+110
+00:06:55,860 --> 00:07:00,600
+they have no meaning, no rigorous
+
+111
+00:07:00,600 --> 00:07:03,060
+mathematical meaning. This is just a
+
+112
+00:07:03,060 --> 00:07:06,479
+short form to write less to save time.
+
+113
+00:07:06,479 --> 00:07:08,759
+And when you write the short form, you
+
+114
+00:07:08,759 --> 00:07:12,539
+can recover the correct full form.
+
+115
+00:07:12,539 --> 00:07:15,000
+Let's consider an example.
+
+116
+00:07:15,000 --> 00:07:18,680
+We know, that DST, the
+
+117
+00:07:18,680 --> 00:07:21,300
+share price in the framework of Black 
+
+118
+00:07:21,300 --> 00:07:22,819
+and Shcoles model
+
+119
+00:07:22,819 --> 00:07:27,000
+is given by M times M times ST times
+
+120
+00:07:27,000 --> 00:07:31,860
+DT plus sigma times ST times DWT. And
+
+121
+00:07:31,860 --> 00:07:35,759
+let's imagine, that YT is a square of ST.
+
+122
+00:07:35,759 --> 00:07:38,639
+So, the share price squared. Let's
+
+123
+00:07:38,639 --> 00:07:41,759
+calculate dYt, and let's recover the full
+
+124
+00:07:41,759 --> 00:07:44,280
+form for YT.
+
+125
+00:07:44,280 --> 00:07:49,139
+We use  the second version of Ito's lemma.
+
+126
+00:07:49,139 --> 00:07:52,199
+dYt is the first derivative with
+
+127
+00:07:52,199 --> 00:07:56,400
+respect to S. So, it will be
+
+128
+00:07:56,400 --> 00:08:01,860
+2 ST times DST plus
+
+129
+00:08:01,860 --> 00:08:04,139
+the first derivative with respect to T.
+
+130
+00:08:04,139 --> 00:08:06,840
+There are no T. So, it will be 0 times
+
+131
+00:08:06,840 --> 00:08:10,860
+DT plus we add 1 over 2 times the second
+
+132
+00:08:10,860 --> 00:08:14,099
+derivative with respect to ST, so, it will
+
+133
+00:08:14,099 --> 00:08:18,900
+be 2 times we multiply by DST squared.
+
+134
+00:08:18,900 --> 00:08:22,620
+We open the brackets instead of DST, we
+
+135
+00:08:22,620 --> 00:08:25,979
+plug in the original expression MST
+
+136
+00:08:25,979 --> 00:08:29,960
+DT plus sigma STDWT.
+
+137
+00:08:29,960 --> 00:08:33,360
+Now we open the square,
+
+138
+00:08:33,360 --> 00:08:37,440
+but DT times DT will replace by zero. DT
+
+139
+00:08:37,440 --> 00:08:40,440
+times DWT will replace by zero, when we
+
+140
+00:08:40,440 --> 00:08:42,479
+calculate a square.
+
+141
+00:08:42,479 --> 00:08:45,600
+And the only remaining term will be
+
+142
+00:08:45,600 --> 00:08:50,220
+sigma ST times  DWT
+
+143
+00:08:50,220 --> 00:08:55,140
+times DWT. But DWT times dWT is DT. And,
+
+144
+00:08:55,140 --> 00:08:58,920
+hence, we rearrange our terms and get the
+
+145
+00:08:58,920 --> 00:09:01,620
+final expression 2 MST squared plus
+
+146
+00:09:01,620 --> 00:09:05,160
+sigma squared ST squared times DT plus
+
+147
+00:09:05,160 --> 00:09:10,080
+2 sigma ST squared times dWt.
+
+148
+00:09:10,080 --> 00:09:13,620
+And we recover the full form: YT or ST
+
+149
+00:09:13,620 --> 00:09:16,980
+squared is equal to S0 squared plus
+
+150
+00:09:16,980 --> 00:09:20,820
+stochastic integral from 0 to T to sigma
+
+151
+00:09:20,820 --> 00:09:25,019
+SU squared times dWu plus ordinary
+
+152
+00:09:25,019 --> 00:09:29,820
+integral from 0 to T to MSU squared
+
+153
+00:09:29,820 --> 00:09:34,860
+plus sigma squared SU squared times DU.
+
+154
+00:09:34,860 --> 00:09:37,620
+There is an easy way to memorize Ito's lemma.
+
+155
+00:09:37,620 --> 00:09:42,540
+If you have a function YT of XT
+
+156
+00:09:42,540 --> 00:09:46,440
+ZTT, where XT and ZT are Ito 
+
+157
+00:09:46,440 --> 00:09:49,380
+processes, then the short form of YT may
+
+158
+00:09:49,380 --> 00:09:53,040
+be obtained in two steps. First calculate
+
+159
+00:09:53,040 --> 00:09:55,140
+the second order taylor expansion of
+
+160
+00:09:55,140 --> 00:09:58,380
+this function F and then simplify the
+
+161
+00:09:58,380 --> 00:10:02,600
+result using symbolic rules DT times dYt.
+
+162
+00:10:02,600 --> 00:10:07,500
+DWT is 0, DT times DT is zero, DWT times
+
+163
+00:10:07,500 --> 00:10:10,019
+DWT is DT.
+
+164
+00:10:10,019 --> 00:10:14,100
+And this process will give the correct a
+
+165
+00:10:14,100 --> 00:10:18,600
+full form, if you will replace the short
+
+166
+00:10:18,600 --> 00:10:21,959
+form by the corresponding full form.
+
+167
+00:10:21,959 --> 00:10:25,080
+And, once again, we should remember, that 
+
+168
+00:10:25,080 --> 00:10:28,860
+dWt, dYt, dXt, dZt
+
+169
+00:10:28,860 --> 00:10:31,560
+this is just a convention to simplify
+
+170
+00:10:31,560 --> 00:10:34,019
+notation. They do not exist. They are not
+
+171
+00:10:34,019 --> 00:10:36,600
+random variables. It's impossible to
+
+172
+00:10:36,600 --> 00:10:39,420
+calculate the expected value of DWT. It's
+
+173
+00:10:39,420 --> 00:10:42,300
+impossible to calculate its variance. It is
+
+174
+00:10:42,300 --> 00:10:47,100
+just a quick way, an easy way to write the steps necessary to obtain the full form.
+
+
+178
+00:10:53,820 --> 00:10:56,640
+And let's proceed to the summary.
+
+179
+00:10:56,640 --> 00:10:59,880
+It is lemma is a basic tool to study
+
+180
+00:10:59,880 --> 00:11:02,820
+stochastic integrals. One may use, for
+
+181
+00:11:02,820 --> 00:11:05,700
+example, it is lamb to check, whether a
+
+182
+00:11:05,700 --> 00:11:07,920
+given process in continuous time is a
+
+183
+00:11:07,920 --> 00:11:10,399
+martingale.
+
+184
+00:11:10,440 --> 00:11:15,180
+The Ito's lemma is easily memorized in a
+
+185
+00:11:15,180 --> 00:11:19,680
+short form, using symbolic rules DT times
+
+186
+00:11:19,680 --> 00:11:25,560
+DWT is 0, DT times DT is 0, DWT times DWT
+
+187
+00:11:25,560 --> 00:11:27,959
+is DT.
+
+189
+00:11:29,820 --> 00:11:35,820
+[Music]
+

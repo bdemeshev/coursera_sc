@@ -1,0 +1,767 @@
+1
+00:00:00,000 --> 00:00:01,760
+[Music]
+2
+00:00:01,760 --> 00:00:04,019
+[Music]
+
+3
+00:00:04,019 --> 00:00:06,720
+Let's move on to conditional values now.
+
+4
+00:00:06,720 --> 00:00:09,059
+First, start with conditional expected
+
+5
+00:00:09,059 --> 00:00:12,660
+value of 7W6 squared given, that we know
+
+6
+00:00:12,660 --> 00:00:17,100
+W at time moment 4. Okay, we will use the
+
+7
+00:00:17,100 --> 00:00:21,240
+same trick on the future value W6. We
+
+8
+00:00:21,240 --> 00:00:24,600
+will represent it, as past value W for
+
+9
+00:00:24,600 --> 00:00:28,619
+known value, plus increment, that means W6
+
+10
+00:00:28,619 --> 00:00:31,019
+minus W4.
+
+11
+00:00:31,019 --> 00:00:34,340
+If we do this substitution, we will get
+
+12
+00:00:34,340 --> 00:00:40,340
+7 times expected value of
+
+13
+00:00:40,399 --> 00:00:47,460
+W4 plus brackets W6 minus W4 squared,
+
+14
+00:00:47,460 --> 00:00:52,440
+given that we know W4.
+
+15
+00:00:54,300 --> 00:00:57,120
+And now let's open the brackets inside
+
+16
+00:00:57,120 --> 00:00:59,960
+the square. Okay, we get 7 times
+
+17
+00:00:59,960 --> 00:01:05,459
+expectation of W4 squared plus W6
+
+18
+00:01:05,459 --> 00:01:09,360
+minus W4 squared plus
+
+19
+00:01:09,360 --> 00:01:16,080
+2 times W4 times increment W6 minus W4
+
+20
+00:01:16,080 --> 00:01:20,600
+given, that we know W4.
+
+21
+00:01:23,280 --> 00:01:26,460
+Now there are basically two cases, we
+
+22
+00:01:26,460 --> 00:01:30,000
+need to consider. W4 is completely
+
+23
+00:01:30,000 --> 00:01:35,700
+known to us. So, we work with W4, as with a
+
+24
+00:01:35,700 --> 00:01:38,100
+constant, so we will move it out of
+
+25
+00:01:38,100 --> 00:01:41,240
+conditional expectation.
+
+26
+00:01:41,460 --> 00:01:44,520
+And the increment
+
+27
+00:01:44,520 --> 00:01:48,540
+W6 minus W4 is independent of what we
+
+28
+00:01:48,540 --> 00:01:51,780
+know of W4.
+
+29
+00:01:51,780 --> 00:01:55,200
+Okay, we get 7 times
+
+30
+00:01:55,200 --> 00:02:00,960
+W4 squared is fixed, we know it.  Plus
+
+31
+00:02:00,960 --> 00:02:04,619
+W6 minus W4 squared is independent of
+
+32
+00:02:04,619 --> 00:02:06,899
+what we know, so, we replace conditional
+
+33
+00:02:06,899 --> 00:02:11,840
+expected value with unconditional one.
+
+34
+00:02:12,300 --> 00:02:14,099
+Plus
+
+35
+00:02:14,099 --> 00:02:18,300
+we take out 2 times W4, we take out what
+
+36
+00:02:18,300 --> 00:02:21,720
+is known out of the expected value. And
+
+37
+00:02:21,720 --> 00:02:23,640
+when we take
+
+38
+00:02:23,640 --> 00:02:25,920
+conditional expected value of the
+
+39
+00:02:25,920 --> 00:02:29,879
+increment, we can forget W for our
+
+40
+00:02:29,879 --> 00:02:31,739
+information.
+
+41
+00:02:31,739 --> 00:02:34,379
+Okay, what do we know about the
+
+42
+00:02:34,379 --> 00:02:36,480
+increments of Wiener process? The
+
+43
+00:02:36,480 --> 00:02:39,060
+increments of Wiener process are
+
+44
+00:02:39,060 --> 00:02:41,459
+normally distributed with means zero and
+
+45
+00:02:41,459 --> 00:02:45,060
+variance T minus S, when T is greater
+
+46
+00:02:45,060 --> 00:02:47,400
+then S. So,
+
+47
+00:02:47,400 --> 00:02:55,760
+we get 7 times brackets W 4 squared plus.
+
+48
+00:02:55,760 --> 00:02:59,760
+The expectation of W6 minus W4 squared
+
+49
+00:02:59,760 --> 00:03:03,780
+is basically the variance of W6 minus W4.
+
+50
+00:03:03,780 --> 00:03:08,819
+So, it will be 6 minus 4, this value we
+
+51
+00:03:08,819 --> 00:03:13,860
+may treat it, as expected value of W6
+
+52
+00:03:13,860 --> 00:03:17,519
+minus W4 squared going or we may say
+
+53
+00:03:17,519 --> 00:03:21,239
+that it's a variance of W6 minus W 4
+
+54
+00:03:21,239 --> 00:03:23,940
+that's 6 minus 4.
+
+55
+00:03:23,940 --> 00:03:28,440
+And we get plus 2 times W4 times
+
+56
+00:03:28,440 --> 00:03:31,379
+expected value of increment and expected
+
+57
+00:03:31,379 --> 00:03:34,500
+value of the increment is zero.
+
+58
+00:03:34,500 --> 00:03:39,480
+Hence, we get our final answer. 7 times W
+
+59
+00:03:39,480 --> 00:03:44,700
+4 squared plus 14.
+
+60
+00:03:44,700 --> 00:03:48,840
+Let's move on to the variance.
+
+61
+00:03:48,840 --> 00:03:52,799
+We calculate the variance of two W6
+
+62
+00:03:52,799 --> 00:03:58,080
+plus W5 given, that we know W4.
+
+63
+00:03:58,080 --> 00:04:01,140
+Once again. We will decompose future
+
+64
+00:04:01,140 --> 00:04:05,280
+values into increments plus plus past
+
+65
+00:04:05,280 --> 00:04:08,220
+values, but we have two random variables
+
+66
+00:04:08,220 --> 00:04:10,680
+here, so we will need two increments.
+
+67
+00:04:10,680 --> 00:04:13,040
+Let's do this.
+
+68
+00:04:13,040 --> 00:04:17,040
+Basically, we consider time moment
+
+69
+00:04:17,040 --> 00:04:22,620
+for time, moment 5, and time moment 6.
+
+70
+00:04:22,620 --> 00:04:25,880
+We will work with W4
+
+71
+00:04:25,880 --> 00:04:32,220
+the increment W5 minus W4 and the
+
+72
+00:04:32,220 --> 00:04:35,460
+increment W6 minus W5.
+
+73
+00:04:35,460 --> 00:04:40,380
+And using this idea of three
+
+74
+00:04:40,380 --> 00:04:43,560
+independent random variables, our
+
+75
+00:04:43,560 --> 00:04:46,620
+calculations will be much easier. Let's
+
+76
+00:04:46,620 --> 00:04:49,040
+do it.
+
+77
+00:04:49,460 --> 00:04:54,840
+Okay, we will have variance of two, I
+
+78
+00:04:54,840 --> 00:04:58,139
+will write W6 minus W5
+
+79
+00:04:58,139 --> 00:05:01,680
+to work with increment. Okay, but I have a
+
+80
+00:05:01,680 --> 00:05:07,199
+plus one W5, 
+
+81
+00:05:07,860 --> 00:05:10,139
+so I will put everything back, so, I will
+
+82
+00:05:10,139 --> 00:05:14,100
+write three W5, so ,I have two w six and
+
+83
+00:05:14,100 --> 00:05:18,300
+one W5 as I wish. And now I will write
+
+84
+00:05:18,300 --> 00:05:21,660
+minus three W4,
+
+85
+00:05:21,660 --> 00:05:26,160
+and I will put them back plus three W4
+
+86
+00:05:26,160 --> 00:05:28,860
+four given W4.
+
+87
+00:05:28,860 --> 00:05:32,460
+Okay, this expression now I see, that I
+
+88
+00:05:32,460 --> 00:05:34,580
+have one increment, the second
+
+89
+00:05:34,580 --> 00:05:37,759
+independent increment and past value,
+
+90
+00:05:37,759 --> 00:05:40,740
+that I know. Okay,
+
+91
+00:05:40,740 --> 00:05:45,320
+my calculations are almost finished.
+
+92
+00:05:47,160 --> 00:05:52,199
+I have variance of 2 times W6 minus W5
+
+93
+00:05:52,199 --> 00:06:00,539
+plus 3 times W5 minus W4. I know W4, so, it
+
+94
+00:06:00,539 --> 00:06:04,440
+does not influence the variance and it's
+
+95
+00:06:04,440 --> 00:06:06,960
+independent of two other increments, so,
+
+96
+00:06:06,960 --> 00:06:10,020
+while I will simply emit my
+
+97
+00:06:10,020 --> 00:06:12,960
+last term. and I will emit my information,
+
+98
+00:06:12,960 --> 00:06:16,139
+because these two increments are
+
+99
+00:06:16,139 --> 00:06:18,960
+independent of what I know. So, I just
+
+100
+00:06:18,960 --> 00:06:21,000
+write
+
+101
+00:06:21,000 --> 00:06:21,840
+
+
+102
+00:06:21,840 --> 00:06:23,759
+bracket here.
+
+103
+00:06:23,759 --> 00:06:27,020
+And I have
+
+104
+00:06:27,240 --> 00:06:33,740
+four times variance of W6 minus W5 plus
+
+105
+00:06:33,740 --> 00:06:40,080
+9 times variance of W5 minus W4.
+
+106
+00:06:40,080 --> 00:06:42,840
+Once again the variance of incremental
+
+107
+00:06:42,840 --> 00:06:46,319
+Wiener process is just difference of
+
+108
+00:06:46,319 --> 00:06:47,720
+time.
+
+109
+00:06:47,720 --> 00:06:52,860
+And I have 4 times 6 minus 5 plus
+
+110
+00:06:52,860 --> 00:06:54,180
+9
+
+111
+00:06:54,180 --> 00:06:59,220
+times 5 minus 4, and I get
+
+112
+00:06:59,220 --> 00:07:02,120
+13.
+
+113
+00:07:03,000 --> 00:07:05,039
+Let's move on to the last case to the
+
+114
+00:07:05,039 --> 00:07:08,100
+probability. We will estimate, sorry,
+
+115
+00:07:08,100 --> 00:07:12,360
+calculate probability, that 3 times W6 is
+
+116
+00:07:12,360 --> 00:07:17,300
+greater than 2 given, that we know W4.
+
+117
+00:07:17,400 --> 00:07:18,919
+Okay.
+
+118
+00:07:18,919 --> 00:07:22,440
+Let's subtract conditional expected
+
+119
+00:07:22,440 --> 00:07:24,539
+value, let's divide by conditional
+
+120
+00:07:24,539 --> 00:07:26,880
+variance and we will have a standard
+
+121
+00:07:26,880 --> 00:07:29,699
+normal distribution, and we can use CDF
+
+122
+00:07:29,699 --> 00:07:31,680
+cumulative distribution function to get
+
+123
+00:07:31,680 --> 00:07:33,060
+probability.
+
+124
+00:07:33,060 --> 00:07:36,900
+Okay, so, we just stop for the
+
+125
+00:07:36,900 --> 00:07:37,800
+moment,
+
+126
+00:07:37,800 --> 00:07:40,940
+and we calculate
+
+127
+00:07:40,940 --> 00:07:44,280
+ conditional expected value of three w
+
+128
+00:07:44,280 --> 00:07:50,099
+6  given W4 it will be three. 
+
+129
+00:07:50,099 --> 00:07:56,580
+Times  expected value of W6 given W4.
+
+130
+00:07:56,580 --> 00:08:00,599
+And, using our  famous trick of
+
+131
+00:08:00,599 --> 00:08:03,000
+decomposing future value into past value,
+
+132
+00:08:03,000 --> 00:08:05,580
+that is known plus independent increment,
+
+133
+00:08:05,580 --> 00:08:10,979
+we will get three times w 4.
+
+134
+00:08:10,979 --> 00:08:14,220
+If we do the same thing with
+
+135
+00:08:14,220 --> 00:08:18,180
+variance, variance of three w6 given
+
+136
+00:08:18,180 --> 00:08:24,900
+W4 will be 9 times variance of W6 given
+
+137
+00:08:24,900 --> 00:08:27,919
+W4.
+
+138
+00:08:28,319 --> 00:08:33,120
+I use my decomposition variance of W4
+
+139
+00:08:33,120 --> 00:08:40,320
+plus W6 minus W4, given W4.
+
+140
+00:08:42,120 --> 00:08:45,080
+This term
+
+141
+00:08:46,380 --> 00:08:49,080
+is fixed.
+
+142
+00:08:49,080 --> 00:08:53,459
+So, it is not influencing variance. And
+
+143
+00:08:53,459 --> 00:08:55,140
+the increment
+
+144
+00:08:55,140 --> 00:08:58,260
+is independent.
+
+145
+00:08:58,260 --> 00:09:00,779
+This one is fixed the other one is
+
+146
+00:09:00,779 --> 00:09:01,980
+independent.
+
+147
+00:09:01,980 --> 00:09:06,300
+So, I remove a fixed term that is known,
+
+148
+00:09:06,300 --> 00:09:10,940
+that does not influence variance.
+
+149
+00:09:11,279 --> 00:09:12,959
+And I get
+
+150
+00:09:12,959 --> 00:09:21,300
+9 times variance of W6 minus W4, given W4.
+
+151
+00:09:21,300 --> 00:09:24,180
+And here we have independence, and we can
+
+152
+00:09:24,180 --> 00:09:26,820
+just emit our information, it's useless.
+
+153
+00:09:26,820 --> 00:09:30,779
+And the variance of  increment of
+
+154
+00:09:30,779 --> 00:09:33,420
+Wiener process is just difference of
+
+155
+00:09:33,420 --> 00:09:37,980
+time moments. So, we get 9 times 6 minus 4
+
+156
+00:09:37,980 --> 00:09:40,320
+we get 18.
+
+157
+00:09:40,320 --> 00:09:41,399
+So,
+
+158
+00:09:41,399 --> 00:09:44,100
+to calculate this probability, we need to
+
+159
+00:09:44,100 --> 00:09:47,160
+standardize a random variable. So, we
+
+160
+00:09:47,160 --> 00:09:50,580
+subtract variance, we divide by square
+
+161
+00:09:50,580 --> 00:09:53,580
+root of variance, and we get the answer.
+
+162
+00:09:53,580 --> 00:09:57,240
+Okay, so, we will have here probability of
+
+163
+00:09:57,240 --> 00:09:59,880
+three W6 minus. We subtract
+
+164
+00:09:59,880 --> 00:10:02,700
+conditional expected value.
+
+165
+00:10:02,700 --> 00:10:04,760
+We subtract
+
+166
+00:10:04,760 --> 00:10:09,540
+3 W4,
+
+167
+00:10:09,540 --> 00:10:12,000
+we divide by square root of variance
+
+168
+00:10:12,000 --> 00:10:13,800
+conditional variance.
+
+169
+00:10:13,800 --> 00:10:18,660
+We do the same thing with 2 2 minus 3W
+
+170
+00:10:18,660 --> 00:10:25,920
+4 divided by square root of 18. Even W4.
+
+171
+00:10:27,720 --> 00:10:28,940
+Hence,
+
+172
+00:10:28,940 --> 00:10:34,260
+this left hand side has normal 0,1
+
+173
+00:10:34,260 --> 00:10:35,640
+distribution.
+
+174
+00:10:35,640 --> 00:10:38,580
+And that is known value,
+
+175
+00:10:38,580 --> 00:10:40,700
+so, we get
+
+176
+00:10:40,700 --> 00:10:43,920
+our last step.
+
+177
+00:10:43,920 --> 00:10:48,540
+We get 1 minus probability, that a
+
+178
+00:10:48,540 --> 00:10:51,540
+standard normal random variable will be
+
+179
+00:10:51,540 --> 00:10:52,740
+less
+
+180
+00:10:52,740 --> 00:10:54,660
+than
+
+181
+00:10:54,660 --> 00:10:55,920
+
+
+182
+00:10:55,920 --> 00:11:01,920
+two minus 3 W4 divided over 18 given
+
+183
+00:11:01,920 --> 00:11:06,540
+that W4, we treat at as a constant.And
+
+184
+00:11:06,540 --> 00:11:10,320
+finally, we get 1 minus cumulative
+
+185
+00:11:10,320 --> 00:11:14,579
+distribution function at the point 2
+
+186
+00:11:14,579 --> 00:11:19,260
+minus 3 W4 divided by square root of
+
+187
+00:11:19,260 --> 00:11:22,079
+18.
+
+188
+00:11:22,079 --> 00:11:26,220
+Bingo! we have calculated all conditional
+
+189
+00:11:26,220 --> 00:11:27,839
+values, conditional expected value,
+
+190
+00:11:27,839 --> 00:11:29,700
+conditional variance and conditional
+
+191
+00:11:29,700 --> 00:11:32,120
+probability.
+
+192
+00:11:33,420 --> 00:11:39,450
+[Music]
+

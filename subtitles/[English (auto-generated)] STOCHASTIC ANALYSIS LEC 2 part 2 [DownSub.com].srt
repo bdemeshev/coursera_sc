@@ -1,0 +1,437 @@
+
+2
+00:00:01,760 --> 00:00:04,520
+[Music]
+
+3
+00:00:04,520 --> 00:00:07,740
+Stochastic intergrals play important role in the Black
+
+4
+00:00:07,740 --> 00:00:10,380
+and Scholes model. So, let's calculate our
+
+5
+00:00:10,380 --> 00:00:13,080
+two first stochastic integrals.
+
+6
+00:00:13,080 --> 00:00:17,460
+Okay, so, what  is the meaning,
+
+7
+00:00:17,460 --> 00:00:20,039
+intuitive meaning of stochastic integral?
+
+8
+00:00:20,039 --> 00:00:23,939
+we treat this quantity,
+
+9
+00:00:23,939 --> 00:00:29,640
+as the profit of an investor, who has XU
+
+10
+00:00:29,640 --> 00:00:34,020
+shares, and the price of a share is WU.
+
+11
+00:00:34,020 --> 00:00:35,579
+
+
+12
+00:00:35,579 --> 00:00:40,260
+Now we have this, let's call it Financial
+
+13
+00:00:40,260 --> 00:00:41,660
+strategy,
+
+14
+00:00:41,660 --> 00:00:44,879
+I'm not speaking about its optimality
+
+15
+00:00:44,879 --> 00:00:48,660
+let's just consider it as given. so we
+
+16
+00:00:48,660 --> 00:00:49,920
+have a
+
+17
+00:00:49,920 --> 00:00:54,899
+full trading points. let's draw them on
+
+18
+00:00:54,899 --> 00:00:56,399
+timeline.
+
+19
+00:00:56,399 --> 00:00:59,960
+we have starting moment zero. we have a
+
+20
+00:00:59,960 --> 00:01:04,920
+jump at moment one, so there will be a
+
+21
+00:01:04,920 --> 00:01:07,979
+transaction at moment one. there will be
+
+22
+00:01:07,979 --> 00:01:11,700
+also a transaction at moment four and
+
+23
+00:01:11,700 --> 00:01:16,200
+the final moment of time is five we will
+
+24
+00:01:16,200 --> 00:01:18,600
+sell our portfolio.
+
+25
+00:01:18,600 --> 00:01:23,040
+okay at time moment zero,
+
+26
+00:01:23,040 --> 00:01:25,979
+we should have three shares. so we should
+
+27
+00:01:25,979 --> 00:01:28,740
+buy that is our first
+
+28
+00:01:28,740 --> 00:01:32,580
+transaction. we should buy three shares
+
+29
+00:01:32,580 --> 00:01:36,840
+and the price is w0.
+
+30
+00:01:36,840 --> 00:01:39,479
+okay at time Moment One
+
+31
+00:01:39,479 --> 00:01:42,780
+we already have three shares but
+
+32
+00:01:42,780 --> 00:01:45,240
+according to our strategy we should have
+
+33
+00:01:45,240 --> 00:01:48,240
+from point one to point four we should
+
+34
+00:01:48,240 --> 00:01:52,979
+have W1 Square shares. so so we we should
+
+35
+00:01:52,979 --> 00:01:55,680
+additionally Buy
+
+36
+00:01:55,680 --> 00:01:59,820
+ W1 squared minus three. we already
+
+37
+00:01:59,820 --> 00:02:03,180
+have three shares. so We additionally buy
+
+38
+00:02:03,180 --> 00:02:06,299
+the quantity we would like to have minus
+
+39
+00:02:06,299 --> 00:02:10,500
+the quantity we already have shares.
+
+40
+00:02:10,500 --> 00:02:12,239
+Given,
+
+41
+00:02:12,239 --> 00:02:13,940
+
+
+42
+00:02:13,940 --> 00:02:18,780
+that the price is  W1
+
+43
+00:02:18,780 --> 00:02:20,760
+at that moment four,
+
+44
+00:02:20,760 --> 00:02:24,660
+we have one more  transaction, we
+
+45
+00:02:24,660 --> 00:02:27,660
+additionally buy. Let's calculate, how
+
+46
+00:02:27,660 --> 00:02:30,720
+many before time moment four we have W1
+
+47
+00:02:30,720 --> 00:02:33,660
+squared, shares after moment four, we
+
+48
+00:02:33,660 --> 00:02:37,260
+should have W two square root shares, so,
+
+49
+00:02:37,260 --> 00:02:40,379
+we additionally buy W2 square root minus
+
+50
+00:02:40,379 --> 00:02:43,879
+W1 squared shares,
+
+51
+00:02:43,879 --> 00:02:49,140
+and their price is W4.
+
+52
+00:02:49,140 --> 00:02:52,800
+And, finally, we sell everything at time
+
+53
+00:02:52,800 --> 00:02:56,280
+moment five, we sell the portfolio, we
+
+54
+00:02:56,280 --> 00:02:57,140
+have.
+
+55
+00:02:57,140 --> 00:03:03,860
+
+So, we sell W2 square shares,
+
+56
+00:03:04,440 --> 00:03:09,420
+and the price of each share is W5. Okay,
+
+57
+00:03:09,420 --> 00:03:11,760
+let's calculate our profit, and this
+
+58
+00:03:11,760 --> 00:03:13,739
+profit will be the value of our
+
+59
+00:03:13,739 --> 00:03:16,860
+stochastic integral. So, let's write
+
+60
+00:03:16,860 --> 00:03:20,519
+all, we should spend with minus, and all
+
+61
+00:03:20,519 --> 00:03:22,440
+we should receive is plus, that's
+
+62
+00:03:22,440 --> 00:03:25,080
+basically the value of an integral. So, we
+
+63
+00:03:25,080 --> 00:03:29,940
+get minus three times W0 quantity times
+
+64
+00:03:29,940 --> 00:03:34,140
+price minus W1 square root minus three
+
+65
+00:03:34,140 --> 00:03:36,959
+times W1
+
+66
+00:03:36,959 --> 00:03:39,300
+
+67
+00:03:39,300 --> 00:03:45,780
+minus W2 minus W1 squared times W4,
+
+68
+00:03:45,780 --> 00:03:49,080
+and here we sell. So, we receive money, we
+
+69
+00:03:49,080 --> 00:03:54,420
+get plus W2 squared times W5, so, that's
+
+70
+00:03:54,420 --> 00:03:57,500
+the value of our stochastic integral.
+
+71
+00:03:57,500 --> 00:04:01,440
+Once again, I'm not pretending, that we
+
+72
+00:04:01,440 --> 00:04:03,840
+are actually buying, maybe, this quantity
+
+73
+00:04:03,840 --> 00:04:08,819
+is negative, so, we are selling in
+
+74
+00:04:08,819 --> 00:04:12,060
+this case, and, hence,  this value will
+
+75
+00:04:12,060 --> 00:04:14,819
+be  with plus, but that's completely
+
+76
+00:04:14,819 --> 00:04:17,820
+okay. This formula will take care of,
+
+77
+00:04:17,820 --> 00:04:20,639
+whether we buy, whether we sell, so, that's
+
+78
+00:04:20,639 --> 00:04:22,800
+a final result.
+
+79
+00:04:22,800 --> 00:04:27,060
+Okay, and what about the other integral?
+
+80
+00:04:27,060 --> 00:04:31,380
+Let's consider it  in more details
+
+81
+00:04:31,380 --> 00:04:35,820
+integral from 0 to 5, to WU plus three
+
+82
+00:04:35,820 --> 00:04:38,040
+dWu.
+
+83
+00:04:38,040 --> 00:04:41,340
+In this case we are doing transaction at
+
+84
+00:04:41,340 --> 00:04:43,080
+every moment of time.
+
+85
+00:04:43,080 --> 00:04:45,780
+So, we're doing transaction infinitely
+
+86
+00:04:45,780 --> 00:04:48,479
+many times, and we should consider some
+
+87
+00:04:48,479 --> 00:04:51,419
+limiting, some sense,
+
+88
+00:04:51,419 --> 00:04:53,639
+if we are doing rigorous mass, but we
+
+89
+00:04:53,639 --> 00:04:56,280
+will just use a table of integrals and
+
+90
+00:04:56,280 --> 00:04:58,320
+the properties of stochastic integrals.
+
+91
+00:04:58,320 --> 00:05:01,860
+They are linear, so, we get two
+
+92
+00:05:01,860 --> 00:05:06,919
+integrals from zero to five W dWu plus
+
+93
+00:05:06,919 --> 00:05:12,240
+integral from 0 to 5 3dWu.
+
+94
+00:05:12,660 --> 00:05:17,100
+And, basically, this integral is in our
+
+95
+00:05:17,100 --> 00:05:20,900
+table. So, we will get 2 times
+
+96
+00:05:20,900 --> 00:05:25,380
+W5 squared minus
+
+97
+00:05:25,380 --> 00:05:27,419
+five
+
+98
+00:05:27,419 --> 00:05:28,919
+over two
+
+99
+00:05:28,919 --> 00:05:33,660
+plus. And this one we may calculate it in
+
+100
+00:05:33,660 --> 00:05:37,500
+intuitively, we should buy at the initial
+
+101
+00:05:37,500 --> 00:05:40,860
+moment of time three shares, and we will
+
+102
+00:05:40,860 --> 00:05:44,160
+sell them at the final moment of time. So,
+
+103
+00:05:44,160 --> 00:05:50,940
+we should buy minus 3 times W0, and we
+
+104
+00:05:50,940 --> 00:05:53,340
+should sell them at the final moment of
+
+105
+00:05:53,340 --> 00:05:57,000
+time, so, we will get three the number of
+
+106
+00:05:57,000 --> 00:06:02,520
+shares, times the share price W5.
+
+107
+00:06:02,520 --> 00:06:05,520
+So, this is the value of our second
+
+108
+00:06:05,520 --> 00:06:08,840
+stochastic integral.
+
+109
+00:06:10,440 --> 00:06:11,340
+
+
+110
+00:06:11,340 --> 00:06:16,060
+[Music]
+

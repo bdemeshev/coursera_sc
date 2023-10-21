@@ -1,0 +1,457 @@
+2
+00:00:01,760 --> 00:00:03,899
+[Music]
+
+3
+00:00:03,899 --> 00:00:07,200
+Let's consider one more no-arbitrage
+
+4
+00:00:07,200 --> 00:00:12,960
+pricing problem. We work in a setup of
+
+5
+00:00:12,960 --> 00:00:16,139
+Black and Scholes model. We assume, that S0,
+
+6
+00:00:16,139 --> 00:00:18,779
+the starting price of a share, is ten
+
+7
+00:00:18,779 --> 00:00:22,080
+dollars. Risk-free interest rate is 0.05
+
+8
+00:00:22,080 --> 00:00:26,220
+And sigma is 0 1 the volatility.
+
+9
+00:00:26,220 --> 00:00:28,980
+Okay, and let's consider a very, very
+
+10
+00:00:28,980 --> 00:00:33,000
+strange asset, very strange asset X. At
+
+11
+00:00:33,000 --> 00:00:37,680
+time moment 2 this strange asset pays
+
+12
+00:00:37,680 --> 00:00:42,579
+you X2 cube, S2 cube.
+
+14
+00:00:42,059 --> 00:00:47,460
+If S2 will be 10, you will receive one
+
+15
+00:00:47,460 --> 00:00:50,100
+thousand. If S2 will be one, you will
+
+16
+00:00:50,100 --> 00:00:53,219
+receive one. If S2 will be 5, you will
+
+17
+00:00:53,219 --> 00:00:56,460
+receive 125 dollars. That's a very
+
+18
+00:00:56,460 --> 00:01:00,059
+strange asset. And let's price it. 
+
+19
+00:01:00,059 --> 00:01:03,239
+There is a unique no-arbitrage price 
+
+20
+00:01:03,239 --> 00:01:05,220
+in the framework of Black and Scholes model.
+
+21
+00:01:05,220 --> 00:01:08,280
+This is current price X0, and let's
+
+22
+00:01:08,280 --> 00:01:10,740
+find it out.
+
+23
+00:01:10,740 --> 00:01:14,640
+First, let's do some simple remarks: that
+
+24
+00:01:14,640 --> 00:01:19,200
+if I have one dollar in future, this
+
+25
+00:01:19,200 --> 00:01:23,759
+future dollar now is priced less
+
+26
+00:01:23,759 --> 00:01:27,259
+than one. And it's actual price is 
+
+27
+00:01:27,259 --> 00:01:32,220
+exponent of minus 2 times R, because I
+
+28
+00:01:32,220 --> 00:01:34,920
+need to discount this future dollar to
+
+29
+00:01:34,920 --> 00:01:37,560
+current prices. And one share in the
+
+30
+00:01:37,560 --> 00:01:44,700
+future is just one share at the start is 10.
+
+32
+00:01:44,159 --> 00:01:47,960
+Okay, so let's price our strange asset X.
+
+33
+00:01:47,960 --> 00:01:51,960
+We have a theorem: that's under some nice
+
+34
+00:01:51,960 --> 00:01:54,780
+probability measure, discounted price
+
+35
+00:01:54,780 --> 00:01:58,619
+is a martingale. So, martingales, they
+
+36
+00:01:58,619 --> 00:02:01,979
+make our life easier. So, this theorem
+
+37
+00:02:01,979 --> 00:02:04,259
+says, that's very easy to calculate X0,
+
+38
+00:02:04,259 --> 00:02:06,540
+it's expected value.
+
+39
+00:02:06,540 --> 00:02:11,060
+Okay, we have, that X0
+
+40
+00:02:11,060 --> 00:02:14,819
+is an expected value, a strange expected
+
+41
+00:02:14,819 --> 00:02:17,280
+value, risk-free expected value
+
+42
+00:02:17,280 --> 00:02:23,099
+of discounted future payoff of our
+
+43
+00:02:23,099 --> 00:02:26,220
+contract. So, it is expected value star
+
+44
+00:02:26,220 --> 00:02:29,340
+risk-free expected value of discounted.
+
+45
+00:02:29,340 --> 00:02:32,160
+So, I need to write exponent of minus 2R
+
+46
+00:02:32,160 --> 00:02:37,120
+here times future or price of my asset X2.
+
+48
+00:02:37,860 --> 00:02:41,519
+And to make calculations easier, we
+
+49
+00:02:41,519 --> 00:02:45,900
+will express X2 in terms of risk-free
+
+50
+00:02:45,900 --> 00:02:49,080
+interest rate. Okay, what is X2?
+
+51
+00:02:49,080 --> 00:02:55,080
+X2 is just S 2 Cube. And what is S2? In the black
+
+53
+00:02:55,739 --> 00:03:00,840
+And Scholes model it is S0 times exponent.
+
+54
+00:03:00,840 --> 00:03:03,660
+And here I may write two possible
+
+55
+00:03:03,660 --> 00:03:08,340
+expressions for St, but I will use the
+
+56
+00:03:08,340 --> 00:03:11,459
+expression with risk-free interest rate
+
+57
+00:03:11,459 --> 00:03:15,300
+R and start Brownian motion.
+
+58
+00:03:15,300 --> 00:03:20,099
+Okay, it will be R minus sigma square
+
+59
+00:03:20,099 --> 00:03:33,080
+root over 2 times future time moment 2 plus sigma times W2 star.
+
+63
+00:03:33,840 --> 00:03:38,519
+And I need to calculate cube.
+
+64
+00:03:38,519 --> 00:03:41,700
+Okay, how do we calculate cube? We will
+
+65
+00:03:41,700 --> 00:03:44,900
+сube, as 0, and we just multiply by three
+
+66
+00:03:44,900 --> 00:03:48,780
+the expression inside exponent. So, we
+
+67
+00:03:48,780 --> 00:03:58,840
+will get X2 equals to S 0 cubed multiplied by exponent
+
+72
+00:04:04,920 --> 00:04:17,260
+of 6 times R minus sigma squared over 2 plus 3 sigma W2 star.
+
+75
+00:04:18,540 --> 00:04:26,460
+Okay, and now let's calculate its start expected value.
+
+77
+00:04:28,020 --> 00:04:33,660
+X0 is a start expected value of
+
+78
+00:04:33,660 --> 00:04:40,199
+exponent minus 2R times S0 cubed
+
+79
+00:04:40,199 --> 00:04:46,080
+times exponent of 6R minus 3 sigma
+
+80
+00:04:46,080 --> 00:04:51,540
+squared plus three sigma W2 star.
+
+81
+00:04:51,540 --> 00:04:56,240
+And I need to close the bracket for expected value.
+
+83
+00:04:56,000 --> 00:05:01,139
+Okay, I move a constants out of the
+
+84
+00:05:01,139 --> 00:05:04,380
+expected value. This is constant, this is
+
+85
+00:05:04,380 --> 00:05:08,360
+constant, this is like a constant,
+
+86
+00:05:08,360 --> 00:05:15,160
+and I get expect exponent of minus 2R times S0
+
+88
+00:05:15,800 --> 00:05:23,699
+cubed times exponent of 6 R minus 3 sigma squared,
+
+90
+00:05:25,919 --> 00:05:30,120
+multiplied by, what is left
+
+91
+00:05:30,120 --> 00:05:35,580
+expected value of star of exponent of 3
+
+92
+00:05:35,580 --> 00:05:41,280
+sigma W2 Star.
+
+94
+00:05:41,039 --> 00:05:45,600
+Okay, and what is this expected value?
+
+96
+00:05:45,840 --> 00:05:49,860
+We know, that we have even proven it with
+
+97
+00:05:49,860 --> 00:05:53,100
+martingales, that ordinary expected
+
+98
+00:05:53,100 --> 00:05:55,880
+value of exponent of
+
+99
+00:05:55,880 --> 00:06:02,400
+alpha times WT, is just exponent of alpha
+
+100
+00:06:02,400 --> 00:06:06,240
+squared times T over 2. And the same
+
+101
+00:06:06,240 --> 00:06:09,840
+holes of four started version of this
+
+102
+00:06:09,840 --> 00:06:14,220
+expression. So, expected value star, so,
+
+103
+00:06:14,220 --> 00:06:16,199
+expected value with respect to different
+
+104
+00:06:16,199 --> 00:06:20,460
+probability measure A of exponent of
+
+105
+00:06:20,460 --> 00:06:26,240
+alpha times Wt star, that's the same thing, because the
+
+107
+00:06:26,160 --> 00:06:28,800
+distribution of WT with respect to
+
+108
+00:06:28,800 --> 00:06:31,380
+probability measure P is the same, as the
+
+109
+00:06:31,380 --> 00:06:35,280
+distribution of WT star with respect
+
+110
+00:06:35,280 --> 00:06:37,380
+to probability measure P star. So, it's
+
+111
+00:06:37,380 --> 00:06:40,919
+just exactly the same value
+
+112
+00:06:40,919 --> 00:06:45,660
+Alpha scored T over 2.
+
+114
+00:06:45,419 --> 00:06:51,840
+And, hence, I can continue my calculations of X0.
+
+116
+00:06:51,780 --> 00:06:54,900
+I simplify a little bit, I see minus 2
+
+117
+00:06:54,900 --> 00:06:58,759
+here and 6 there. So, I will get
+
+118
+00:06:58,759 --> 00:07:08,120
+exponent of 4R minus 3 sigma squared times S0 cubed.
+
+120
+00:07:08,060 --> 00:07:12,300
+And this expected value. Now I need
+
+121
+00:07:12,300 --> 00:07:19,740
+just to find the alpha in this term.
+
+123
+00:07:20,699 --> 00:07:23,639
+And I get the exponent
+
+124
+00:07:23,639 --> 00:07:28,680
+of alpha squared 9 sigma squared times T.
+
+125
+00:07:28,680 --> 00:07:34,819
+T is 2 times 2 divided by 2.
+
+126
+00:07:35,280 --> 00:07:46,020
+And, finally, I get S0 cube times exponent of 4R.
+
+130
+00:07:46,440 --> 00:07:50,639
+Here I have minus 3 sigma squared,
+
+131
+00:07:50,639 --> 00:07:54,120
+here I have plus 9 sigma squared. So, I
+
+132
+00:07:54,120 --> 00:07:58,560
+have a plus 6 sigma squared. And that is a fair price.
+
+133
+00:07:58,560 --> 00:08:06,039
+The unique no-arbitrage price, let's copy it.
+
+135
+00:08:06,539 --> 00:08:12,479
+So, we have found, that X0 is just, as zero
+
+136
+00:08:12,479 --> 00:08:21,080
+cube times exponent of 4r plus 6 sigma square root.
+
+139
+00:08:21,900 --> 00:08:27,740
+And if we plug in our our values,
+
+140
+00:08:28,139 --> 00:08:36,539
+then we get, X0 is just 1000 multiplied by exponent
+
+142
+00:08:36,958 --> 00:08:44,459
+4 times, 0 0 5 is 0 2 times 0 0 6, it will
+
+143
+00:08:44,459 --> 00:08:55,459
+be 0 26. And we will get approximately 1296.9.
+
+145
+00:08:56,100 --> 00:08:58,100
+And voila!
+
+146
+00:08:58,100 --> 00:09:08,459
+We have found unique no-arbitrage price of this tricky asset.
+
+
+148
+00:09:09,700 --> 00:09:15,720
+[Music]
+

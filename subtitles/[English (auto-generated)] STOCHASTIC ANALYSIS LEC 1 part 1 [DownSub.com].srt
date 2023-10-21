@@ -1,0 +1,952 @@
+1
+00:00:00,000 --> 00:00:01,760
+[Music]
+
+2
+00:00:01,760 --> 00:00:04,339
+[Music]
+
+3
+00:00:04,339 --> 00:00:07,259
+Welcome to our course on stochastic
+
+4
+00:00:07,259 --> 00:00:08,340
+calculus.
+
+5
+00:00:08,340 --> 00:00:10,139
+This lecture we will discuss Wiener
+
+6
+00:00:10,139 --> 00:00:12,900
+process and Martin Gales. And we start
+
+7
+00:00:12,900 --> 00:00:15,379
+with a short description of our course.
+
+8
+00:00:15,379 --> 00:00:19,320
+Our main goal is to price European type
+
+9
+00:00:19,320 --> 00:00:21,720
+options in the framework of Black 
+
+10
+00:00:21,720 --> 00:00:23,220
+and Scholes model. 
+
+11
+00:00:23,220 --> 00:00:25,619
+The main problem is a contradiction. Our
+
+12
+00:00:25,619 --> 00:00:28,380
+course is very short only four weeks. And
+
+13
+00:00:28,380 --> 00:00:30,480
+the mathematics behind the course is
+
+14
+00:00:30,480 --> 00:00:31,439
+very hard.
+
+15
+00:00:31,439 --> 00:00:35,820
+Soб we will provide sometimes informal
+
+16
+00:00:35,820 --> 00:00:38,760
+definitions and theorems. And we will
+
+17
+00:00:38,760 --> 00:00:40,739
+focus on problem solving and computer
+
+18
+00:00:40,739 --> 00:00:43,200
+simulations in Python.
+
+19
+00:00:43,200 --> 00:00:46,800
+Okay, Wiener process here it is.
+
+20
+00:00:46,800 --> 00:00:49,320
+And what is the formal definition behind.
+
+21
+00:00:49,320 --> 00:00:52,140
+First, we start with stochastic or random
+
+22
+00:00:52,140 --> 00:00:54,600
+process is basically a collection of
+
+23
+00:00:54,600 --> 00:00:56,520
+random variable indexed by a time
+
+24
+00:00:56,520 --> 00:00:59,640
+variable T. Mainly, we will work in
+
+25
+00:00:59,640 --> 00:01:03,180
+continuous time, so, XT the index T will
+
+26
+00:01:03,180 --> 00:01:06,420
+belong to any to the set of any positive
+
+27
+00:01:06,420 --> 00:01:08,580
+real numbers or zero.
+
+28
+00:01:08,580 --> 00:01:11,700
+And sometimes we will work in discrete
+
+29
+00:01:11,700 --> 00:01:16,799
+time. So, T maybe, 0, 1, 2, 3, 4, 5 and so on. 
+
+30
+00:01:16,799 --> 00:01:20,159
+And just a small notation remark:  when we
+
+31
+00:01:20,159 --> 00:01:23,700
+write brackets XT, and T greater or
+
+32
+00:01:23,700 --> 00:01:26,580
+equal to zero or just bracket 6T, we mean
+
+33
+00:01:26,580 --> 00:01:29,640
+a collection of random variables. And
+
+34
+00:01:29,640 --> 00:01:32,700
+when we write just XT without brackets,
+
+35
+00:01:32,700 --> 00:01:37,740
+we mean one a particular random variable.
+
+36
+00:01:37,740 --> 00:01:40,979
+Okay, now the Wiener process. The Wiener
+
+37
+00:01:40,979 --> 00:01:44,880
+process is defined by four  defining
+
+38
+00:01:44,880 --> 00:01:48,540
+properties. The first one is very easy. W0
+
+39
+00:01:48,540 --> 00:01:51,600
+is zero. So Brownian motion or Wiener
+
+40
+00:01:51,600 --> 00:01:55,320
+process starts at zero. The next property
+
+41
+00:01:55,320 --> 00:01:58,799
+is more interesting. The increments so WT
+
+42
+00:01:58,799 --> 00:02:02,700
+minus WS, the change of Wiener process, is
+
+43
+00:02:02,700 --> 00:02:04,500
+a normally distributed random variable
+
+44
+00:02:04,500 --> 00:02:09,720
+with mean zero and variance T minus S.
+
+45
+00:02:09,720 --> 00:02:13,260
+The third property that increment WT
+
+46
+00:02:13,260 --> 00:02:16,500
+minus WS is independent of the past
+
+47
+00:02:16,500 --> 00:02:19,080
+values of Wiener process.
+
+48
+00:02:19,080 --> 00:02:22,200
+And the last property. The trajectory of
+
+49
+00:02:22,200 --> 00:02:24,180
+Wiener process is continuous with
+
+50
+00:02:24,180 --> 00:02:25,920
+probability one.
+
+51
+00:02:25,920 --> 00:02:29,700
+So you may see a duck here. This is a
+
+52
+00:02:29,700 --> 00:02:34,080
+formal duck with a tie and a hat. So this
+
+53
+00:02:34,080 --> 00:02:37,819
+definition is perfectly rigorous. And
+
+54
+00:02:37,819 --> 00:02:41,700
+sometimes we will use less formal
+
+55
+00:02:41,700 --> 00:02:44,760
+definitions and you will see the less
+
+56
+00:02:44,760 --> 00:02:46,260
+formal duck.
+
+57
+00:02:46,260 --> 00:02:49,260
+Sometimes, later.
+
+58
+00:02:49,260 --> 00:02:51,660
+Okay. And here we will use our first
+
+59
+00:02:51,660 --> 00:02:54,720
+tradition. When we speak about two
+
+60
+00:02:54,720 --> 00:02:57,840
+arbitrary moments of time SNT, we usually
+
+61
+00:02:57,840 --> 00:03:01,019
+will suppose that S is before T. As in
+
+62
+00:03:01,019 --> 00:03:03,660
+the alphabet S is before T. So time
+
+63
+00:03:03,660 --> 00:03:07,319
+moment S is Before Time moment T.
+
+64
+00:03:07,319 --> 00:03:10,500
+Our main trick to study properties of
+
+65
+00:03:10,500 --> 00:03:13,500
+many stochastic processes will be divide
+
+66
+00:03:13,500 --> 00:03:14,879
+and concur.
+
+67
+00:03:14,879 --> 00:03:17,459
+That means future value of some process
+
+68
+00:03:17,459 --> 00:03:19,980
+will be known current Value Plus
+
+69
+00:03:19,980 --> 00:03:22,560
+unpredictable future change.
+
+70
+00:03:22,560 --> 00:03:25,379
+for the Brownian motion it seems trivial.
+
+71
+00:03:25,379 --> 00:03:29,819
+WT is past value WS plus the Change Plus
+
+72
+00:03:29,819 --> 00:03:32,819
+WT minus WS.
+
+73
+00:03:32,819 --> 00:03:36,180
+Okay. Our first exercise with exercise we
+
+74
+00:03:36,180 --> 00:03:38,879
+need to struggle. So we need a good
+
+75
+00:03:38,879 --> 00:03:41,580
+helmet and a sword.
+
+76
+00:03:41,580 --> 00:03:43,799
+Okay. Let's calculate the probability.
+
+77
+00:03:43,799 --> 00:03:46,860
+That W at time moment 10 is greater than
+
+78
+00:03:46,860 --> 00:03:48,900
+2 given. That you know some information
+
+79
+00:03:48,900 --> 00:03:52,860
+that W6 is 3.
+
+80
+00:03:52,860 --> 00:03:55,860
+Okay. the probability that W10 is greater
+
+81
+00:03:55,860 --> 00:03:58,319
+than 2 given our information is the
+
+82
+00:03:58,319 --> 00:04:01,379
+probability. We use our main trick. We
+
+83
+00:04:01,379 --> 00:04:04,620
+decompose future value into past value
+
+84
+00:04:04,620 --> 00:04:09,239
+and change. So that will be W6 plus
+
+85
+00:04:09,239 --> 00:04:12,239
+change W10 minus W6.
+
+86
+00:04:12,239 --> 00:04:17,399
+Okay. We may use the fact that W6 is 3
+
+87
+00:04:17,399 --> 00:04:21,000
+and we plug in it instead of W6.
+
+88
+00:04:21,000 --> 00:04:25,500
+Then we use the fact that W6 now gives
+
+89
+00:04:25,500 --> 00:04:27,960
+no information about the future change.
+
+90
+00:04:27,960 --> 00:04:32,639
+And we are done. W10 minus W6. According
+
+91
+00:04:32,639 --> 00:04:35,460
+to the defining properties of Brownian
+
+92
+00:04:35,460 --> 00:04:37,500
+motion is normally distributed with mean
+
+93
+00:04:37,500 --> 00:04:40,560
+0 and variance 4. Hence we standardize
+
+94
+00:04:40,560 --> 00:04:43,380
+it. We subtract 0 we divide by square
+
+95
+00:04:43,380 --> 00:04:45,600
+root of variance, we obtain standard
+
+96
+00:04:45,600 --> 00:04:47,880
+normal, random, variable.
+
+97 
+00:04:47,880 --> 00:04:51,300
+And we use standard normal distribution
+
+98
+00:04:51,300 --> 00:04:53,340
+function f of U that is just the
+
+99
+00:04:53,340 --> 00:04:55,440
+probability that a standard normal
+
+100
+00:04:55,440 --> 00:04:59,460
+random variable Z is less or equal to U.
+
+101
+00:04:59,460 --> 00:05:03,360
+And hence our answer is just the
+
+102
+00:05:03,360 --> 00:05:04,919
+probability.
+
+103
+00:05:04,919 --> 00:05:09,360
+That is less than zero five. So it's
+
+104
+00:05:09,360 --> 00:05:12,060
+a probability distribution function at
+
+105
+00:05:12,060 --> 00:05:15,180
+0.05. And approximately using tables or
+
+106
+00:05:15,180 --> 00:05:19,740
+using computer, we can see that it's 0.69.
+
+107
+00:05:19,740 --> 00:05:22,440
+We will have a lot of gentlemen's
+
+108
+00:05:22,440 --> 00:05:24,900
+agreement to shorten the X position on
+
+109
+00:05:24,900 --> 00:05:28,560
+slides. So sS and T are arbitrary two Time
+
+110
+00:05:28,560 --> 00:05:31,220
+moments with S before T.
+
+111
+00:05:31,220 --> 00:05:34,580
+Wt will always denote a Wiener process
+
+112
+00:05:34,580 --> 00:05:37,320
+that will always denote a standard
+
+113
+00:05:37,320 --> 00:05:39,479
+normal random variable.
+
+114
+00:05:39,479 --> 00:05:42,720
+And F of U will denote the standard
+
+115
+00:05:42,720 --> 00:05:45,539
+normal distribution function.
+
+116
+00:05:45,539 --> 00:05:48,000
+Okay. Let's focus a little bit on the
+
+117
+00:05:48,000 --> 00:05:50,220
+property of independent increments.
+
+118
+00:05:50,220 --> 00:05:54,300
+Increment WT minus WS is independent of
+
+119
+00:05:54,300 --> 00:05:56,580
+the past values.
+
+120
+00:05:56,580 --> 00:06:01,580
+So W6 minus W4 is independent of W4
+
+121
+00:06:01,580 --> 00:06:04,440
+w3w1 and so on.
+
+122
+00:06:04,440 --> 00:06:08,160
+Or W6 minus W4 is independent of these
+
+123
+00:06:08,160 --> 00:06:09,539
+two increments.
+
+124
+00:06:09,539 --> 00:06:14,000
+And by the same argument we see that all
+
+125
+00:06:14,000 --> 00:06:18,300
+increments W6 minus W 4, W 4 minus W 3
+
+126
+00:06:18,300 --> 00:06:22,580
+and W 2.5 minus W1 are independent.
+
+127
+00:06:22,580 --> 00:06:26,900
+Or in more abstract notation if we have
+
+128
+00:06:26,900 --> 00:06:29,819
+many time intervals that are
+
+129
+00:06:29,819 --> 00:06:32,220
+non-overlapping.
+
+130
+00:06:32,220 --> 00:06:36,300
+Then the increments WT1 minus WS1 and so
+
+131
+00:06:36,300 --> 00:06:38,400
+on are independent.
+
+132
+00:06:38,400 --> 00:06:41,340
+Just a small remark. The right border of
+
+133
+00:06:41,340 --> 00:06:44,039
+an interval may touch the left border of
+
+134
+00:06:44,039 --> 00:06:48,060
+the next one, but it may not exceed it. In
+
+135
+00:06:48,060 --> 00:06:50,100
+this case of non-overlapping time
+
+136
+00:06:50,100 --> 00:06:52,440
+intervals the increments of Wiener
+
+137
+00:06:52,440 --> 00:06:55,860
+process are independent.
+
+138
+00:06:55,860 --> 00:06:58,800
+Let's calculate expected value and the
+
+139
+00:06:58,800 --> 00:07:01,460
+variance of a Wiener process.
+
+140
+00:07:01,460 --> 00:07:04,139
+Expected value of WT is expected value
+
+141
+00:07:04,139 --> 00:07:07,800
+of WT minus W0 is zero. The variance of
+
+142
+00:07:07,800 --> 00:07:12,419
+WT is variance of WT minus w0 is T by
+
+143
+00:07:12,419 --> 00:07:14,340
+the assumptions.
+
+144
+00:07:14,340 --> 00:07:18,060
+And for T greater than S covariance of
+
+145
+00:07:18,060 --> 00:07:21,479
+WS WT we use the same trick we decompose
+
+146
+00:07:21,479 --> 00:07:23,580
+the future value into
+
+147
+00:07:23,580 --> 00:07:27,360
+past value and future change, and hence
+
+148
+00:07:27,360 --> 00:07:30,539
+we see that the covariance is just the
+
+149
+00:07:30,539 --> 00:07:35,460
+ the value of s that is before t.
+
+150
+00:07:35,460 --> 00:07:39,419
+For example covariance of W7 and W3 is
+
+151
+00:07:39,419 --> 00:07:41,400
+3.
+
+152
+00:07:41,400 --> 00:07:44,220
+Okay. We have two close friends of Wiener
+
+153
+00:07:44,220 --> 00:07:45,599
+process.
+
+154
+00:07:45,599 --> 00:07:47,880
+Brownian motion or winner process
+
+155
+00:07:47,880 --> 00:07:50,460
+with drift and scaling. When we multiply
+
+156
+00:07:50,460 --> 00:07:53,699
+winner process WT by some constant a and
+
+157
+00:07:53,699 --> 00:07:57,419
+when we add a trend B times T. We have a
+
+158
+00:07:57,419 --> 00:07:59,520
+stochastic process that is called
+
+159
+00:07:59,520 --> 00:08:02,580
+Brownian motion with drift and scaling.
+
+160
+00:08:02,580 --> 00:08:06,660
+And one more friend. If we take the
+
+161
+00:08:06,660 --> 00:08:09,120
+exponent of Brownian motion with drift,
+
+162
+00:08:09,120 --> 00:08:12,419
+we obtain a very usable stochastic
+
+163
+00:08:12,419 --> 00:08:14,940
+process that is called geometric bronial
+
+164
+00:08:14,940 --> 00:08:15,900
+motion.
+
+165
+00:08:15,900 --> 00:08:18,539
+In the framework of black and souls
+
+166
+00:08:18,539 --> 00:08:21,660
+model the share price is assumed to
+
+167
+00:08:21,660 --> 00:08:24,539
+follow geometric Brownian motion, so this
+
+168
+00:08:24,539 --> 00:08:28,319
+is a model of a price of a share. 
+
+169
+00:08:28,319 --> 00:08:33,419
+Okay, here we see on the plots of these
+
+170
+00:08:33,419 --> 00:08:37,219
+two friends of Wiener process.
+
+171
+00:08:37,620 --> 00:08:40,559
+Okay, just more exercising, let's
+
+172
+00:08:40,559 --> 00:08:42,719
+calculate expected value of Brownian
+
+173
+00:08:42,719 --> 00:08:44,820
+motion with drift and scaling. Expected
+
+174
+00:08:44,820 --> 00:08:48,060
+value of 5 WT plus 60 and the variance
+
+175
+00:08:48,060 --> 00:08:49,860
+of the same process.
+
+176
+00:08:49,860 --> 00:08:52,860
+Okay, that's very easy expected value of
+
+177
+00:08:52,860 --> 00:08:57,300
+5wg plus 60 is 0 Plus 60. And the
+
+178
+00:08:57,300 --> 00:09:01,860
+variance of 5wt plus 60 is just 25 T,
+
+179
+00:09:01,860 --> 00:09:04,800
+because 60 does not influence the
+
+180
+00:09:04,800 --> 00:09:07,220
+variance.
+
+181
+00:09:07,800 --> 00:09:11,940
+Okay, sometimes to calculate harder
+
+182
+00:09:11,940 --> 00:09:14,120
+properties of Wiener processes and
+
+183
+00:09:14,120 --> 00:09:17,220
+the friends of Wiener processes, we will
+
+184
+00:09:17,220 --> 00:09:20,399
+need expected values of exponents. We
+
+185
+00:09:20,399 --> 00:09:22,440
+will just postulate them, that the
+
+186
+00:09:22,440 --> 00:09:25,740
+expected value of exponent of a z is
+
+187
+00:09:25,740 --> 00:09:29,279
+exponent of a square root of 2. And the
+
+188
+00:09:29,279 --> 00:09:31,260
+same property holds not only for
+
+189
+00:09:31,260 --> 00:09:33,360
+standardized 
+
+190
+00:09:33,360 --> 00:09:36,420
+random variables Z, that  is normal 0 1
+
+191
+00:09:36,420 --> 00:09:39,980
+but for arbitrary WT.
+
+192
+00:09:39,980 --> 00:09:42,720
+these properties are obtained using
+
+193
+00:09:42,720 --> 00:09:44,959
+integration but we will not go into
+
+194
+00:09:44,959 --> 00:09:48,540
+details, but basically one needs to
+
+195
+00:09:48,540 --> 00:09:50,459
+calculate the integral of the function
+
+196
+00:09:50,459 --> 00:09:53,160
+times the probability density function
+
+197
+00:09:53,160 --> 00:09:57,180
+of the corresponding random variable.
+
+198
+00:09:57,180 --> 00:10:01,380
+and the expected value of exponent of ax
+
+199
+00:10:01,380 --> 00:10:06,140
+is so useful, that it has its own name
+
+200
+00:10:06,140 --> 00:10:09,500
+moment generating function.
+
+201
+00:10:09,500 --> 00:10:12,180
+for example, moment generating function
+
+202
+00:10:12,180 --> 00:10:14,940
+for a standard normal random variable is
+
+203
+00:10:14,940 --> 00:10:19,680
+exponent of a squared over 2.
+
+204
+00:10:19,680 --> 00:10:22,019
+why may we need a moment generating
+
+205
+00:10:22,019 --> 00:10:23,100
+function?
+
+206
+00:10:23,100 --> 00:10:26,160
+ if you can take the derivative of a
+
+207
+00:10:26,160 --> 00:10:28,980
+moment generating function  with
+
+208
+00:10:28,980 --> 00:10:30,800
+respect to the variable
+
+209
+00:10:30,800 --> 00:10:33,660
+u. you will have expected value of x
+
+210
+00:10:33,660 --> 00:10:37,320
+times exponent of u x and if you plug in
+
+211
+00:10:37,320 --> 00:10:40,380
+the value 0 instead of U you will obtain
+
+212
+00:10:40,380 --> 00:10:43,279
+just expected value of x. if you repeat
+
+213
+00:10:43,279 --> 00:10:46,440
+this trick many times you see that
+
+214
+00:10:46,440 --> 00:10:48,480
+moment generating function is a funny
+
+215
+00:10:48,480 --> 00:10:50,700
+way to calculate a lot of expected
+
+216
+00:10:50,700 --> 00:10:52,920
+values. for example you take the
+
+217
+00:10:52,920 --> 00:10:55,680
+derivative twice and you get expected
+
+218
+00:10:55,680 --> 00:10:58,399
+value of x squared you calculate the
+
+219
+00:10:58,399 --> 00:11:01,740
+derivative three times and you plug in 0
+
+220
+00:11:01,740 --> 00:11:04,500
+instead of U and you get expected value
+
+221
+00:11:04,500 --> 00:11:07,079
+of x cubed and it's very useful to
+
+222
+00:11:07,079 --> 00:11:10,140
+calculate many expected value and to
+
+223
+00:11:10,140 --> 00:11:13,980
+study properties of stochastic processes.
+
+224
+00:11:13,980 --> 00:11:17,160
+so, a short summary: what is a
+
+225
+00:11:17,160 --> 00:11:19,800
+Wiener process? Wiener process is a
+
+226
+00:11:19,800 --> 00:11:21,899
+stochastic process with normal and
+
+227
+00:11:21,899 --> 00:11:24,120
+independent increments.
+
+228
+00:11:24,120 --> 00:11:27,000
+Wiener process with drift and geometric
+
+229
+00:11:27,000 --> 00:11:29,820
+Wiener processes are two friends of a
+
+230
+00:11:29,820 --> 00:11:32,519
+Wiener process. and the share price in
+
+231
+00:11:32,519 --> 00:11:35,100
+the black controls model is modeled by
+
+232
+00:11:35,100 --> 00:11:36,959
+the geometric Wiener process by
+
+233
+00:11:36,959 --> 00:11:39,000
+geometric Brownian motion.
+
+234
+00:11:39,000 --> 00:11:41,220
+and we have introduced moment generating
+
+235
+00:11:41,220 --> 00:11:43,380
+function that is used to calculate
+
+236
+00:11:43,380 --> 00:11:46,579
+expected values.
+
+237
+00:11:48,180 --> 00:11:48,980
+foreign
+
+238
+00:11:48,980 --> 00:11:53,700
+[Music]
+

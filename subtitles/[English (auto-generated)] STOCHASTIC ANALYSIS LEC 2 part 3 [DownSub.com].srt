@@ -1,0 +1,320 @@
+1
+00:00:00,000 --> 00:00:01,760
+
+
+2
+00:00:01,760 --> 00:00:04,100
+[Music]
+
+3
+00:00:04,100 --> 00:00:06,960
+In this video we will discuss the properties of
+
+4
+00:00:06,960 --> 00:00:09,360
+stochastic integral.
+
+5
+00:00:09,360 --> 00:00:11,219
+First, we will start with the common
+
+6
+00:00:11,219 --> 00:00:14,519
+properties of Ito integral with our old
+
+7
+00:00:14,519 --> 00:00:17,580
+friend Riemann integral. Then we
+
+8
+00:00:17,580 --> 00:00:19,800
+will discuss a very simple property, that
+
+9
+00:00:19,800 --> 00:00:22,560
+the expected value of
+
+10
+00:00:22,560 --> 00:00:25,619
+Ito integral is just 0. And then, we will
+
+11
+00:00:25,619 --> 00:00:29,340
+discuss Ito isometry, that can be used
+
+12
+00:00:29,340 --> 00:00:31,260
+to calculate the variance of a
+
+13
+00:00:31,260 --> 00:00:33,120
+stochastic integral.
+
+14
+00:00:33,120 --> 00:00:35,760
+Let's start with some basic properties,
+
+15
+00:00:35,760 --> 00:00:39,300
+that are common between Riemann integral
+
+16
+00:00:39,300 --> 00:00:41,579
+and stochastic integral with respect to
+
+17
+00:00:41,579 --> 00:00:44,040
+dWu.
+
+18
+00:00:44,040 --> 00:00:46,559
+If you have two non-overlapping time
+
+19
+00:00:46,559 --> 00:00:49,760
+intervals, the time interval from A to B
+
+20
+00:00:49,760 --> 00:00:54,239
+plus integral with the interval from B
+
+21
+00:00:54,239 --> 00:00:57,059
+to C, you can just use the common
+
+22
+00:00:57,059 --> 00:01:02,219
+interval from A to C of XudWu.
+
+23
+00:01:02,219 --> 00:01:04,559
+The second property: if you integrate
+
+24
+00:01:04,559 --> 00:01:07,740
+from A to A, then you have no time to
+
+25
+00:01:07,740 --> 00:01:10,500
+make money, and your net cash flow is
+
+26
+00:01:10,500 --> 00:01:13,619
+zero. And the last property, that you can
+
+27
+00:01:13,619 --> 00:01:16,619
+move out constant out of the integral,
+
+28
+00:01:16,619 --> 00:01:19,619
+that is a common property of Ito
+
+29
+00:01:19,619 --> 00:01:22,640
+integral and the agreement integral.
+
+30
+00:01:22,640 --> 00:01:27,659
+Now the property, that stochastic
+
+31
+00:01:27,659 --> 00:01:30,659
+integral has zero expected value. The
+
+32
+00:01:30,659 --> 00:01:33,659
+intuition here is very very simple: if
+
+33
+00:01:33,659 --> 00:01:37,020
+you buy and sell the Wiener process, so,
+
+34
+00:01:37,020 --> 00:01:40,259
+if the price is completely random, it may
+
+35
+00:01:40,259 --> 00:01:43,439
+go up and down with equal probability, so,
+
+36
+00:01:43,439 --> 00:01:47,579
+intuition says, that the expected net
+
+37
+00:01:47,579 --> 00:01:50,579
+cash flow should be zero. And, indeed, we
+
+38
+00:01:50,579 --> 00:01:52,500
+have informal theorem, that for any
+
+39
+00:01:52,500 --> 00:01:54,960
+reasonable process XT measurable with
+
+40
+00:01:54,960 --> 00:01:57,960
+respect to the natural filtration FT of
+
+41
+00:01:57,960 --> 00:02:01,439
+the Wiener process WT, expected value of
+
+42
+00:02:01,439 --> 00:02:04,680
+stochastic integral from 0 to T, of XU
+
+43
+00:02:04,680 --> 00:02:08,580
+times dWu, is zero.
+
+44
+00:02:08,580 --> 00:02:12,120
+And there is a property, that is called
+
+45
+00:02:12,120 --> 00:02:16,140
+Ito isometry, that describes how to
+
+46
+00:02:16,140 --> 00:02:18,120
+calculate the variance of stochastic
+
+47
+00:02:18,120 --> 00:02:20,459
+integral. So, the variance of integral
+
+48
+00:02:20,459 --> 00:02:25,560
+from 0 to T, of X U times dWu, is equal to
+
+49
+00:02:25,560 --> 00:02:28,739
+ordinary integral, old Riemann integral
+
+50
+00:02:28,739 --> 00:02:32,640
+from 0 to T, of expected value of XU
+
+51
+00:02:32,640 --> 00:02:36,319
+squared times DU.
+
+52
+00:02:36,500 --> 00:02:39,900
+Let's solve an exercise.
+
+53
+00:02:39,900 --> 00:02:44,040
+Let's find expected value of I of T and
+
+54
+00:02:44,040 --> 00:02:48,000
+variance of I of T, if I of T is an
+
+55
+00:02:48,000 --> 00:02:51,480
+integral from 0 to T of WU squared
+
+56
+00:02:51,480 --> 00:02:54,840
+times dWu.
+
+57
+00:02:54,840 --> 00:02:57,900
+Let's start with expected value OH, it's
+
+58
+00:02:57,900 --> 00:02:59,640
+simple, it's just zero.
+
+59
+00:02:59,640 --> 00:03:02,340
+Now, what about the variance?
+
+60
+00:03:02,340 --> 00:03:07,560
+We just square the stochastic process
+
+61
+00:03:07,560 --> 00:03:11,220
+inside the integral, so, it will be double
+
+62
+00:03:11,220 --> 00:03:15,360
+WU power 4. We calculate expected value
+
+63
+00:03:15,360 --> 00:03:19,260
+of it, and we integrate with respect
+
+64
+00:03:19,260 --> 00:03:23,040
+to W with respect to DU and not with
+
+65
+00:03:23,040 --> 00:03:25,680
+respect to dWu.
+
+66
+00:03:25,680 --> 00:03:29,220
+And, hence, we know, that expected value of
+
+67
+00:03:29,220 --> 00:03:34,080
+W power 4 is just 3U squared, and
+
+68
+00:03:34,080 --> 00:03:37,319
+the integral of this expression is just
+
+69
+00:03:37,319 --> 00:03:40,159
+T cube.
+
+70
+00:03:40,580 --> 00:03:45,000
+So, let's recap the properties of Ito
+
+71
+00:03:45,000 --> 00:03:49,260
+integral. It has zero expected value,
+
+72
+00:03:49,260 --> 00:03:52,200
+that's very simple.
+
+73
+00:03:52,200 --> 00:03:55,019
+Using the property, that is called Ito
+
+74
+00:03:55,019 --> 00:03:57,959
+isometry, one may calculate the variance
+
+75
+00:03:57,959 --> 00:04:00,540
+of a stochastic integral.
+
+76
+00:04:00,540 --> 00:04:03,900
+There are some common properties of
+
+77
+00:04:03,900 --> 00:04:07,019
+Ito integral and Riemann integral, but be
+
+78
+00:04:07,019 --> 00:04:10,680
+careful, in general, old integration rules
+
+79
+00:04:10,680 --> 00:04:13,640
+do not apply.
+
+80
+00:04:14,820 --> 00:04:20,819
+[Music]
+

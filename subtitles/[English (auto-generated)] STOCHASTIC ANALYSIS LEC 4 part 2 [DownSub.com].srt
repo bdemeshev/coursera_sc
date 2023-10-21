@@ -1,0 +1,622 @@
+
+2
+00:00:01,750 --> 00:00:04,220
+[Music]
+
+3
+00:00:04,220 --> 00:00:07,740
+In this video we will find the formula for the price
+
+4
+00:00:07,740 --> 00:00:09,900
+of a call option.
+
+5
+00:00:09,900 --> 00:00:11,940
+We will start with the definition of a
+
+6
+00:00:11,940 --> 00:00:15,360
+call and put options. Then we will find
+
+7
+00:00:15,360 --> 00:00:18,180
+the put call option parity.
+
+8
+00:00:18,180 --> 00:00:20,760
+And then, finally, we will find the price
+
+9
+00:00:20,760 --> 00:00:22,500
+of a call option.
+
+10
+00:00:22,500 --> 00:00:23,699
+Okay, the call option gives you a right to buy
+
+12
+00:00:27,000 --> 00:00:33,420
+one share at a specified strike price K on a specified date t.
+
+14
+00:00:33,600 --> 00:00:36,540
+And the put option gives you on the
+
+15
+00:00:36,540 --> 00:00:39,600
+contrary a right to sell one share at a
+
+16
+00:00:39,600 --> 00:00:42,540
+specified strike price K on a specified
+
+17
+00:00:42,540 --> 00:00:46,379
+date T. In mathematical terms, that means,
+
+18
+00:00:46,379 --> 00:00:52,239
+that CT, the payoff, that the call option gives
+
+20
+00:00:52,559 --> 00:00:56,640
+you, is equal to St minus K, if St is
+
+21
+00:00:56,640 --> 00:00:59,699
+bigger than K, because, if St the share
+
+22
+00:00:59,699 --> 00:01:01,559
+price is bigger than K,
+
+23
+00:01:01,559 --> 00:01:05,339
+you will use your right to buy cheap to
+
+24
+00:01:05,339 --> 00:01:07,920
+buy at the price K. And you will
+
+25
+00:01:07,920 --> 00:01:10,860
+immediately sell the share and the
+
+26
+00:01:10,860 --> 00:01:13,080
+prices T, and your profit will be, as T
+
+27
+00:01:13,080 --> 00:01:16,020
+minus K. If the share price is too low,
+
+28
+00:01:16,020 --> 00:01:20,400
+you will not use your right to buy a
+
+29
+00:01:20,400 --> 00:01:23,820
+share at a specified strike price key.
+
+30
+00:01:23,820 --> 00:01:27,659
+And by the same logic, the price of
+
+31
+00:01:27,659 --> 00:01:31,020
+a put option at time moment big T PT is
+
+32
+00:01:31,020 --> 00:01:35,220
+equal to K minus St, if St is lower than
+
+33
+00:01:35,220 --> 00:01:38,520
+K. In this case you have incentives to
+
+34
+00:01:38,520 --> 00:01:41,520
+use your right. But if St is bigger than
+
+35
+00:01:41,520 --> 00:01:44,520
+K, you will not use your right to sell
+
+36
+00:01:44,520 --> 00:01:50,479
+one share, and your profit P big T will be zero.
+
+38
+00:01:50,159 --> 00:01:52,680
+Okay, let's look at this formulas for
+
+39
+00:01:52,680 --> 00:01:57,960
+CT and for PT, and let's subtract PT
+
+40
+00:01:57,960 --> 00:02:02,840
+from CT. We get CT minus PT is St minus K.
+
+41
+00:02:02,840 --> 00:02:06,719
+In any possible state of the world if St
+
+42
+00:02:06,719 --> 00:02:08,940
+is bigger than K, if St is lower than
+
+43
+00:02:08,940 --> 00:02:13,140
+K, this difference is St minus K.
+
+44
+00:02:13,140 --> 00:02:17,580
+So, the difference CT minus PT can be
+
+45
+00:02:17,580 --> 00:02:22,200
+simulated, replicated by holding one
+
+46
+00:02:22,200 --> 00:02:27,360
+share St. To have St at the end of time,
+
+47
+00:02:27,360 --> 00:02:31,940
+you can just buy one share in the beginning of time.
+
+49
+00:02:31,620 --> 00:02:36,239
+And the K at the end of time are
+
+50
+00:02:36,239 --> 00:02:39,780
+equivalent to K rubbles multiplied by exponent
+
+51
+00:02:39,780 --> 00:02:43,500
+of minus RT rubbles now. So, we have
+
+52
+00:02:43,500 --> 00:02:47,340
+proven, that C0 minus P0 is equal to S0
+
+53
+00:02:47,340 --> 00:02:51,180
+minus discounted K exponent minus RT
+
+54
+00:02:51,180 --> 00:02:53,760
+times K.
+
+55
+00:02:53,760 --> 00:02:58,060
+Now let's move on to the call option price.
+
+57
+00:02:58,500 --> 00:03:02,040
+We have two knight ducks with us, we call
+
+58
+00:03:02,040 --> 00:03:05,220
+the derivation is very difficult.
+
+59
+00:03:05,220 --> 00:03:10,080
+Okay, so, from the general pricing rule we have
+
+61
+00:03:10,800 --> 00:03:15,180
+that C0 is discounted exponent minus RT
+
+62
+00:03:15,180 --> 00:03:19,860
+discounted expected value star of, or
+
+63
+00:03:19,860 --> 00:03:22,500
+CT given F0.
+
+64
+00:03:22,500 --> 00:03:25,080
+But we know the formula for CT, we will
+
+65
+00:03:25,080 --> 00:03:28,140
+just rewrite it, using indicator I, that
+
+66
+00:03:28,140 --> 00:03:31,620
+is equal to 1, when St is bigger than K,
+
+67
+00:03:31,620 --> 00:03:36,060
+and it's equal to 0 otherwise. So, CT is
+
+68
+00:03:36,060 --> 00:03:39,599
+just I times CT minus K. We open the
+
+69
+00:03:39,599 --> 00:03:45,900
+brackets, it's I  times CT minus I times K.
+
+71
+00:03:45,060 --> 00:03:50,720
+And  the conditional expected value, even if
+
+73
+00:03:50,400 --> 00:03:52,560
+conditional expected value star is
+
+74
+00:03:52,560 --> 00:03:56,400
+linear. So, we will calculate the expected
+
+75
+00:03:56,400 --> 00:04:00,000
+value star of I times St minus
+
+76
+00:04:00,000 --> 00:04:05,540
+conditional expected value star of I times k.
+
+78
+00:04:05,040 --> 00:04:10,599
+Okay, let's  first start with the second
+
+80
+00:04:10,019 --> 00:04:11,640
+term. Why not?
+
+
+81
+00:04:11,640 --> 00:04:16,019
+Expected value star of I times K is 
+
+82
+00:04:16,019 --> 00:04:18,600
+constant, we move it out of the
+
+83
+00:04:18,600 --> 00:04:20,820
+expected value, it's K times expected
+
+84
+00:04:20,820 --> 00:04:23,400
+value star of I given our information,
+
+85
+00:04:23,400 --> 00:04:26,880
+described by sigma algebra of zero, but
+
+86
+00:04:26,880 --> 00:04:30,960
+the indicator is either one or zero. So,
+
+87
+00:04:30,960 --> 00:04:33,840
+the expected value of the indicator is a
+
+88
+00:04:33,840 --> 00:04:35,940
+probability, that it will be equal to 1.
+
+89
+00:04:35,940 --> 00:04:39,060
+So, its probability star that St is
+
+90
+00:04:39,060 --> 00:04:41,900
+bigger than K.
+
+91
+00:04:42,180 --> 00:04:48,120
+Let's go down to WT star, the event St
+
+92
+00:04:48,120 --> 00:04:49,979
+bigger than K.
+
+93
+00:04:49,979 --> 00:04:52,919
+In other terms it's logarithm of St
+
+94
+00:04:52,919 --> 00:04:55,320
+bigger, than logarithm of K.
+
+95
+00:04:55,320 --> 00:04:58,740
+Or logarithm of S0 plus R minus
+
+96
+00:04:58,740 --> 00:05:00,840
+sigma square root of 2 times T plus
+
+97
+00:05:00,840 --> 00:05:05,259
+sigma Wt star bigger than logarithm of K.
+
+99
+00:05:05,160 --> 00:05:09,780
+Or in terms of WT star we have Wt star
+
+100
+00:05:09,780 --> 00:05:13,320
+bigger than this fraction.
+
+101
+00:05:13,320 --> 00:05:17,220
+We will standardize WD star, so we
+
+102
+00:05:17,220 --> 00:05:22,419
+subtract 0, the expected value star of WT star we
+
+104
+00:05:22,020 --> 00:05:26,600
+divide by square root of variance by square root of T.
+
+106
+00:05:26,220 --> 00:05:29,220
+And we reverse the inequality, and we get
+
+107
+00:05:29,220 --> 00:05:33,000
+the event St bigger than K, is
+
+108
+00:05:33,000 --> 00:05:35,940
+equivalent to the event at minus Wt
+
+109
+00:05:35,940 --> 00:05:39,000
+star divided by square root of T, is less
+
+110
+00:05:39,000 --> 00:05:41,639
+than a constant D. The previous fraction
+
+111
+00:05:41,639 --> 00:05:45,620
+additionally divided by square root of T.
+
+112
+00:05:45,620 --> 00:05:50,520
+And here in the left side 0 minus WD
+
+113
+00:05:50,520 --> 00:05:52,620
+star divided by square root of T has
+
+114
+00:05:52,620 --> 00:05:55,440
+normal distribution 0 1. So, this
+
+115
+00:05:55,440 --> 00:05:57,360
+probability can be calculated it's
+
+116
+00:05:57,360 --> 00:06:03,940
+called cumulative distribution function.
+
+118
+00:06:03,900 --> 00:06:07,500
+We have done one half of the job. So,
+
+119
+00:06:07,500 --> 00:06:11,300
+expected value star of I times K given
+
+120
+00:06:11,300 --> 00:06:15,360
+information F0 is K times
+
+121
+00:06:15,360 --> 00:06:17,759
+probability star, that St is bigger than
+
+122
+00:06:17,759 --> 00:06:23,600
+K. Or K times normal cumulative distribution function
+
+124
+00:06:23,639 --> 00:06:27,479
+at the point D, where D is this fraction
+
+125
+00:06:27,479 --> 00:06:31,020
+Ln is 0 minus Ln K plus R minus sigma
+
+126
+00:06:31,020 --> 00:06:34,560
+squared over 2 times T divided by sigma
+
+127
+00:06:34,560 --> 00:06:36,900
+times square root of T.
+
+128
+00:06:36,900 --> 00:06:41,280
+Okay, let's move on to the final answer.
+
+130
+00:06:41,220 --> 00:06:43,979
+The first term: it's expected value star
+
+131
+00:06:43,979 --> 00:06:47,880
+of I times St. We plug in the value of
+
+132
+00:06:47,880 --> 00:06:50,880
+St, it's a 0 times exponent.
+
+133
+00:06:50,880 --> 00:06:55,580
+We plug in our indicator. That's an
+
+135
+00:06:55,919 --> 00:06:59,220
+indicator of WT star is less than D
+
+136
+00:06:59,220 --> 00:07:01,440
+times square root of T.
+
+137
+00:07:01,440 --> 00:07:05,160
+And now we have only Wiener process
+
+138
+00:07:05,160 --> 00:07:08,340
+inside our expected value. This expected
+
+139
+00:07:08,340 --> 00:07:11,280
+value we have in the tables and, so,
+
+140
+00:07:11,280 --> 00:07:14,280
+basically, we obtain our final answer for
+
+141
+00:07:14,280 --> 00:07:19,020
+the first term, as 0 is normal a standard
+
+142
+00:07:19,020 --> 00:07:21,419
+cumulative distribution function at the
+
+143
+00:07:21,419 --> 00:07:26,280
+point D plus sigma square root of T.
+
+144
+00:07:26,280 --> 00:07:29,639
+And we have the famous call option price
+
+145
+00:07:29,639 --> 00:07:34,860
+formula. C0 is equal to exponent minus RT
+
+146
+00:07:34,860 --> 00:07:37,800
+the discounting factor times brackets.
+
+147
+00:07:37,800 --> 00:07:41,880
+The first term is S0 multiplied by
+
+148
+00:07:41,880 --> 00:07:44,400
+normal distribution function at the
+
+149
+00:07:44,400 --> 00:07:47,060
+point D Plus Sigma square root of T
+
+150
+00:07:47,060 --> 00:07:50,660
+minus the second term K strike price
+
+151
+00:07:50,660 --> 00:07:54,020
+multiplied by normal distribution,
+
+152
+00:07:54,020 --> 00:07:57,060
+cumulative distribution function at the
+
+153
+00:07:57,060 --> 00:07:59,819
+point D, where D is a fraction logarithm
+
+154
+00:07:59,819 --> 00:08:02,340
+of a zero minus logarithm of K plus R
+
+155
+00:08:02,340 --> 00:08:04,800
+minus sigma square root over 2 times T
+
+156
+00:08:04,800 --> 00:08:10,259
+divided by sigma square root of T. Bingo!
+
+157
+00:08:11,099 --> 00:08:13,740
+Let's proceed to the summary. Call option
+
+158
+00:08:13,740 --> 00:08:16,800
+is right to buy one share, put option is
+
+159
+00:08:16,800 --> 00:08:19,379
+the right to sell one share.
+
+160
+00:08:19,379 --> 00:08:23,940
+Put call parity between the prices is C0
+
+161
+00:08:23,940 --> 00:08:28,139
+minus P0 equals to S0 minus discounted
+
+162
+00:08:28,139 --> 00:08:31,080
+strike price K.
+
+163
+00:08:31,080 --> 00:08:36,000
+and the call option price formula is
+
+164
+00:08:36,000 --> 00:08:40,080
+here. C0 is discounted sum of two terms: 
+
+165
+00:08:40,080 --> 00:08:44,159
+the first term is S0 times cumulative
+
+166
+00:08:44,159 --> 00:08:46,800
+standard normal distribution function
+
+167
+00:08:46,800 --> 00:08:50,580
+minus K times the standard normal
+
+168
+00:08:50,580 --> 00:08:53,279
+distribution function at another point.
+
+169
+00:08:53,279 --> 00:08:56,700
+In the first term we use the point G
+
+170
+00:08:56,700 --> 00:09:00,600
+plus sigma times square root of T, in the
+
+171
+00:09:00,600 --> 00:09:03,000
+second term the cumulative distribution
+
+172
+00:09:03,000 --> 00:09:06,899
+function is evaluated at the point D.
+
+173
+00:09:06,899 --> 00:09:12,720
+We have obtained the famous Black and Scholes call option price formula.
+
+176
+00:09:14,740 --> 00:09:20,750
+[Music]
+

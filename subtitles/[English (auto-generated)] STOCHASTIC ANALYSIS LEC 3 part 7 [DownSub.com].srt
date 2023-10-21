@@ -1,0 +1,418 @@
+
+
+2
+00:00:01,760 --> 00:00:04,040
+[Music]
+
+3
+00:00:04,040 --> 00:00:06,540
+In this video we will simulate the trajectory of
+
+4
+00:00:06,540 --> 00:00:09,059
+stochastic differential equation. We will
+
+5
+00:00:09,059 --> 00:00:11,340
+use a code, we have created during two
+
+6
+00:00:11,340 --> 00:00:13,099
+previous weeks.
+
+7
+00:00:13,099 --> 00:00:16,940
+And we will simulate the trajectory of
+
+8
+00:00:16,940 --> 00:00:21,480
+risk of interest rate and the Vacicek
+
+9
+00:00:21,480 --> 00:00:25,320
+interest rate model. Initial value is 007,
+
+10
+00:00:25,320 --> 00:00:28,740
+and the stochastic differential equation,
+
+11
+00:00:28,740 --> 00:00:31,199
+that governs the dynamics of interest
+
+12
+00:00:31,199 --> 00:00:34,620
+rate: is DRT equals to
+
+13
+00:00:34,620 --> 00:00:39,000
+005 minus Rt times Dt plus 0 0 2 times
+
+14
+00:00:39,000 --> 00:00:42,000
+dWt.
+
+15
+00:00:42,059 --> 00:00:47,239
+Okay, let's create our function.
+
+17
+00:00:47,360 --> 00:00:51,860
+Def get as a solution.
+
+18
+00:00:51,860 --> 00:00:55,379
+We should specify the final moment of
+
+19
+00:00:55,379 --> 00:01:03,480
+time. We should specify the number of segments.
+
+21
+00:01:03,359 --> 00:01:08,000
+And we will specify initial value.
+
+22
+00:01:08,040 --> 00:01:12,860
+Okay, first, we will calculate them,
+
+23
+00:01:12,860 --> 00:01:18,540
+deltas of Wiener process.  Delta W will
+
+24
+00:01:18,540 --> 00:01:25,479
+be get winner increments of T.
+
+27
+00:01:28,560 --> 00:01:33,240
+And, so, we will need also seed here.
+
+28
+00:01:33,240 --> 00:01:36,420
+Seed will be none by default.
+
+29
+00:01:36,420 --> 00:01:41,220
+We will need T and and seed. Okay, we
+
+30
+00:01:41,220 --> 00:01:45,439
+got Brownian motion increments.
+
+31
+00:01:45,439 --> 00:01:49,340
+then we will calculate the trajectory of Wiener process.
+
+33
+00:01:49,500 --> 00:01:52,140
+We have already done this.
+
+34
+00:01:52,140 --> 00:02:01,680
+We can just copy these part of the code from the previous function.
+
+38
+00:02:01,020 --> 00:02:05,219
+Okay, we got the values of Wiener process,
+
+39
+00:02:05,219 --> 00:02:08,880
+the values of time stamps.
+
+40
+00:02:08,880 --> 00:02:13,920
+Then let's say Dt is T Over N to
+
+41
+00:02:13,920 --> 00:02:17,700
+simplify some calculations.
+
+42
+00:02:17,700 --> 00:02:20,640
+Okay, let's create that trajectory of our
+
+43
+00:02:20,640 --> 00:02:25,080
+solution R, that trajectory of R. First, we
+
+44
+00:02:25,080 --> 00:02:27,180
+will fill it with zeros.
+
+45
+00:02:27,180 --> 00:02:31,879
+We will get N plus one zeros.
+
+46
+00:02:31,879 --> 00:02:39,620
+Initial value is specified by our R0.
+
+47
+00:02:39,660 --> 00:02:42,360
+And then we will create a big cycle. We
+
+48
+00:02:42,360 --> 00:02:46,000
+will calculate the values of R one by one.
+
+50
+00:02:46,620 --> 00:02:51,599
+So, four I in range N.
+
+52
+00:02:51,300 --> 00:02:54,060
+What should we do? We should calculate
+
+53
+00:02:54,060 --> 00:02:57,420
+the delta R, and we should add it to the
+
+54
+00:02:57,420 --> 00:03:00,239
+previous value. So, basically, the logic is
+
+55
+00:03:00,239 --> 00:03:03,440
+very simple. First, we calculate delta R,
+
+56
+00:03:03,440 --> 00:03:10,260
+then we say, that our number I plus 1 is
+
+57
+00:03:10,260 --> 00:03:16,540
+equal to R number I plus delta R.
+
+59
+00:03:16,400 --> 00:03:22,340
+And, basically, we return that trajectory.
+
+60
+00:03:23,280 --> 00:03:26,940
+Okay, how delta R is calculated, and this
+
+61
+00:03:26,940 --> 00:03:30,180
+is exactly our stochastic differential
+
+62
+00:03:30,180 --> 00:03:34,379
+equation. So, basically we may copy it.
+
+63
+00:03:34,379 --> 00:03:42,700
+Okay, we will copy it here. And we replace
+
+65
+00:03:42,019 --> 00:03:46,819
+our Dt is Dt. So, we just add here
+
+66
+00:03:46,819 --> 00:03:51,060
+multiplied by Dt. What is RT? RT is a
+
+67
+00:03:51,060 --> 00:03:55,799
+previous value of our process R. So, it
+
+68
+00:03:55,799 --> 00:03:59,420
+will be Ri.
+
+69
+00:03:59,580 --> 00:04:03,720
+Okay, and here we got 0 0 2 times Dw. And
+
+70
+00:04:03,720 --> 00:04:12,560
+what is dWt? It is a delta W number I.
+
+72
+00:04:14,420 --> 00:04:18,959
+And we are done. So, let's check, whether
+
+73
+00:04:18,959 --> 00:04:21,979
+everything works.
+
+74
+00:04:25,220 --> 00:04:29,100
+We should provide some initial value for
+
+75
+00:04:29,100 --> 00:04:33,259
+R0. Let it be 0 0 5.
+
+76
+00:04:34,560 --> 00:04:41,120
+Okay, and now let's see the trajectory.
+
+78
+00:04:41,940 --> 00:04:46,340
+Okay, let's create, T will be
+
+79
+00:04:46,340 --> 00:04:53,900
+get time from T from T equal to 0 up to three.
+
+81
+00:04:53,040 --> 00:04:59,460
+Yeah, I don't know the initial value was 0 0 7.
+
+83
+00:05:01,520 --> 00:05:05,280
+Okay, we got the time, we go to 3 N
+
+84
+00:05:05,280 --> 00:05:07,199
+equal to one thousand.
+
+85
+00:05:07,199 --> 00:05:11,160
+Maybe, we should make them,
+
+86
+00:05:11,160 --> 00:05:14,759
+maybe, we should write them before
+
+87
+00:05:14,759 --> 00:05:21,680
+our function. Okay, T, and then we got T and N.
+
+89
+00:05:21,000 --> 00:05:24,600
+Then we will get the trajectory. R will
+
+90
+00:05:24,600 --> 00:05:30,340
+be get, as the solution.
+
+92
+00:05:30,960 --> 00:05:38,759
+Let me say T and R0 equal to 0 0 7.
+
+95
+00:05:44,940 --> 00:05:49,340
+And that's all.
+
+96
+00:05:50,039 --> 00:05:54,199
+Now we may plot our solution.
+
+97
+00:05:54,660 --> 00:05:58,680
+We use the C born line plot function.
+
+98
+00:05:58,680 --> 00:06:02,520
+The horizontal, on the horizontal axis we
+
+99
+00:06:02,520 --> 00:06:06,479
+will plot our time stamps. On the
+
+100
+00:06:06,479 --> 00:06:09,060
+vertical axis we will plot our
+
+101
+00:06:09,060 --> 00:06:17,820
+trajectory of our risk-free interest rate.
+
+104
+00:06:19,020 --> 00:06:25,100
+And we see, that this risk-free rate fluctuates around some
+
+106
+00:06:25,800 --> 00:06:29,819
+value. Let's check, how the plot will
+
+107
+00:06:29,819 --> 00:06:34,180
+change, if we will use different values.
+
+109
+00:06:34,199 --> 00:06:38,039
+So, let it be more sensible to the
+
+110
+00:06:38,039 --> 00:06:42,479
+deviations from the long run equilibrium.
+
+111
+00:06:42,479 --> 00:06:46,740
+So, let's multiply here by two. Yeah, let's
+
+112
+00:06:46,740 --> 00:06:48,300
+change a little bit the equation, let's
+
+113
+00:06:48,300 --> 00:06:52,319
+multiply here by 5. So, this will make
+
+114
+00:06:52,319 --> 00:06:54,840
+our trajectory very sensitive to the
+
+115
+00:06:54,840 --> 00:06:59,400
+deviations from these 0 0 5.
+
+116
+00:06:59,400 --> 00:07:03,440
+When RT will be much bigger than 0 0 5,
+
+117
+00:07:03,440 --> 00:07:06,500
+this term will be
+
+118
+00:07:06,500 --> 00:07:10,259
+negative and big by absolute value. So,
+
+119
+00:07:10,259 --> 00:07:12,660
+the interest rate should feel the
+
+120
+00:07:12,660 --> 00:07:16,740
+pressure to go down to value 0 0 5. So,
+
+121
+00:07:16,740 --> 00:07:18,900
+let's multiply by 5.
+
+122
+00:07:18,900 --> 00:07:23,180
+Well, multiply by 5 here.
+
+123
+00:07:24,539 --> 00:07:29,599
+Okay, and let's look what will change.
+
+124
+00:07:33,120 --> 00:07:37,620
+Okay, and we see that it goes from 0 0 7
+
+125
+00:07:37,620 --> 00:07:42,380
+to 0 0 5 or faster.
+
+127
+00:07:42,479 --> 00:07:45,900
+And we can experiment, then we can study
+
+128
+00:07:45,900 --> 00:07:48,300
+the properties of stochastic
+
+129
+00:07:48,300 --> 00:07:54,539
+differential equations solutions  in this manner.
+
+131
+00:07:55,300 --> 00:08:01,300
+[Music]
+

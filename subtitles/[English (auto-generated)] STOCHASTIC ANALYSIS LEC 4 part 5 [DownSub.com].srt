@@ -1,0 +1,520 @@
+1
+00:00:00,000 --> 00:00:01,750
+foreign
+
+2
+00:00:01,750 --> 00:00:05,400
+[Music]
+
+3
+00:00:05,480 --> 00:00:08,519
+In this video we will discus delta hedging.
+
+4
+00:00:08,519 --> 00:00:10,679
+We will start with obtaining expression
+
+5
+00:00:10,679 --> 00:00:13,200
+for dXt using Ito's lemma.
+
+6
+00:00:13,200 --> 00:00:21,980
+Then we will give the formula for dXt using replicating strategy idea.
+
+9
+00:00:21,660 --> 00:00:24,900
+And, finally, we will obtain a simple
+
+10
+00:00:24,900 --> 00:00:29,160
+receipt for replication strategy.
+
+11
+00:00:29,160 --> 00:00:34,320
+Okay, the price of a claim XT is a function
+
+13
+00:00:34,200 --> 00:00:37,500
+of share prices T and time T. So, Xt is
+
+14
+00:00:37,500 --> 00:00:41,040
+some function X of St and t. Why it is so?
+
+16
+00:00:41,820 --> 00:00:44,700
+Because we have some replicating
+
+17
+00:00:44,700 --> 00:00:48,059
+strategy. And, so, to replicate our
+
+18
+00:00:48,059 --> 00:00:52,300
+financial claim, we need to make some initial investment.
+
+20
+00:00:52,920 --> 00:00:55,320
+And the initial investments, we will do
+
+21
+00:00:55,320 --> 00:00:59,100
+them in the shares and in bonds. So, but
+
+22
+00:00:59,100 --> 00:01:01,500
+the bond price is a function of T. It's
+
+23
+00:01:01,500 --> 00:01:04,260
+non-stochastic. The share price St is
+
+24
+00:01:04,260 --> 00:01:07,439
+known. So, we know how much to invest to
+
+25
+00:01:07,439 --> 00:01:09,659
+start replicating strategy. And, basically,
+
+26
+00:01:09,659 --> 00:01:13,799
+Xt should depend only on St and T. We
+
+27
+00:01:13,799 --> 00:01:16,740
+don't know the formula. We know it, but it
+
+28
+00:01:16,740 --> 00:01:20,540
+cannot depend on some additional terms.
+
+29
+00:01:20,540 --> 00:01:23,040
+Using it as layer month, we obtain
+
+30
+00:01:23,040 --> 00:01:25,560
+expression for dXt. It's a first
+
+31
+00:01:25,560 --> 00:01:27,840
+derivative with respect to T times Dt
+
+32
+00:01:27,840 --> 00:01:29,580
+plus the first derivative with respect
+
+33
+00:01:29,580 --> 00:01:35,700
+to S times times Ds plus Ito's correction term 1 over 2 times the,
+
+35
+00:01:35,579 --> 00:01:39,540
+second derivative Dx with respect to
+
+36
+00:01:39,540 --> 00:01:43,799
+DS, DS times Ds squared.
+
+37
+00:01:43,799 --> 00:01:47,400
+But from as a viewpoint we know, that the
+
+38
+00:01:47,400 --> 00:01:50,220
+final answer will simplify somehow, I
+
+39
+00:01:50,220 --> 00:01:53,220
+don't know how yet. It will simplify up
+
+40
+00:01:53,220 --> 00:01:55,320
+to something times DT plus something
+
+41
+00:01:55,320 --> 00:01:58,920
+times dWt. I don't care, basically, about
+
+42
+00:01:58,920 --> 00:02:02,939
+the term before Dt, I will focus on the
+
+43
+00:02:02,939 --> 00:02:06,119
+term before dWt.
+
+44
+00:02:06,119 --> 00:02:08,038
+Let's do this.
+
+45
+00:02:08,038 --> 00:02:13,739
+Once again, we have an expression using Ito's lemma,
+
+47
+00:02:13,020 --> 00:02:15,300
+and we know the structure of the answer,
+
+48
+00:02:15,300 --> 00:02:18,840
+that is Dx, dXt equals to something times
+
+49
+00:02:18,840 --> 00:02:21,900
+Dt plus something times dWt.
+
+50
+00:02:21,900 --> 00:02:25,860
+There are no dWt in dSt square root,
+
+51
+00:02:25,860 --> 00:02:28,940
+because according to
+
+52
+00:02:28,940 --> 00:02:33,239
+mnemonic rules, Dt times Dt is 0, Dt
+
+53
+00:02:33,239 --> 00:02:38,580
+times dWtt is 0, and Dt dWt times dWt is
+
+54
+00:02:38,580 --> 00:02:42,680
+Dt. When you square dSt, you cannot get
+
+55
+00:02:42,680 --> 00:02:49,440
+dWt. Okay, so, only in dSt we have dWt, more
+
+56
+00:02:49,440 --> 00:02:54,120
+exactly, dSt is sigma times St times dWt.
+
+57
+00:02:54,120 --> 00:03:04,280
+Okay, so, the shorthand notation for dXt is something times Dt, 
+
+61
+00:03:04,980 --> 00:03:07,560
+I don't care about this term times this
+
+62
+00:03:07,560 --> 00:03:11,340
+term, I care about. Dx times Ds times
+
+63
+00:03:11,340 --> 00:03:14,340
+sigma St times dWt.
+
+64
+00:03:14,340 --> 00:03:20,019
+Okay, let's calculate dXt the other way.
+
+66
+00:03:21,180 --> 00:03:24,900
+Let's use the replicating portfolio idea.
+
+67
+00:03:24,900 --> 00:03:28,620
+Imagine, we have Yt shares and Zt bonds
+
+68
+00:03:28,620 --> 00:03:30,780
+in our portfolio. So, the price of
+
+69
+00:03:30,780 --> 00:03:34,379
+portfolio Xt is Yt times s t plus ZT
+
+70
+00:03:34,379 --> 00:03:36,060
+times BT. That's just the balance.
+
+72
+00:03:39,300 --> 00:03:42,720
+Okay, but the interpretation of
+
+73
+00:03:42,720 --> 00:03:45,060
+stochastic integral is a net cash flow.
+
+74
+00:03:45,060 --> 00:03:50,400
+So, Xt is equal to X0 plus integral from
+
+75
+00:03:50,400 --> 00:03:56,120
+0 to tYu times dSu. So, that's a
+
+76
+00:03:56,120 --> 00:04:01,920
+net flow from shares plus integral
+
+77
+00:04:01,920 --> 00:04:06,239
+from 0 to T times Zu times gBu, that is
+
+78
+00:04:06,239 --> 00:04:10,920
+the cash flow from bonds. And my strategy
+
+79
+00:04:10,920 --> 00:04:13,200
+is self-financing. My portfolio is self
+
+80
+00:04:13,200 --> 00:04:16,918
+financing. So, these two flows should
+
+81
+00:04:16,918 --> 00:04:19,079
+compensate each other.
+
+82
+00:04:19,079 --> 00:04:23,040
+Or in short form dXt is YT times dSt
+
+83
+00:04:23,040 --> 00:04:26,639
+plus ZT times DBT.
+
+84
+00:04:26,639 --> 00:04:29,160
+Once again, we need to recap the idea,
+
+85
+00:04:29,160 --> 00:04:31,380
+that's stochastic integral represents
+
+86
+00:04:31,380 --> 00:04:34,280
+the net cash flow.
+
+87
+00:04:34,520 --> 00:04:37,680
+And in Black and Scholes model we know, that
+
+88
+00:04:37,680 --> 00:04:40,860
+DsT is Mu StDt, I don't care about this
+
+89
+00:04:40,860 --> 00:04:43,979
+term plus. That's important sigma St
+
+90
+00:04:43,979 --> 00:04:48,060
+times dWt, and dBt is non-stochastic at
+
+91
+00:04:48,060 --> 00:04:50,699
+all, dBt is Bt times Dt.
+
+92
+00:04:50,699 --> 00:04:56,500
+Okay, so, if I focus on dWt term once again.
+
+95
+00:04:57,720 --> 00:05:06,020
+I just have the same equations. And let's focus on
+
+97
+00:05:04,199 --> 00:05:06,780
+the term before dWt.
+
+98
+00:05:06,780 --> 00:05:10,919
+Here it's just Yt times sigma St
+
+99
+00:05:10,919 --> 00:05:14,400
+times dWt.
+
+100
+00:05:14,400 --> 00:05:15,600
+Bingo!
+
+101
+00:05:15,600 --> 00:05:18,960
+We have an informal theorem to replicate
+
+102
+00:05:18,960 --> 00:05:23,340
+a European type claim with price X of St,
+
+103
+00:05:23,340 --> 00:05:27,419
+and t we should hold YT shares, and ZT
+
+104
+00:05:27,419 --> 00:05:31,440
+bonds, where YT is just DX with respect
+
+105
+00:05:31,440 --> 00:05:37,800
+to DS. So, the number of shares, we need to
+
+106
+00:05:37,800 --> 00:05:41,520
+have in our portfolio, is the derivative
+
+107
+00:05:41,520 --> 00:05:47,280
+of the portfolio price with respect to the share price.
+
+110
+00:05:47,940 --> 00:05:52,199
+That's called the delta hedging rule.
+
+111
+00:05:52,199 --> 00:05:55,800
+And we all obviously can find out the
+
+112
+00:05:55,800 --> 00:05:58,500
+number of bonds. The total price of
+
+113
+00:05:58,500 --> 00:06:02,820
+portfolio is Xt. We have Yt shares. So, Xt
+
+114
+00:06:02,820 --> 00:06:05,639
+minus total price of shares Xt minus
+
+115
+00:06:05,639 --> 00:06:08,580
+YtSt the total price of all bonds. We
+
+116
+00:06:08,580 --> 00:06:11,100
+divide by the price of one bond by BT.
+
+117
+00:06:11,100 --> 00:06:14,400
+And we get, that T is the number of bonds.
+
+118
+00:06:14,400 --> 00:06:19,199
+Okay, so, that's a very simple rule, that
+
+119
+00:06:19,199 --> 00:06:22,380
+gives you explicit receipt, how to
+
+120
+00:06:22,380 --> 00:06:24,979
+replicate any European type claim.
+
+121
+00:06:24,979 --> 00:06:28,800
+Obviously, you need to have the formula X
+
+122
+00:06:28,800 --> 00:06:31,740
+of St and t, but we have the pricing
+
+123
+00:06:31,740 --> 00:06:34,560
+formula. So, Bingo! We have the pricing
+
+124
+00:06:34,560 --> 00:06:36,960
+formula for for every European type
+
+125
+00:06:36,960 --> 00:06:39,479
+asset. And we have a rule how to
+
+126
+00:06:39,479 --> 00:06:44,360
+replicate every European type asset.
+
+127
+00:06:44,400 --> 00:06:46,740
+Let's proceed to the summary.
+
+128
+00:06:46,740 --> 00:06:50,280
+We have obtained two expressions for the
+
+129
+00:06:50,280 --> 00:06:53,340
+evolution of price of any financial
+
+130
+00:06:53,340 --> 00:06:56,699
+claim. It's dXt is equal to something
+
+131
+00:06:56,699 --> 00:07:01,800
+times Dt plus Dx, Dx over Ds times sigma
+
+132
+00:07:01,800 --> 00:07:06,600
+times sTdwt. The other expression for the
+
+133
+00:07:06,600 --> 00:07:09,660
+evolution of the price of any financial
+
+134
+00:07:09,660 --> 00:07:12,300
+claim is dXt equals to something times
+
+135
+00:07:12,300 --> 00:07:15,600
+Dt plus Yt times sigma times St times
+
+136
+00:07:15,600 --> 00:07:17,220
+dWt.
+
+137
+00:07:17,220 --> 00:07:21,720
+These expressions before dWt equal. So,
+
+138
+00:07:21,720 --> 00:07:25,380
+we have the delta hedging rule: that to
+
+139
+00:07:25,380 --> 00:07:29,639
+replicate any financial claim, we need to
+
+140
+00:07:29,639 --> 00:07:34,080
+have in our portfolio Yt shares, where Yt
+
+141
+00:07:34,080 --> 00:07:37,979
+is the derivative of the portfolio price,
+
+142
+00:07:37,979 --> 00:07:41,580
+Dx with respect  to the share price Ds
+
+143
+00:07:41,580 --> 00:07:44,840
+at that moment of time.
+
+144
+00:07:45,599 --> 00:07:49,440
+That was the last video in our short
+
+145
+00:07:49,440 --> 00:07:52,440
+introduction. It was rather hard from the
+
+146
+00:07:52,440 --> 00:07:59,599
+mathematical viewpoint, but let me thank you.
+
+149
+00:08:02,140 --> 00:08:08,149
+[Music]
+

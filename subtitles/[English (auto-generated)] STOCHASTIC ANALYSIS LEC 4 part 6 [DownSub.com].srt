@@ -1,0 +1,596 @@
+2
+00:00:01,760 --> 00:00:03,959
+[Music]
+
+3
+00:00:03,959 --> 00:00:07,500
+We will know, how to price  different contracts in
+
+4
+00:00:07,500 --> 00:00:09,720
+the Black and Scholes model. We
+
+5
+00:00:09,720 --> 00:00:11,519
+need just to calculate expected value.
+
+6
+00:00:11,519 --> 00:00:13,920
+And we have already considered a
+
+7
+00:00:13,920 --> 00:00:17,279
+contract, that pays you at time moment t
+
+8
+00:00:17,279 --> 00:00:21,240
+equal to 2 S2 cube. And we have found,
+
+9
+00:00:21,240 --> 00:00:24,779
+that the no-arbitrage price of this
+
+10
+00:00:24,779 --> 00:00:27,480
+claim is just  0 Cube times exponent of
+
+11
+00:00:27,480 --> 00:00:30,720
+4R plus 6 sigma squared.
+
+12
+00:00:30,720 --> 00:00:34,200
+Okay, and it's also possible to replicate
+
+13
+00:00:34,200 --> 00:00:37,860
+this contract, this claim in the
+
+14
+00:00:37,860 --> 00:00:39,960
+framework of the Black and Scholes model. And
+
+15
+00:00:39,960 --> 00:00:43,140
+my question now is: how to start the
+
+16
+00:00:43,140 --> 00:00:46,559
+replicating portfolio? So, how many shares
+
+17
+00:00:46,559 --> 00:00:49,980
+I need to buy initially? How many units
+
+18
+00:00:49,980 --> 00:00:53,940
+of cash account I need to buy to
+
+19
+00:00:53,940 --> 00:00:57,840
+replicate these X0?
+
+20
+00:00:57,840 --> 00:01:01,579
+Okay, so, from one point of view
+
+21
+00:01:01,579 --> 00:01:05,700
+Xt can be completely replicated, using
+
+22
+00:01:05,700 --> 00:01:09,780
+shares and units of cash account. So, Xt
+
+23
+00:01:09,780 --> 00:01:15,299
+is just, if I buy Yt shares, so yt,
+
+24
+00:01:15,299 --> 00:01:18,119
+small y, is the number of shares. So, in
+
+25
+00:01:18,119 --> 00:01:21,180
+shares I have this sum of money. Yt is
+
+26
+00:01:21,180 --> 00:01:23,340
+the number of shares, St is a share
+
+27
+00:01:23,340 --> 00:01:29,880
+price. Plus I have Zt units of cash
+
+28
+00:01:29,880 --> 00:01:35,820
+account. So, I have Zt times Bt.
+
+29
+00:01:35,820 --> 00:01:38,340
+Bt is a cash account, what does it mean.
+
+30
+00:01:38,340 --> 00:01:40,619
+So, if in the beginning I have one dollar,
+
+31
+00:01:40,619 --> 00:01:46,140
+I invested in all. And
+
+32
+00:01:46,140 --> 00:01:51,840
+if B0 is one, then Bt is just exponent of
+
+33
+00:01:51,840 --> 00:01:57,340
+Rt. Okay, so, this is the price of my portfolio.
+
+35
+00:01:57,840 --> 00:02:03,079
+And by our interpretation of stochastic integral,
+
+37
+00:02:04,040 --> 00:02:12,300
+dXt is just Yt times dSt plus Zt
+
+38
+00:02:12,300 --> 00:02:17,640
+times dBt. Or we may write it like Yt
+
+39
+00:02:17,640 --> 00:02:20,160
+times, we just plug in the expression for
+
+40
+00:02:20,160 --> 00:02:30,160
+dSd. it will be mu St Dt plus sigma St dWt plus.
+
+42
+00:02:30,620 --> 00:02:34,920
+We also plug in the expression for dBt.
+
+43
+00:02:34,920 --> 00:02:39,720
+If Bt is just exponent of Rt, then we
+
+44
+00:02:39,720 --> 00:02:43,739
+have, dBt will be equal, we take the
+
+45
+00:02:43,739 --> 00:02:46,200
+derivative with respect to T. That's a
+
+46
+00:02:46,200 --> 00:02:49,319
+non-stochastic process. So, we have R
+
+47
+00:02:49,319 --> 00:03:00,040
+times exponent of Rt times Dt or just R times Bt Dt.
+
+50
+00:03:00,120 --> 00:03:10,000
+Okay, so, we have that times R times Bt Dt.
+
+53
+00:03:10,800 --> 00:03:19,760
+Okay, let's focus on their coefficient before dTe. 
+
+55
+00:03:19,319 --> 00:03:20,599
+So, we have here
+
+56
+00:03:20,599 --> 00:03:39,580
+mu Yt St plus zTr Bt times Dt plus.
+
+61
+00:03:39,000 --> 00:03:45,060
+And we have the the other term, that is Yt sigma St dWt.
+
+62
+00:03:45,060 --> 00:03:49,200
+Okay, that will be the term of interest.
+
+64
+00:03:49,739 --> 00:03:55,099
+Or more specifically we will look at this term.
+
+66
+00:03:55,620 --> 00:04:00,819
+Now let's recall, that Xt may be expressed,
+
+68
+00:04:00,239 --> 00:04:05,220
+as a function of St and t. Okay, we also
+
+69
+00:04:05,220 --> 00:04:13,360
+have another approach Xt is a function of T and St.
+
+71
+00:04:13,319 --> 00:04:16,320
+We haven't recovered this function
+
+72
+00:04:16,320 --> 00:04:19,858
+for urbanity, but it's possible. But we
+
+73
+00:04:19,858 --> 00:04:24,380
+know, for example, that X0 is just S0
+
+74
+00:04:24,380 --> 00:04:34,340
+cube times exponent of 4R plus sigma squared.
+
+77
+00:04:34,139 --> 00:04:37,620
+Okay, so, we may also derive the general
+
+78
+00:04:37,620 --> 00:04:43,259
+formula for XT, using the eXp the expected value star of discounted X2.
+
+80
+00:04:43,259 --> 00:04:53,699
+But our goal is to find
+
+81
+00:04:47,699 --> 00:04:51,120
+only the starting values of replicating portfolio. 
+
+83
+00:04:53,340 --> 00:04:58,139
+So, X0 will be sufficient. Okay, we will
+
+84
+00:04:58,139 --> 00:05:00,419
+apply it as Ito's lemma. Ito's lemma say, that
+
+85
+00:05:00,419 --> 00:05:03,840
+dXt should be equal to, what should be
+
+86
+00:05:03,840 --> 00:05:10,699
+equal to F of prime with respect to t times Dt
+
+89
+00:05:12,000 --> 00:05:18,000
+plus F prime with respect to S times dSt plus.
+
+90
+00:05:18,000 --> 00:05:21,900
+It is correction term 1 over 2 times F
+
+91
+00:05:21,900 --> 00:05:24,539
+prime prime with respect to S with
+
+92
+00:05:24,539 --> 00:05:34,220
+respect to S times dSt squared.
+
+96
+00:05:34,139 --> 00:05:39,699
+Okay, let's plug in the expression for dSt.
+
+98
+00:05:39,660 --> 00:05:46,220
+We will have F Prime with respect to t times Dt plus
+
+101
+00:05:46,680 --> 00:05:50,520
+F Prime with respect to S
+
+102
+00:05:50,520 --> 00:06:09,340
+times mu sTd d plus sigma St dWt.
+
+106
+00:06:09,539 --> 00:06:13,020
+Plus 1 over 2 F prime prime with respect
+
+107
+00:06:13,020 --> 00:06:17,600
+to S, what is DS squared?
+
+108
+00:06:17,600 --> 00:06:21,720
+If I will square this expression, I
+
+109
+00:06:21,720 --> 00:06:26,280
+will receive only sigma squared times
+
+110
+00:06:26,280 --> 00:06:39,160
+St squared times dWt squared, that is, that is equal to Dt.
+
+113
+00:06:41,520 --> 00:06:45,479
+And, basically, that's all. Okay,
+
+114
+00:06:45,479 --> 00:06:54,319
+let's look at our term with mu St. What is mu S?
+
+116
+00:06:54,360 --> 00:06:57,919
+Okay, in the first, so, I have two expressions.
+
+118
+00:06:57,960 --> 00:07:03,860
+For Xt, for dXt, I have two expressions for dXt.
+
+120
+00:07:03,539 --> 00:07:10,259
+And let us look at the coefficient before mu St.
+
+122
+00:07:10,500 --> 00:07:16,319
+So, I'm interested in a coefficient before mu St.
+
+124
+00:07:16,199 --> 00:07:19,780
+In the first expression, what is before muSt.
+
+126
+00:07:19,680 --> 00:07:24,479
+So, before mu St I have exactly
+
+127
+00:07:24,479 --> 00:07:28,380
+the number of shares, I need to hold in
+
+128
+00:07:28,380 --> 00:07:31,380
+my replication portfolio.
+
+129
+00:07:31,380 --> 00:07:36,360
+That is YT, the number of shares I need to have in
+
+131
+00:07:36,960 --> 00:07:39,599
+my replicating portfolio. What is the
+
+132
+00:07:39,599 --> 00:07:43,740
+expression before mu St 
+
+134
+00:07:43,160 --> 00:07:47,500
+muStdt, yeah, muStdt in the second expression.
+
+136
+00:07:47,819 --> 00:07:54,740
+In the second expression, before muStdt
+
+138
+00:07:54,120 --> 00:08:00,020
+I have F prime with respect to S,
+
+139
+00:08:00,620 --> 00:08:04,440
+and to make my portfolio, replicating
+
+140
+00:08:04,440 --> 00:08:09,139
+portfolio, I need to have these values equal.
+
+142
+00:08:09,419 --> 00:08:17,819
+So, Yt should be F prime with respect to S.
+
+144
+00:08:17,160 --> 00:08:21,220
+And, hence, I almost have everything I need.
+
+146
+00:08:21,060 --> 00:08:27,340
+So, Y0. The numbers of shares to start the
+
+148
+00:08:27,360 --> 00:08:31,560
+replicating portfolio is just the
+
+149
+00:08:31,560 --> 00:08:37,958
+derivative of my initial formula for X0.
+
+151
+00:08:37,200 --> 00:08:46,620
+So, I will take my initial formula plus 6 sigma squared.
+
+154
+00:08:46,740 --> 00:08:49,920
+And I will take the derivative with
+
+155
+00:08:49,920 --> 00:08:59,560
+respect to S. So, it will be 3, as 0 squared times
+
+158
+00:08:59,180 --> 00:09:05,839
+exponent of 4R plus 6 sigma squared.
+
+159
+00:09:06,060 --> 00:09:16,380
+And this value is equal to 3 times 100
+
+161
+00:09:16,320 --> 00:09:23,040
+times exponent of 4R. R is 0 0 5, so, 4R is
+
+162
+00:09:23,040 --> 00:09:26,640
+0 2 6 sigma squared is 0 0 6.
+
+163
+00:09:26,640 --> 00:09:35,500
+So, I have 0 26 here.
+
+165
+00:09:35,100 --> 00:09:48,220
+And it will be 3 times, 100 times, approximately, 1.3.
+
+169
+00:09:48,720 --> 00:09:51,180
+And I will have here, this is
+
+170
+00:09:51,180 --> 00:10:01,120
+approximately. And I will have, and I will have roughly 390 shares. 
+
+173
+00:10:01,160 --> 00:10:09,640
+So, to start the replicating portfolio I need roughly
+
+175
+00:10:09,380 --> 00:10:19,160
+390 shares, and which some should be invested in the cash account.
+
+179
+00:10:19,980 --> 00:10:24,779
+So what is the value of zero? What is
+
+180
+00:10:24,779 --> 00:10:35,399
+zero? But that 0 is just X0 minus Y0 times S0.
+
+182
+00:10:35,339 --> 00:10:41,800
+Because at the moment time t equal to 0, the price of
+
+184
+00:10:41,580 --> 00:10:44,820
+one dollar is one dollar. If the price of
+
+185
+00:10:44,820 --> 00:10:48,720
+my portfolio is X0 at start, and
+
+186
+00:10:48,720 --> 00:10:52,500
+I'm replicating it using  Y0
+
+187
+00:10:52,500 --> 00:10:55,920
+shares, each of them has a price, as 0.
+
+188
+00:10:55,920 --> 00:10:58,200
+So, this is the price, this is the number
+
+189
+00:10:58,200 --> 00:11:01,079
+of dollars, I need to have to start the
+
+190
+00:11:01,079 --> 00:11:04,680
+replicating portfolio. Okay, and we will
+
+191
+00:11:04,680 --> 00:11:30,700
+have 1297, approximately, minus 390 times, the price of one share is 10.
+
+198
+00:11:30,720 --> 00:11:44,800
+So, I will have 1297 minus 3090 nine hundreds. This value will be
+
+202
+00:11:44,160 --> 00:11:47,100
+negative. That's completely okay, because
+
+203
+00:11:47,100 --> 00:11:50,279
+in the replicating portfolio we may
+
+204
+00:11:50,279 --> 00:11:52,740
+borrow, that means. So what does it
+
+205
+00:11:52,740 --> 00:11:54,899
+mean negative or number of dollars? So,
+
+206
+00:11:54,899 --> 00:11:58,100
+that means, we need to borrow.
+
+207
+00:11:58,380 --> 00:12:03,360
+And, hence, the value is. So, we
+
+208
+00:12:03,360 --> 00:12:10,100
+obtain - 2603 dollars.
+
+210
+00:12:10,320 --> 00:12:14,399
+Okay, so, we not only know the initial
+
+211
+00:12:14,399 --> 00:12:26,120
+price X0. X0 is roughly 1297 dollars. So,
+
+213
+00:12:26,339 --> 00:12:28,740
+that's the initial price of our claim.
+
+214
+00:12:28,740 --> 00:12:32,399
+But we know, how to start the replicating
+
+215
+00:12:32,399 --> 00:12:35,640
+portfolio for this claim? To replicate we
+
+216
+00:12:35,640 --> 00:12:42,240
+need to borrow, so, we need to borrow
+
+218
+00:12:42,079 --> 00:12:57,420
+2603 dollars and to buy 390 shares.
+
+224
+00:12:57,420 --> 00:13:00,720
+This is the start value of replicating
+
+225
+00:13:00,720 --> 00:13:03,540
+portfolio, and then we will just continue
+
+226
+00:13:03,540 --> 00:13:09,519
+to use their identity, that dynamically,
+
+228
+00:13:09,899 --> 00:13:14,880
+we will use identity, that Yt should be
+
+229
+00:13:14,880 --> 00:13:20,399
+always equal to F prime with respect to
+
+230
+00:13:20,399 --> 00:13:22,440
+current share price. So, if we will
+
+231
+00:13:22,440 --> 00:13:25,500
+maintain this equality every time, then
+
+232
+00:13:25,500 --> 00:13:32,980
+we will obtain the replicating portfolio for our claim.
+
+235
+00:13:33,940 --> 00:13:39,960
+[Music]
+

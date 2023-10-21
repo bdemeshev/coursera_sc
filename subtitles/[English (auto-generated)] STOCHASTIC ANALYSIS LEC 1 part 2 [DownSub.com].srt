@@ -1,0 +1,660 @@
+1
+00:00:00,000 --> 00:00:01,760
+[Music]
+
+2
+00:00:01,760 --> 00:00:04,100
+[Music]
+
+3
+00:00:04,100 --> 00:00:07,080
+Our course is about problem solving, so, let's solve
+
+4
+00:00:07,080 --> 00:00:09,120
+some problems. Let's calculate expected
+
+5
+00:00:09,120 --> 00:00:11,340
+value variance and covariance. let's
+
+6
+00:00:11,340 --> 00:00:13,380
+calculate expected variance of T times
+
+7
+00:00:13,380 --> 00:00:16,859
+WT, where WT is a Wiener process power
+
+8
+00:00:16,859 --> 00:00:21,060
+four. Okay. As t is non-random, we just take
+
+9
+00:00:21,060 --> 00:00:22,439
+it out.
+
+10
+00:00:22,439 --> 00:00:26,640
+And is T expected value of WT power 4.
+
+11
+00:00:26,640 --> 00:00:30,000
+Next we will standardize our random
+
+12
+00:00:30,000 --> 00:00:32,880
+variable WT power 4. So, we use the fact
+
+13
+00:00:32,880 --> 00:00:34,399
+that
+
+14
+00:00:34,399 --> 00:00:38,579
+WT has the same distribution, as square
+
+15
+00:00:38,579 --> 00:00:42,120
+root of T times standard  random,
+
+16
+00:00:42,120 --> 00:00:44,640
+variable normal standard print, variable
+
+17
+00:00:44,640 --> 00:00:46,200
+Z.
+
+18
+00:00:46,200 --> 00:00:50,059
+And if I will do this
+
+19
+00:00:50,059 --> 00:00:52,739
+substitution, the distribution will not
+
+20
+00:00:52,739 --> 00:00:54,539
+change and the expected value will not
+
+21
+00:00:54,539 --> 00:00:59,760
+change. So, I will get T times expected
+
+22
+00:00:59,760 --> 00:01:05,339
+value of square root T times Z power 4.
+
+23
+00:01:05,339 --> 00:01:09,420
+As T is non-random, I will take squared
+
+24
+00:01:09,420 --> 00:01:12,720
+T squared out of the brackets. That's T
+
+25
+00:01:12,720 --> 00:01:15,479
+times T squared times expected value of
+
+26
+00:01:15,479 --> 00:01:20,340
+Z power 4. Now I see that that power 4
+
+27
+00:01:20,340 --> 00:01:22,979
+is a power of a standard normal random
+
+28
+00:01:22,979 --> 00:01:27,240
+variable, so I can use the effect which
+
+29
+00:01:27,240 --> 00:01:29,520
+can be established, using integration or
+
+30
+00:01:29,520 --> 00:01:31,979
+some other tricks. That expected value of
+
+31
+00:01:31,979 --> 00:01:33,360
+ZN.
+
+32
+00:01:33,360 --> 00:01:36,900
+For even N is N minus 1, times N minus 3,
+
+33
+00:01:36,900 --> 00:01:39,960
+times N minus all.
+
+34
+00:01:39,960 --> 00:01:44,340
+Odd numbers Q1. In my case it will be
+
+35
+00:01:44,340 --> 00:01:49,380
+T cube times 4 minus 1 is 3. I
+
+36
+00:01:49,380 --> 00:01:53,040
+subtract two more is one, and voila.
+
+37
+00:01:53,040 --> 00:01:57,479
+So we get 3 times T cubed.
+
+38
+00:01:57,479 --> 00:02:00,240
+Now let's move on to the calculation of
+
+39
+00:02:00,240 --> 00:02:02,840
+variance.
+
+40
+00:02:04,560 --> 00:02:07,439
+We need to calculate variance of T times
+
+41
+00:02:07,439 --> 00:02:11,760
+WT power 4 plus T squared. First, we use
+
+42
+00:02:11,760 --> 00:02:14,879
+the property of variance that we can add
+
+43
+00:02:14,879 --> 00:02:19,140
+constants non-random quantities for free.
+
+44
+00:02:19,140 --> 00:02:22,860
+So we just get variance of T times WT
+
+45
+00:02:22,860 --> 00:02:27,180
+power 4 plus nothing. Okay, we take out T,
+
+46
+00:02:27,180 --> 00:02:30,000
+but now with square.
+
+47
+00:02:30,000 --> 00:02:33,840
+We get T squared times variance of WT
+
+48
+00:02:33,840 --> 00:02:36,620
+power 4.
+
+49
+00:02:40,080 --> 00:02:43,680
+Now  we will do once again the same
+
+50
+00:02:43,680 --> 00:02:47,519
+substitution, we will say that WT has the
+
+51
+00:02:47,519 --> 00:02:49,860
+same distribution as square root of T
+
+52
+00:02:49,860 --> 00:02:52,860
+times some standard normal random
+
+53
+00:02:52,860 --> 00:02:55,200
+variable. And hence using this
+
+54
+00:02:55,200 --> 00:02:58,140
+substitution, we get tT squared times
+
+55
+00:02:58,140 --> 00:03:03,360
+variance of square root of T times Z
+
+56
+00:03:03,360 --> 00:03:05,940
+power 4.
+
+57
+00:03:05,940 --> 00:03:07,860
+That is equal.
+
+58
+00:03:07,860 --> 00:03:10,860
+Now I have  T squared inside brackets,
+
+59
+00:03:10,860 --> 00:03:15,599
+but it will go out with one more square.
+
+60
+00:03:15,599 --> 00:03:19,860
+So, I get T squared times T squared
+
+61
+00:03:19,860 --> 00:03:24,720
+squared times variance of that
+
+62
+00:03:24,720 --> 00:03:26,580
+power 4.
+
+63
+00:03:26,580 --> 00:03:30,300
+And I get T power 6.
+
+64
+00:03:30,300 --> 00:03:34,620
+And now I get expected value of Z power
+
+65
+00:03:34,620 --> 00:03:39,200
+8 minus expected value of Z power 4
+
+66
+00:03:39,200 --> 00:03:42,720
+squared. I have used the definition of
+
+67
+00:03:42,720 --> 00:03:47,700
+variance. And then I get T power 6
+
+68
+00:03:47,700 --> 00:03:52,620
+and I use the moment formula for normal
+
+69
+00:03:52,620 --> 00:03:56,159
+standard random variable. And hence, I
+
+70
+00:03:56,159 --> 00:04:03,599
+have 7 times 5 times 3 times 1 minus
+
+71
+00:04:03,599 --> 00:04:07,019
+three times one
+
+72
+00:04:07,019 --> 00:04:09,180
+squared.
+
+73
+00:04:09,180 --> 00:04:14,540
+And finally, I get T power 6 times
+
+74
+00:04:14,540 --> 00:04:19,440
+seven times three, it will be 21, 105
+
+75
+00:04:19,440 --> 00:04:21,660
+minus 9.
+
+76
+00:04:21,660 --> 00:04:23,940
+And hence, we have calculated variance.
+
+77
+00:04:23,940 --> 00:04:27,979
+And now let's move to covariance.
+
+78
+00:04:28,080 --> 00:04:30,600
+Usually we will consider two moments
+
+79
+00:04:30,600 --> 00:04:33,000
+of time SNT and for simplicity we will
+
+80
+00:04:33,000 --> 00:04:36,080
+make an agreement that S is less than T.
+
+81
+00:04:36,080 --> 00:04:39,259
+Let's calculate covariance.
+
+82
+00:04:39,259 --> 00:04:45,600
+Covariance of T times WT with WS squared
+
+83
+00:04:45,600 --> 00:04:48,360
+is equal. According to the definition of
+
+84
+00:04:48,360 --> 00:04:51,240
+covariance, it's expected value of the
+
+85
+00:04:51,240 --> 00:04:55,500
+product T times, WT times, WS squared
+
+86
+00:04:55,500 --> 00:04:57,660
+minus
+
+87
+00:04:57,660 --> 00:05:01,139
+the product of  expected value.
+
+88
+00:05:01,139 --> 00:05:05,960
+Expected value of T times WT times
+
+89
+00:05:05,960 --> 00:05:10,560
+expected value of WS squared.
+
+90
+00:05:10,560 --> 00:05:12,060
+Okay.
+
+91
+00:05:12,060 --> 00:05:15,479
+First, let's make some simple remarks.
+
+92
+00:05:15,479 --> 00:05:19,620
+Here we can move T outside. And expected
+
+93
+00:05:19,620 --> 00:05:24,720
+value of WT is zero, so we will ignore
+
+94
+00:05:24,720 --> 00:05:27,600
+the second term. And let's focus on
+
+95
+00:05:27,600 --> 00:05:30,479
+the first one. Here we move T once again
+
+96
+00:05:30,479 --> 00:05:35,160
+out of the brackets. And we get T
+
+97
+00:05:35,160 --> 00:05:39,720
+times expected value of WT times WS
+
+98
+00:05:39,720 --> 00:05:41,220
+squared.
+
+99
+00:05:41,220 --> 00:05:46,080
+And here we have  two correlated  or
+
+100
+00:05:46,080 --> 00:05:48,900
+probably dependent variables.
+
+101
+00:05:48,900 --> 00:05:52,100
+And we need to be careful here,
+
+102
+00:05:52,100 --> 00:05:55,320
+because these variables,
+
+103
+00:05:55,320 --> 00:05:57,660
+they may be dependent.
+
+104
+00:05:57,660 --> 00:06:01,500
+And so let's use our standard trick. We
+
+105
+00:06:01,500 --> 00:06:03,960
+will represent future value, as past
+
+106
+00:06:03,960 --> 00:06:06,780
+value plus some  unpredictable
+
+107
+00:06:06,780 --> 00:06:10,400
+independent increment. So, we will replace
+
+108
+00:06:10,400 --> 00:06:15,960
+WT with past value WS plus independent
+
+109
+00:06:15,960 --> 00:06:20,940
+increment. So, plus WT minus WS that is it
+
+110
+00:06:20,940 --> 00:06:23,720
+future value.
+
+111
+00:06:24,720 --> 00:06:26,900
+This is plus value
+
+112
+00:06:28,979 --> 00:06:32,360
+plus increment.
+
+113
+00:06:32,819 --> 00:06:35,880
+That's our standard trick.
+
+114
+00:06:35,880 --> 00:06:39,240
+Let's see what we will have. We will have
+
+115
+00:06:39,240 --> 00:06:46,020
+T times expected value of Ws plus Wt
+
+116
+00:06:46,020 --> 00:06:48,479
+minus Ws
+
+117
+00:06:48,479 --> 00:06:53,300
+times Ws squared.
+
+118
+00:06:56,880 --> 00:06:59,460
+We are almost done. We have T times
+
+119
+00:06:59,460 --> 00:07:03,000
+expected value of Ws cubed.
+
+120
+00:07:03,000 --> 00:07:09,139
+That is 0, because it's a odd moment of
+
+121
+00:07:09,139 --> 00:07:12,539
+ scaled standard normal random
+
+122
+00:07:12,539 --> 00:07:13,520
+variable.
+
+123
+00:07:13,520 --> 00:07:19,400
+Plus T times expected value of
+
+124
+00:07:19,400 --> 00:07:25,979
+WT minus Ws times Ws squared. And hence
+
+125
+00:07:25,979 --> 00:07:32,520
+we. Here we know that WT minus Ws and
+
+126
+00:07:32,520 --> 00:07:36,120
+WS are independent.
+
+127
+00:07:36,120 --> 00:07:39,660
+Here we have independency. So, we may
+
+128
+00:07:39,660 --> 00:07:42,539
+decompose our expected value into a
+
+129
+00:07:42,539 --> 00:07:46,039
+product of expected values.
+
+130
+00:07:47,460 --> 00:07:51,419
+So, we have a T times expected value of
+
+131
+00:07:51,419 --> 00:07:56,460
+WT minus WS times expected value of WS
+
+132
+00:07:56,460 --> 00:07:58,220
+squared.
+
+133
+00:07:58,220 --> 00:08:01,800
+From the definition of Wiener process of
+
+134
+00:08:01,800 --> 00:08:05,880
+Brownian motion, we know that WT minus WS
+
+135
+00:08:05,880 --> 00:08:09,060
+has normal distribution with mean 0 and
+
+136
+00:08:09,060 --> 00:08:12,720
+variance T minus S. And hence, this
+
+137
+00:08:12,720 --> 00:08:16,680
+expected value is 0, because of the first
+
+138
+00:08:16,680 --> 00:08:19,460
+term.
+
+139
+00:08:21,240 --> 00:08:24,060
+And even more, let's calculate some easy
+
+140
+00:08:24,060 --> 00:08:26,580
+probability. Let's calculate probability
+
+141
+00:08:26,580 --> 00:08:29,060
+of
+
+142
+00:08:29,060 --> 00:08:36,958
+3 times W 4 minus W 3 greater than zero.
+
+143
+00:08:36,958 --> 00:08:41,418
+Let's calculate this probability.
+
+144
+00:08:41,458 --> 00:08:44,420
+As we have a linear combination of
+
+145
+00:08:44,420 --> 00:08:48,360
+values of Wiener process, we know, that
+
+146
+00:08:48,360 --> 00:08:50,580
+this random variable has normal
+
+147
+00:08:50,580 --> 00:08:54,120
+distribution. So, this variable has normal
+
+148
+00:08:54,120 --> 00:08:56,880
+distribution with some mean
+
+149
+00:08:56,880 --> 00:08:59,040
+and some variance.
+
+150
+00:08:59,040 --> 00:09:01,380
+But what is the mean of this linear
+
+151
+00:09:01,380 --> 00:09:05,940
+combination expected value of 3 times W
+
+152
+00:09:05,940 --> 00:09:12,720
+4 minus W 3 is 3 times 0 minus 0 is 0.
+
+153
+00:09:12,720 --> 00:09:14,880
+And honestly speakingб I don't care about
+
+154
+00:09:14,880 --> 00:09:16,440
+the variance.
+
+155
+00:09:16,440 --> 00:09:23,300
+I have the probability that 
+
+156
+00:09:23,459 --> 00:09:25,440
+
+
+157
+00:09:25,440 --> 00:09:28,080
+normal distribution with mean 0 and some
+
+158
+00:09:28,080 --> 00:09:31,080
+variance is greater than zero.
+
+159
+00:09:31,080 --> 00:09:34,560
+Soб it's probability that some normal
+
+160
+00:09:34,560 --> 00:09:36,839
+variable with mean 0 and some variance
+
+161
+00:09:36,839 --> 00:09:39,899
+is greater than zero, but due to the
+
+162
+00:09:39,899 --> 00:09:42,360
+symmetry of this normal variable around
+
+163
+00:09:42,360 --> 00:09:45,480
+zero, I get one point.
+
+164
+00:09:45,480 --> 00:09:48,440
+One over two
+
+165
+00:09:51,460 --> 00:09:57,460
+[Music]
+

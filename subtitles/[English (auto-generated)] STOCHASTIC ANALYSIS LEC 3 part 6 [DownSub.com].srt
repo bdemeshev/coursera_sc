@@ -1,0 +1,538 @@
+
+2
+00:00:01,750 --> 00:00:05,400
+[Music]
+
+3
+00:00:06,620 --> 00:00:09,540
+In this video we will introduce Girsanov theorem. First, we will start with appealing, but
+
+4
+00:00:09,540 --> 00:00:12,719
+wrong answer to the pricing problem.
+
+5
+00:00:12,719 --> 00:00:15,179
+Then we will introduce the idea of
+
+6
+00:00:15,179 --> 00:00:18,660
+alternative probability and then, finally,
+
+7
+00:00:18,660 --> 00:00:22,220
+we will state the Girsanov theorem.
+
+8
+00:00:23,220 --> 00:00:27,180
+First, let's provide the wrong intuition.
+
+9
+00:00:27,180 --> 00:00:30,180
+It seems, that the future payoff XT is
+
+10
+00:00:30,180 --> 00:00:33,059
+random. And to calculate the current
+
+11
+00:00:33,059 --> 00:00:36,120
+price of something, that is random in the
+
+12
+00:00:36,120 --> 00:00:38,340
+future, we just need to calculate the
+
+13
+00:00:38,340 --> 00:00:41,219
+expected payoff given current
+
+14
+00:00:41,219 --> 00:00:44,940
+information. So, it seems at first a
+
+15
+00:00:44,940 --> 00:00:47,820
+glance, that X0 should be equal to
+
+16
+00:00:47,820 --> 00:00:51,840
+expected value of Xt given initial
+
+17
+00:00:51,840 --> 00:00:53,460
+information F0.
+
+18
+00:00:53,460 --> 00:00:57,000
+But this intuitive idea is wrong.
+
+19
+00:00:57,000 --> 00:01:01,559
+It will be true for a martingale, but the
+
+20
+00:01:01,559 --> 00:01:02,820
+claim price
+
+21
+00:01:02,820 --> 00:01:05,519
+Xt is not a martingale.
+
+22
+00:01:05,519 --> 00:01:08,520
+So, that's the main idea, why this answer
+
+23
+00:01:08,520 --> 00:01:10,260
+is wrong.
+
+24
+00:01:10,260 --> 00:01:15,960
+We will modify it to make it correct.
+2
+25
+00:01:15,960 --> 00:01:18,180
+First, let's introduce the idea of
+
+26
+00:01:18,180 --> 00:01:21,000
+alternative probability. Normally in
+
+27
+00:01:21,000 --> 00:01:24,240
+probability of statistics we work with
+
+28
+00:01:24,240 --> 00:01:26,759
+just one probability. There is only one
+
+29
+00:01:26,759 --> 00:01:29,159
+true probability P.
+
+31
+00:01:30,479 --> 00:01:32,700
+In the Black and Scholes model it's very
+
+32
+00:01:32,700 --> 00:01:34,680
+useful to introduce alternative
+
+33
+00:01:34,680 --> 00:01:38,579
+probability P star. So, we will have two
+
+34
+00:01:38,579 --> 00:01:40,920
+probabilities: probability P and
+
+35
+00:01:40,920 --> 00:01:43,380
+probability P star. Imagine the following.
+
+36
+00:01:43,380 --> 00:01:46,320
+A simple example: the random variable X
+
+37
+00:01:46,320 --> 00:01:49,439
+takes three values either minus two,
+
+38
+00:01:49,439 --> 00:01:52,259
+either zero, either four. And we have
+
+39
+00:01:52,259 --> 00:01:53,960
+probability P.
+
+40
+00:01:53,960 --> 00:01:57,420
+The probability P, that X is equal to
+
+41
+00:01:57,420 --> 00:02:01,320
+minus 2 is 0 3, but the probability P
+
+42
+00:02:01,320 --> 00:02:05,759
+star, that X is equal to -2 is 0 4. So,
+
+43
+00:02:05,759 --> 00:02:07,500
+they are different.
+
+44
+00:02:07,500 --> 00:02:10,258
+And we can calculate different expected
+
+45
+00:02:10,258 --> 00:02:11,400
+values.
+
+46
+00:02:11,400 --> 00:02:15,599
+For example, expected value of X is 0 6.
+
+47
+00:02:15,599 --> 00:02:18,000
+You just multiply value by probability
+
+48
+00:02:18,000 --> 00:02:21,180
+and you add. And the expected value star,
+
+49
+00:02:21,180 --> 00:02:24,360
+the expected value calculating, using
+
+50
+00:02:24,360 --> 00:02:26,879
+alternative probability is different, is
+
+51
+00:02:26,879 --> 00:02:28,739
+one over two, because the probability is
+
+52
+00:02:28,739 --> 00:02:31,500
+different. So, we will work with two
+
+53
+00:02:31,500 --> 00:02:34,080
+probabilities now. And we need to pay
+
+54
+00:02:34,080 --> 00:02:36,660
+attention: there will be expected value
+
+55
+00:02:36,660 --> 00:02:39,060
+and expected value star, and they will be
+
+56
+00:02:39,060 --> 00:02:40,980
+different.
+
+57
+00:02:40,980 --> 00:02:44,640
+The main reason to introduce the
+
+58
+00:02:44,640 --> 00:02:46,800
+new probability P star in the Black and
+
+59
+00:02:46,800 --> 00:02:49,260
+Scholes model is to simplify the
+
+60
+00:02:49,260 --> 00:02:52,080
+calculation of prices.
+
+61
+00:02:52,080 --> 00:02:54,180
+And, finally, we are ready to state the
+
+62
+00:02:54,180 --> 00:02:57,540
+Girsanov theorem. If Wt is a Wienner process
+
+63
+00:02:57,540 --> 00:03:01,620
+and the probability P, and WT star is a
+
+64
+00:03:01,620 --> 00:03:04,200
+Brownian motion with drift, that means it
+
+65
+00:03:04,200 --> 00:03:08,099
+is equal to B times t plus Wt. Then there
+
+66
+00:03:08,099 --> 00:03:11,640
+is a probability P star such, that Wt
+
+67
+00:03:11,640 --> 00:03:15,420
+star is a Wiener process on the P star.
+
+68
+00:03:15,420 --> 00:03:19,019
+So, that means sWt is a Wiener process,
+
+69
+00:03:19,019 --> 00:03:21,900
+it's expected value is zero.
+
+70
+00:03:21,900 --> 00:03:25,920
+And expected value of Wt star, because we
+
+71
+00:03:25,920 --> 00:03:29,760
+add B times T inside expected value. So,
+
+72
+00:03:29,760 --> 00:03:33,540
+we get B times T, but if I change
+
+73
+00:03:33,540 --> 00:03:37,260
+probability, if I change expected value
+
+74
+00:03:37,260 --> 00:03:39,840
+to expected value star, I will get
+
+75
+00:03:39,840 --> 00:03:44,280
+expected value star of W star is zero,
+
+76
+00:03:44,280 --> 00:03:47,459
+because under probability measure P star
+
+77
+00:03:47,459 --> 00:03:53,180
+W star is once again a Wiener process.
+
+78
+00:03:54,500 --> 00:03:59,040
+We can state Girsanov theorem applied
+
+79
+00:03:59,040 --> 00:04:01,680
+specially for Black and Scholes model. And
+
+80
+00:04:01,680 --> 00:04:04,080
+the Black and Scholes model, there is an
+
+81
+00:04:04,080 --> 00:04:06,959
+alternative probability P star such, that
+
+82
+00:04:06,959 --> 00:04:09,540
+Wt star is a Wiener process on the P
+
+83
+00:04:09,540 --> 00:04:13,860
+star. And St is equal to S0 times
+
+84
+00:04:13,860 --> 00:04:16,798
+exponent of R
+
+85
+00:04:16,798 --> 00:04:19,019
+minus sigma squared over 2 times T
+
+86
+00:04:19,019 --> 00:04:23,160
+plus sigma times Wt star.
+
+87
+00:04:23,160 --> 00:04:27,300
+The old formula is still valid as T is
+
+88
+00:04:27,300 --> 00:04:29,580
+as 0 times exponent
+
+89
+00:04:29,580 --> 00:04:32,280
+mu minus sigma squared over 2 plus
+
+90
+00:04:32,280 --> 00:04:36,000
+sigma times Wt. Where Wt is a Wiener
+
+91
+00:04:36,000 --> 00:04:38,880
+process and the probability P. So, both
+
+92
+00:04:38,880 --> 00:04:42,919
+forms are okay.
+
+93
+00:04:43,320 --> 00:04:48,300
+Let's find a link between Wt and Wt star.
+
+94
+00:04:48,300 --> 00:04:52,919
+As formulas equivalent we can derive,
+
+95
+00:04:52,919 --> 00:04:54,900
+that mu minus sigma squared of 2
+
+96
+00:04:54,900 --> 00:04:58,440
+times T plus sigma times Wt is equal to
+
+97
+00:04:58,440 --> 00:05:01,320
+R minus sigma squared over 2 times T
+
+98
+00:05:01,320 --> 00:05:04,860
+plus sigma Wt star. We simplify a little
+
+99
+00:05:04,860 --> 00:05:07,440
+bit. We can get rid of sigma squared
+
+100
+00:05:07,440 --> 00:05:12,240
+over 2. And we get, that mu minus R times
+
+101
+00:05:12,240 --> 00:05:16,139
+T plus sigma times Wt, Wt is the Wiener
+
+102
+00:05:16,139 --> 00:05:19,740
+process on the P is equal to sigma times
+
+103
+00:05:19,740 --> 00:05:23,100
+Wd star, that is a Wiener process under
+
+104
+00:05:23,100 --> 00:05:26,100
+probability P star. Or we may write the
+
+105
+00:05:26,100 --> 00:05:28,440
+same equation in a short form, we just
+
+106
+00:05:28,440 --> 00:05:31,620
+add D everywhere, so, we have mu minus R
+
+107
+00:05:31,620 --> 00:05:34,979
+times Dt plus sigma times dWt is equal
+
+108
+00:05:34,979 --> 00:05:39,199
+to sigma times dWt star.
+
+109
+00:05:39,840 --> 00:05:41,820
+The meaning of probabilities is the
+
+110
+00:05:41,820 --> 00:05:44,900
+following P is a real world probability.
+
+111
+00:05:44,900 --> 00:05:49,560
+It determines, how the future will happen.
+
+112
+00:05:49,560 --> 00:05:51,960
+And P star is an artificial probability,
+
+113
+00:05:51,960 --> 00:05:54,900
+that is used to simplify formulas.
+
+114
+00:05:54,900 --> 00:05:57,560
+We have seen, that big expression with
+
+115
+00:05:57,560 --> 00:06:00,419
+dWt is equivalent to a small expression
+
+116
+00:06:00,419 --> 00:06:02,940
+with WT star, and that's the reason to
+
+117
+00:06:02,940 --> 00:06:06,979
+introduce the probability measure P star.
+
+118
+00:06:06,979 --> 00:06:10,440
+Let's make a small summary.
+
+119
+00:06:10,440 --> 00:06:12,960
+First point fair price of a financial
+
+120
+00:06:12,960 --> 00:06:15,660
+claim is not a simple expected value,
+
+121
+00:06:15,660 --> 00:06:17,580
+it's a little bit more difficult to
+
+122
+00:06:17,580 --> 00:06:19,199
+calculate.
+
+123
+00:06:19,199 --> 00:06:22,440
+And Girsanov theorem gives two equivalent
+
+124
+00:06:22,440 --> 00:06:27,180
+formulas for St. St is a zero times
+
+125
+00:06:27,180 --> 00:06:30,360
+exponent R minus sigma squared of 2
+
+126
+00:06:30,360 --> 00:06:34,800
+times T plus sigma times Wt star. Or the
+
+127
+00:06:34,800 --> 00:06:37,979
+same expression with R replaced by mu
+
+128
+00:06:37,979 --> 00:06:44,400
+and the sigma, and the WT star by WT.
+
+129
+00:06:44,400 --> 00:06:47,100
+And, once again, Wd star is a Wiener
+
+130
+00:06:47,100 --> 00:06:49,500
+process on the artificial probability P
+
+131
+00:06:49,500 --> 00:06:52,860
+star. And the big expression mu minus R
+
+132
+00:06:52,860 --> 00:06:57,300
+Dt plus sigma dWt is a very small
+
+133
+00:06:57,300 --> 00:07:05,639
+sigma times dWt star in this mu terms.
+
+134
+00:07:05,639 --> 00:07:07,740
+So, basically, that's the reason to
+
+135
+00:07:07,740 --> 00:07:09,780
+introduce new probability measure to
+
+136
+00:07:09,780 --> 00:07:12,979
+simplify X position.
+ 
+

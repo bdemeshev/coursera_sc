@@ -1,0 +1,569 @@
+
+2
+00:00:01,750 --> 00:00:03,899
+[Music]
+
+3
+00:00:03,899 --> 00:00:06,899
+This lecture is about option pricing.
+
+4
+00:00:07,620 --> 00:00:09,720
+In the first video we will discuss
+
+5
+00:00:09,720 --> 00:00:12,660
+discounted price process. We will start
+
+6
+00:00:12,660 --> 00:00:15,360
+by recalling, what discount it is in
+
+7
+00:00:15,360 --> 00:00:18,660
+continuous in discrete time. Then we will
+
+8
+00:00:18,660 --> 00:00:21,180
+state the theorem, that says, that every
+
+9
+00:00:21,180 --> 00:00:24,359
+european type asset can be replicated.
+
+10
+00:00:24,359 --> 00:00:29,900
+And then we will look at the pricing formula.
+
+12
+00:00:29,820 --> 00:00:33,900
+Okay, if XT is a price of a claim at time
+
+14
+00:00:33,899 --> 00:00:37,559
+moment T, we can re-express the same
+
+15
+00:00:37,559 --> 00:00:41,399
+future price and the current prices.
+
+16
+00:00:41,399 --> 00:00:43,860
+And in discrete time it's very easy. We
+
+17
+00:00:43,860 --> 00:00:49,320
+just divide Xt by 1 plus R power T or
+
+18
+00:00:49,320 --> 00:00:53,760
+just 1 plus R power minus T times Xt. In
+
+19
+00:00:53,760 --> 00:00:56,219
+continuous time it's little bit more
+
+20
+00:00:56,219 --> 00:01:00,239
+interesting. We divide Xt by exponent of
+
+21
+00:01:00,239 --> 00:01:04,080
+R power T or we divide Xt by exponent
+
+22
+00:01:04,080 --> 00:01:08,040
+of RT, or we multiply Xt by exponent of
+
+23
+00:01:08,040 --> 00:01:11,280
+minus RT. Then the discounting in
+
+24
+00:01:11,280 --> 00:01:13,740
+continuous time. What's the reason behind
+
+25
+00:01:13,740 --> 00:01:15,900
+this formula? The reason behind this
+
+26
+00:01:15,900 --> 00:01:18,360
+formula is the following exponent of R
+
+27
+00:01:18,360 --> 00:01:21,540
+for small R according to the to the
+
+28
+00:01:21,540 --> 00:01:23,939
+Taylor expansion is approximately equal
+
+29
+00:01:23,939 --> 00:01:26,640
+to 1 plus R.
+
+30
+00:01:26,640 --> 00:01:30,060
+And it's much easier to work with
+
+31
+00:01:30,060 --> 00:01:32,159
+exponent of R in continuous time,
+
+32
+00:01:32,159 --> 00:01:34,860
+because you can take derivative, you can
+
+33
+00:01:34,860 --> 00:01:37,259
+take logarithm and so on.
+
+34
+00:01:37,259 --> 00:01:39,720
+And just a small reminder:  if T is equal
+
+35
+00:01:39,720 --> 00:01:42,360
+to 0, then the discounted price and the
+
+36
+00:01:42,360 --> 00:01:45,900
+price are equal, because the multiplier
+
+37
+00:01:45,900 --> 00:01:49,500
+exponent minus RT or 1 plus R power
+
+38
+00:01:49,500 --> 00:01:54,420
+minus T are equal to 1.
+
+39
+00:01:54,420 --> 00:01:57,659
+Okay, let's ask the following question: is
+
+40
+00:01:57,659 --> 00:02:00,360
+a discounted share price a martingale?
+
+41
+00:02:00,360 --> 00:02:03,540
+It seems, that okay on average the share
+
+42
+00:02:03,540 --> 00:02:07,380
+price should grow, but, maybe, if we speak
+
+43
+00:02:07,380 --> 00:02:09,479
+about discounted share price, it will be
+
+44
+00:02:09,479 --> 00:02:12,540
+a martingale. Okay, let's use it, as lemma,
+
+45
+00:02:12,540 --> 00:02:15,720
+and let's calculate  the differential
+
+46
+00:02:15,720 --> 00:02:18,060
+of discounted share price.
+
+47
+00:02:18,060 --> 00:02:20,400
+First, we start with Ito's lemma. We have
+
+48
+00:02:20,400 --> 00:02:23,160
+minus R times exponent of minus Rt
+
+49
+00:02:23,160 --> 00:02:26,760
+times St Dt plus exponent of minus Rt
+
+50
+00:02:26,760 --> 00:02:31,319
+dSt. We may meet the second derivative,
+
+51
+00:02:31,319 --> 00:02:32,940
+because the second derivative with
+
+52
+00:02:32,940 --> 00:02:35,400
+respect to S2s is zero.
+
+53
+00:02:35,400 --> 00:02:38,459
+We simplify, where we rearrange the terms,
+
+54
+00:02:38,459 --> 00:02:43,760
+and we get exponent of minus Rt times St times.
+
+56
+00:02:43,739 --> 00:02:47,400
+In the brackets we have mu minus R times
+
+57
+00:02:47,400 --> 00:02:52,379
+Dt plus sigma times dWt.
+
+58
+00:02:52,379 --> 00:02:54,540
+So, the answer is no.
+
+59
+00:02:54,540 --> 00:02:59,319
+Under probability P short form has Dt inside it.
+
+61
+00:02:59,580 --> 00:03:03,840
+And when short form has Dt inside the
+
+62
+00:03:03,840 --> 00:03:06,720
+process is not a martingale.
+
+63
+00:03:06,720 --> 00:03:10,319
+So, S0 we cannot calculate, that 0 is the
+
+64
+00:03:10,319 --> 00:03:15,260
+expected value of discounted price.
+
+65
+00:03:15,420 --> 00:03:22,080
+But let's recall once again, that formula for differential, for
+
+67
+00:03:22,220 --> 00:03:25,200
+discounted share price it is exponent
+
+68
+00:03:25,200 --> 00:03:28,620
+minus rtSt times very familiar bracket.
+
+69
+00:03:28,620 --> 00:03:33,860
+Mu minus R times Dt plus sigma times dWt.
+
+70
+00:03:33,860 --> 00:03:37,560
+This familiar bracket is just sigma
+
+71
+00:03:37,560 --> 00:03:43,340
+times dWt star. Wow, that means, that
+
+72
+00:03:43,340 --> 00:03:46,080
+differential of discounted share price
+
+73
+00:03:46,080 --> 00:03:49,739
+is just exponent minus Rt times St
+
+74
+00:03:49,739 --> 00:03:55,799
+times sigma times dWt star. Wow, it has no
+
+75
+00:03:55,799 --> 00:04:02,739
+Dt term inside it. So, on the probability P star
+
+77
+00:04:02,760 --> 00:04:06,860
+short form has no Dt term inside.
+
+78
+00:04:06,860 --> 00:04:11,280
+Wt star is a Wiener process. And, hence,
+
+79
+00:04:11,280 --> 00:04:14,099
+the discounted share price is a
+
+80
+00:04:14,099 --> 00:04:17,940
+martingale under probability P star. So,
+
+81
+00:04:17,940 --> 00:04:22,260
+S0 is equal to expected value star of
+
+82
+00:04:22,260 --> 00:04:25,860
+future discounted price exponent minus
+
+83
+00:04:25,860 --> 00:04:29,220
+Rt times St, given current information,
+
+84
+00:04:29,220 --> 00:04:34,380
+that is described by sigma algebra F0.
+
+85
+00:04:34,380 --> 00:04:39,620
+Now let's move on to the next topic the replicating strategy.
+
+87
+00:04:39,479 --> 00:04:41,880
+And in the Black and Scholes model, every
+
+88
+00:04:41,880 --> 00:04:44,820
+european type asset can be replicated by
+
+89
+00:04:44,820 --> 00:04:47,639
+a self-financing strategy, that trades
+
+90
+00:04:47,639 --> 00:04:50,820
+shares and risk-free bonds.
+
+91
+00:04:50,820 --> 00:04:53,759
+At time T the portfolio contains Yt
+
+92
+00:04:53,759 --> 00:04:57,300
+shares and Zt bonds. So, the price of
+
+93
+00:04:57,300 --> 00:05:02,639
+portfolio Xt is equal to Yt times St, the
+
+94
+00:05:02,639 --> 00:05:04,380
+total price of all shares in the
+
+95
+00:05:04,380 --> 00:05:08,280
+portfolio plus Zt times Bt, the total
+
+96
+00:05:08,280 --> 00:05:11,100
+price of all risk-free bonds in the
+
+97
+00:05:11,100 --> 00:05:12,540
+portfolio.
+
+98
+00:05:12,540 --> 00:05:16,620
+But a strategy is self-financing the dXt
+
+99
+00:05:16,620 --> 00:05:22,020
+is equal to Yt times dSt plus Zt times
+
+100
+00:05:22,020 --> 00:05:25,199
+dBt, because we recall, that the meaning
+
+101
+00:05:25,199 --> 00:05:28,320
+of a stochastic integral is just the net
+
+102
+00:05:28,320 --> 00:05:32,039
+cash flow, when you have Yt shares, and
+
+103
+00:05:32,039 --> 00:05:37,220
+the share price is after the letter D.
+
+104
+00:05:38,100 --> 00:05:41,340
+Just a small remark european type asset
+
+105
+00:05:41,340 --> 00:05:50,380
+gives you a specified payoff at a fixed time moment big T.
+
+108
+00:05:50,340 --> 00:06:00,699
+And, once again, self financing strategy means that there are no exogenous capital inflow or outflow.
+
+111
+00:06:02,220 --> 00:06:04,860
+And, finally, let's test, let's State the
+
+112
+00:06:04,860 --> 00:06:06,539
+pricing formula.
+
+113
+00:06:06,539 --> 00:06:16,419
+As every asset can be replicated, using bonds and using share price.
+
+116
+00:06:16,919 --> 00:06:20,460
+And they discounted or price of a bond
+
+117
+00:06:20,460 --> 00:06:22,860
+is just a constant, the discount share
+
+118
+00:06:22,860 --> 00:06:24,479
+price is a martingale.
+
+119
+00:06:24,479 --> 00:06:27,479
+And every portfolio is a combination of
+
+120
+00:06:27,479 --> 00:06:32,479
+these two. So, we get the following informal theorem
+
+122
+00:06:32,100 --> 00:06:37,319
+in the Black and Scholes model the discounted price of every of any
+
+124
+00:06:37,680 --> 00:06:40,800
+European type asset is a martingale
+
+125
+00:06:40,800 --> 00:06:44,400
+under probability P star. Hence, the price
+
+126
+00:06:44,400 --> 00:06:48,180
+of any European type claim X0 is just
+
+127
+00:06:48,180 --> 00:06:52,080
+exponent minus Rt times expected value
+
+128
+00:06:52,080 --> 00:06:54,960
+star of future value
+
+129
+00:06:54,960 --> 00:06:57,840
+Xt given current information current
+
+130
+00:06:57,840 --> 00:07:01,199
+sigma algebra F0.
+
+131
+00:07:01,199 --> 00:07:04,740
+Once again Wt star is a Wiener process,
+
+132
+00:07:04,740 --> 00:07:07,979
+but on the probability P star not on the
+
+133
+00:07:07,979 --> 00:07:10,440
+probability P.
+
+134
+00:07:10,440 --> 00:07:14,520
+The link between Wt, and Wt star is Mu
+
+135
+00:07:14,520 --> 00:07:19,139
+minus rDt plus sigma times dWt equals to
+
+136
+00:07:19,139 --> 00:07:22,620
+sigma times dWt star.
+
+137
+00:07:22,620 --> 00:07:29,099
+And just a small reminder, what is the idea of the proof
+
+139
+00:07:29,039 --> 00:07:32,520
+of this theorem. Because every European
+
+140
+00:07:32,520 --> 00:07:34,500
+type asset can be replicated using
+
+141
+00:07:34,500 --> 00:07:37,500
+trading shares and bonds, discounted bond
+
+142
+00:07:37,500 --> 00:07:40,380
+price is constant, discounted share price
+
+143
+00:07:40,380 --> 00:07:42,419
+is a martingale, and the probability
+
+144
+00:07:42,419 --> 00:07:45,900
+measure P star. So, basically, the theorem
+
+145
+00:07:45,900 --> 00:07:49,560
+follows from this idea.
+
+146
+00:07:49,560 --> 00:07:52,680
+Let's proceed to the summary. European
+
+147
+00:07:52,680 --> 00:07:57,120
+claim gives payoff at a fixed specified
+
+148
+00:07:57,120 --> 00:08:00,419
+in the contract moment of time T.
+
+149
+00:08:00,419 --> 00:08:03,599
+The discounted price of any European
+
+150
+00:08:03,599 --> 00:08:06,900
+type claim is a martingale on the P star.
+
+151
+00:08:06,900 --> 00:08:09,720
+So, to calculate the price, we need to
+
+152
+00:08:09,720 --> 00:08:12,900
+calculate one expected value.
+
+153
+00:08:12,900 --> 00:08:16,860
+And the other main idea, that every
+
+154
+00:08:16,860 --> 00:08:20,819
+European type claim may be replicated.
+
+155
+00:08:20,819 --> 00:08:25,560
+And the pricing formula here it is X0 is
+
+156
+00:08:25,560 --> 00:08:28,800
+equal to exponent of minus Rt times
+
+157
+00:08:28,800 --> 00:08:32,458
+expected value star of Xt given current
+
+158
+00:08:32,458 --> 00:08:38,880
+information described by sigma algebra F0.
+
+160
+00:08:39,900 --> 00:08:45,919
+[Music]
+

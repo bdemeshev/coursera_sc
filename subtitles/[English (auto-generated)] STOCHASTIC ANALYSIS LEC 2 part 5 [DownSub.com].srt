@@ -1,0 +1,472 @@
+1
+00:00:00,000 --> 00:00:01,760
+
+
+2
+00:00:01,760 --> 00:00:04,339
+[Music]
+
+3
+00:00:04,339 --> 00:00:07,379
+Let's consider the properties of a
+
+4
+00:00:07,379 --> 00:00:09,720
+stochastic integral. We consider the
+
+5
+00:00:09,720 --> 00:00:13,380
+stochastic integral from 0 to TW power
+
+6
+00:00:13,380 --> 00:00:17,580
+4 times U times dWu. We know, that any
+
+7
+00:00:17,580 --> 00:00:19,520
+stochastic integral under some mild
+
+8
+00:00:19,520 --> 00:00:22,500
+conditions is a martingale with zero
+
+9
+00:00:22,500 --> 00:00:25,439
+expected value. So, the first question is
+
+10
+00:00:25,439 --> 00:00:31,439
+just is it like a cake. The expected
+
+11
+00:00:31,439 --> 00:00:35,280
+value of Ip is just zero. We are happy.
+
+12
+00:00:35,280 --> 00:00:37,320
+Now for the variance.
+
+13
+00:00:37,320 --> 00:00:40,680
+Let's use Ito isometry now. Let's say, that
+
+14
+00:00:40,680 --> 00:00:45,239
+variance of IT is expected value of IT,
+
+15
+00:00:45,239 --> 00:00:49,140
+and can be calculated, as ordinary bream
+
+16
+00:00:49,140 --> 00:00:53,180
+and integral. Integral from 0 to T.
+
+17
+00:00:53,180 --> 00:00:55,199
+We put
+
+18
+00:00:55,199 --> 00:00:58,039
+the expected value of square inside.
+
+19
+00:00:58,039 --> 00:01:02,940
+So, we calculate expected value of Wu
+
+20
+00:01:02,940 --> 00:01:07,500
+power 8 times U squared. And we change dWu
+
+21
+00:01:07,500 --> 00:01:13,560
+by just ordinary DU. Okay, that's
+
+22
+00:01:13,560 --> 00:01:18,479
+simple to calculate. We recall, that  WU
+
+23
+00:01:18,479 --> 00:01:23,100
+has the same distribution, as a square
+
+24
+00:01:23,100 --> 00:01:27,960
+root of U times Z, where Z is a standard
+
+25
+00:01:27,960 --> 00:01:31,979
+normal random variable. And the
+
+26
+00:01:31,979 --> 00:01:37,680
+expected value of Z power 8 is 7 times 5
+
+27
+00:01:37,680 --> 00:01:40,680
+times 3 times 1, that is a double
+
+28
+00:01:40,680 --> 00:01:42,600
+factorial.
+
+29
+00:01:42,600 --> 00:01:47,780
+And, hence, our expected value is almost
+
+30
+00:01:47,780 --> 00:01:52,380
+found. So, we get integral from 0 to T
+
+31
+00:01:52,380 --> 00:01:56,340
+expected value of square root of U
+
+32
+00:01:56,340 --> 00:02:04,320
+power 8 times Z power 8 times U squared
+
+33
+00:02:04,320 --> 00:02:07,799
+DU. We get
+
+34
+00:02:07,799 --> 00:02:10,739
+integral from 0 to T
+
+35
+00:02:10,739 --> 00:02:13,620
+U power 4
+
+36
+00:02:13,620 --> 00:02:18,680
+times U power 2 times 7 times 5 times 3
+
+37
+00:02:18,680 --> 00:02:21,060
+DU.
+
+38
+00:02:21,060 --> 00:02:23,160
+We got
+
+39
+00:02:23,160 --> 00:02:24,840
+
+
+40
+00:02:24,840 --> 00:02:27,900
+integral from 0 to T
+
+41
+00:02:27,900 --> 00:02:33,660
+or 105 times U power 6 DU.
+
+42
+00:02:33,660 --> 00:02:39,540
+And, finally, we get 105 times U to the
+
+43
+00:02:39,540 --> 00:02:44,879
+power 7 divided by 7 U changes from zero
+
+44
+00:02:44,879 --> 00:02:47,700
+to T. And we get
+
+45
+00:02:47,700 --> 00:02:50,599
+
+46
+00:02:50,700 --> 00:02:53,099
+15
+
+47
+00:02:53,099 --> 00:02:54,780
+times
+
+48
+00:02:54,780 --> 00:02:58,019
+T power 7.
+
+49
+00:02:58,019 --> 00:03:00,920
+And that's all.
+
+50
+00:03:00,959 --> 00:03:04,860
+Okay, we have calculated variance. Now
+
+51
+00:03:04,860 --> 00:03:07,860
+let's move on to covariance.
+
+52
+00:03:07,860 --> 00:03:11,640
+We need to calculate covariance of our
+
+53
+00:03:11,640 --> 00:03:18,620
+integral with  double UT squared.
+
+54
+00:03:19,739 --> 00:03:22,260
+Our main idea is the following: it's easy
+
+55
+00:03:22,260 --> 00:03:25,800
+to calculate, using Ito isometry the
+
+56
+00:03:25,800 --> 00:03:28,200
+covariance between integrals. So, it's
+
+57
+00:03:28,200 --> 00:03:30,780
+better to represent WT squared, as an
+
+58
+00:03:30,780 --> 00:03:34,140
+integral, because IT is already an
+
+59
+00:03:34,140 --> 00:03:35,840
+integral
+
+60
+00:03:35,840 --> 00:03:41,400
+of Wu power 4 times UDWU. So, it's
+
+61
+00:03:41,400 --> 00:03:44,280
+better to represent WT squared, as an
+
+62
+00:03:44,280 --> 00:03:48,000
+integral. How we may represent WT
+
+63
+00:03:48,000 --> 00:03:50,159
+squared, as an integral?
+
+64
+00:03:50,159 --> 00:03:53,580
+We may say, that it's WT squared minus t,
+
+65
+00:03:53,580 --> 00:03:57,260
+that is from our integral tables plus T,
+
+66
+00:03:57,260 --> 00:04:01,980
+and, so, we get, that this is basically 
+
+67
+00:04:01,980 --> 00:04:07,680
+integral from 0 to T2 times WUDWU plus t.
+
+68
+00:04:09,239 --> 00:04:11,400
+
+69
+00:04:11,400 --> 00:04:14,819
+Hence, we plug in both these integrals
+
+70
+00:04:14,819 --> 00:04:18,298
+into covariance. So, we have covariance of
+
+71
+00:04:18,298 --> 00:04:22,680
+integral from 0 to TWU power 4 times U
+
+72
+00:04:22,680 --> 00:04:28,699
+dWu with integral from 0 to T to
+
+73
+00:04:28,699 --> 00:04:31,979
+WUDW U plus t.
+
+74
+00:04:31,979 --> 00:04:33,300
+
+75
+00:04:33,300 --> 00:04:37,800
+This plus T is a non-random quality. It
+
+76
+00:04:37,800 --> 00:04:41,280
+does not influence the covariance, so, we
+
+77
+00:04:41,280 --> 00:04:45,380
+just get rid of this T.
+
+78
+00:04:45,440 --> 00:04:47,100
+
+
+79
+00:04:47,100 --> 00:04:49,560
+We need to calculate covariance
+
+80
+00:04:49,560 --> 00:04:51,660
+between two integrals. And covariance
+
+81
+00:04:51,660 --> 00:04:55,340
+between two integrals is just original
+
+82
+00:04:55,340 --> 00:04:59,699
+integral from 0 to T expected value of
+
+83
+00:04:59,699 --> 00:05:02,160
+the product of expressions inside
+
+84
+00:05:02,160 --> 00:05:05,759
+integrals. So, we need to multiply these
+
+85
+00:05:05,759 --> 00:05:07,380
+values,
+
+86
+00:05:07,380 --> 00:05:10,080
+and to take expected value of the
+
+87
+00:05:10,080 --> 00:05:11,220
+product.
+
+88
+00:05:11,220 --> 00:05:15,000
+So, we have here WU power 4 times U
+
+89
+00:05:15,000 --> 00:05:18,860
+times 2 WU.
+
+90
+00:05:20,600 --> 00:05:24,360
+And we use ordinary ariemann integral by
+
+91
+00:05:24,360 --> 00:05:27,500
+Ito  isometry.
+
+92
+00:05:28,320 --> 00:05:31,919
+We get UN2 out of expected value out
+
+93
+00:05:31,919 --> 00:05:35,759
+of integral.  2U integral from 0 to
+
+94
+00:05:35,759 --> 00:05:41,759
+T expected value of WU power 5 times DU.
+
+95
+00:05:41,759 --> 00:05:47,100
+This is odd power of Wu.
+
+96
+00:05:47,100 --> 00:05:52,020
+So, the expected value of odd power of 
+
+97
+00:05:52,020 --> 00:05:54,600
+scaled standard normal random variable
+
+98
+00:05:54,600 --> 00:06:01,160
+is just zero. So, we got zero covariance.
+
+99
+00:06:01,160 --> 00:06:04,259
+And finally, let's calculate our
+
+100
+00:06:04,259 --> 00:06:06,300
+conditional expected value. Let's
+
+101
+00:06:06,300 --> 00:06:08,820
+calculate conditional expected value of
+
+102
+00:06:08,820 --> 00:06:11,639
+I6 given I4.
+
+103
+00:06:11,639 --> 00:06:14,520
+We use the property of stochastic
+
+104
+00:06:14,520 --> 00:06:18,120
+integral, that stochastic integral is a
+
+105
+00:06:18,120 --> 00:06:20,900
+martingale.
+
+106
+00:06:23,160 --> 00:06:26,699
+And, hence, the last question is also easy,
+
+107
+00:06:26,699 --> 00:06:29,759
+as it's a martingale, the best prediction
+
+108
+00:06:29,759 --> 00:06:33,180
+of its future value, if you know 
+109
+00:06:33,180 --> 00:06:36,600
+current value is the current value.
+
+110
+00:06:36,600 --> 00:06:42,020
+So, it's I4, and it's integral from 0 to 4
+
+111
+00:06:42,020 --> 00:06:44,180
+Wu
+
+112
+00:06:44,180 --> 00:06:49,280
+power 4 times U times dWu.
+
+113
+00:06:49,280 --> 00:06:52,919
+Unfortunately, the explicit value of
+
+114
+00:06:52,919 --> 00:06:56,400
+stochastic integral can be calculated in
+
+115
+00:06:56,400 --> 00:07:00,060
+general, only in some rare cases we can
+
+116
+00:07:00,060 --> 00:07:03,180
+get the stochastic integral explicitly
+
+117
+00:07:03,180 --> 00:07:06,120
+without the integral sign.
+
+118
+00:07:06,120 --> 00:07:08,020
+
+
+119
+00:07:08,020 --> 00:07:14,040
+[Music]
+

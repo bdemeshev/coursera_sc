@@ -1,0 +1,904 @@
+1
+[Music]
+
+
+2
+00:00:01,760 --> 00:00:04,339
+[Music]
+
+3
+00:00:04,339 --> 00:00:07,020
+We will simulate trajectories of Wiener
+
+4
+00:00:07,020 --> 00:00:08,480
+process.
+
+5
+00:00:08,480 --> 00:00:13,080
+We use many libraries like pandas, numpy,
+
+6
+00:00:13,080 --> 00:00:15,080
+seaborn.
+
+7
+00:00:15,080 --> 00:00:18,180
+So, we start with our first function. Our
+
+8
+00:00:18,180 --> 00:00:21,900
+first function, we will call it get time.
+
+9
+00:00:21,900 --> 00:00:26,039
+This function will give us time moments:
+
+10
+00:00:26,039 --> 00:00:28,199
+first time moment, second time moment and
+
+11
+00:00:28,199 --> 00:00:32,579
+so on. Evenly spaced from 0 to big T. So,
+
+12
+00:00:32,579 --> 00:00:34,920
+this function will take big T, as an
+
+13
+00:00:34,920 --> 00:00:37,260
+argument. Let it be one by default and
+
+14
+00:00:37,260 --> 00:00:39,559
+the number of segments.
+
+15
+00:00:39,559 --> 00:00:42,960
+Let it be by default 1000 small
+
+16
+00:00:42,960 --> 00:00:45,059
+segments.
+
+17
+00:00:45,059 --> 00:00:49,640
+And, so, my function will just return
+
+18
+00:00:49,640 --> 00:00:53,760
+evenly space it. So, I use numpy space
+
+19
+00:00:53,760 --> 00:00:58,739
+function. The first argument is starting
+
+20
+00:00:58,739 --> 00:01:02,760
+moment of time. In our setting time
+
+21
+00:01:02,760 --> 00:01:05,700
+starts from zero. Final moment of time
+
+22
+00:01:05,700 --> 00:01:11,220
+will be just T, and the number of time
+
+23
+00:01:11,220 --> 00:01:14,939
+points should be N plus 1. Why? Because if
+
+24
+00:01:14,939 --> 00:01:17,280
+I subdivide a big
+
+25
+00:01:17,280 --> 00:01:20,580
+time interval into two smaller interval,
+
+26
+00:01:20,580 --> 00:01:22,560
+I will have three points one in the
+
+27
+00:01:22,560 --> 00:01:24,420
+beginning, one in the middle, one and in the
+
+28
+00:01:24,420 --> 00:01:29,000
+end. So, here I write the number of points:
+
+29
+00:01:29,000 --> 00:01:32,880
+it will be N plus one. So, basically,
+
+30
+00:01:32,880 --> 00:01:35,700
+that's our first function. Let's check,
+
+31
+00:01:35,700 --> 00:01:39,540
+whether it works, get time, Let T be equal
+
+32
+00:01:39,540 --> 00:01:44,820
+to 2, and  let's subdivide it
+
+33
+00:01:44,820 --> 00:01:49,220
+into 20 time intervals, so, we should get
+
+34
+00:01:49,220 --> 00:01:53,340
+21 time points. The first time point is
+
+35
+00:01:53,340 --> 00:01:55,979
+zero, the last time point is two and all
+
+36
+00:01:55,979 --> 00:01:57,780
+other points are evenly spaced between
+
+37
+00:01:57,780 --> 00:02:00,180
+them. Okay, our first function is ready.
+
+38
+00:02:00,180 --> 00:02:02,640
+Let's move on. Let's create the function,
+
+39
+00:02:02,640 --> 00:02:05,280
+that will give us the increments of
+
+40
+00:02:05,280 --> 00:02:08,160
+Wiener process for every
+
+41
+00:02:08,160 --> 00:02:11,099
+interval, for every small interval.
+
+42
+00:02:11,099 --> 00:02:14,520
+Okay, we will create this function. Get
+
+43
+00:02:14,520 --> 00:02:17,160
+Wiener
+
+44
+00:02:17,160 --> 00:02:19,440
+increments.
+
+45
+00:02:19,440 --> 00:02:22,819
+And this function
+
+46
+00:02:22,940 --> 00:02:25,680
+will take big T.
+
+47
+00:02:25,680 --> 00:02:30,420
+We'll take the number of small intervals,
+
+48
+00:02:30,420 --> 00:02:33,360
+and this new function will be stochastic
+
+49
+00:02:33,360 --> 00:02:36,120
+function, and, sometimes, we would like to
+
+50
+00:02:36,120 --> 00:02:36,980
+have
+
+51
+00:02:36,980 --> 00:02:39,840
+the exactly the same trajectory of
+
+52
+00:02:39,840 --> 00:02:42,239
+Wiener process, that is stochastic, but
+
+53
+00:02:42,239 --> 00:02:43,800
+sometimes, we would like to have, the
+
+54
+00:02:43,800 --> 00:02:45,540
+exactly, the same trajectory of
+
+55
+00:02:45,540 --> 00:02:48,000
+stochastic process twice. So, we need
+
+56
+00:02:48,000 --> 00:02:51,560
+sometimes to replicate exactly the same
+
+57
+00:02:51,560 --> 00:02:55,080
+trajectory, so, we will provide here, as a
+
+58
+00:02:55,080 --> 00:02:58,860
+seed. Seed is an initial condition to
+
+59
+00:02:58,860 --> 00:03:02,099
+make a generation of pseudo-random
+
+60
+00:03:02,099 --> 00:03:03,959
+numbers
+
+61
+00:03:03,959 --> 00:03:06,900
+replicable.
+
+62
+00:03:06,900 --> 00:03:10,200
+Okay, so, basically, what shall we
+
+63
+00:03:10,200 --> 00:03:11,879
+calculate here? First, we will create
+
+64
+00:03:11,879 --> 00:03:16,320
+random number generator. It will be
+
+65
+00:03:16,320 --> 00:03:16,379
+
+
+66
+00:03:16,379 --> 00:03:18,379
+
+
+67
+00:03:18,480 --> 00:03:21,260
+random
+
+69
+00:03:23,640 --> 00:03:26,760
+default
+
+70
+00:03:26,760 --> 00:03:29,480
+and random number generated
+
+71
+00:03:29,480 --> 00:03:34,200
+with a seed, as initial value. Then we
+
+72
+00:03:34,200 --> 00:03:37,379
+will say, that standard deviation for a
+
+73
+00:03:37,379 --> 00:03:40,920
+delta T. The standard deviation is the
+
+74
+00:03:40,920 --> 00:03:43,500
+square root of delta T. So, we will write
+
+75
+00:03:43,500 --> 00:03:48,620
+S square T of T over N. T Over N is a
+
+76
+00:03:48,620 --> 00:03:51,659
+length of small time interval. So, the
+
+77
+00:03:51,659 --> 00:03:53,340
+standard deviation of Wiener process
+
+78
+00:03:53,340 --> 00:03:56,819
+increment is square root of T over N. And
+
+79
+00:03:56,819 --> 00:04:01,440
+here we will create the deltas of Wiener
+
+80
+00:04:01,440 --> 00:04:05,700
+processes like RNG normal. And we will
+
+81
+00:04:05,700 --> 00:04:09,439
+say, that mean value is zero.
+
+82
+00:04:09,439 --> 00:04:14,280
+Standard deviation is SD, and the number
+
+83
+00:04:14,280 --> 00:04:15,680
+of
+
+84
+00:04:15,680 --> 00:04:19,798
+ increments we need to generate, is
+
+85
+00:04:19,798 --> 00:04:21,839
+exactly N.
+
+86
+00:04:21,839 --> 00:04:26,040
+Okay, and we just return this delta W
+
+87
+00:04:26,040 --> 00:04:27,840
+vector.
+
+88
+00:04:27,840 --> 00:04:31,139
+Okay, let's check that our function works.
+
+89
+00:04:31,139 --> 00:04:32,820
+Get
+
+90
+00:04:32,820 --> 00:04:35,040
+Wiener
+
+91
+00:04:35,040 --> 00:04:38,460
+increments T is equal to 2. Let's
+
+92
+00:04:38,460 --> 00:04:42,240
+say 20 increments, and let's say, seed
+
+93
+00:04:42,240 --> 00:04:46,160
+will be equal to 777.
+
+94
+00:04:46,160 --> 00:04:48,600
+Okay, we have increments of Wiener
+
+95
+00:04:48,600 --> 00:04:52,500
+process. And this function, if I launch it
+
+96
+00:04:52,500 --> 00:04:55,800
+twice, I will get exactly the same result.
+
+97
+00:04:55,800 --> 00:04:59,880
+If I will emit the seed,
+
+98
+00:04:59,880 --> 00:05:02,820
+I will get new results, new random
+
+99
+00:05:02,820 --> 00:05:05,940
+results every time.
+
+100
+00:05:05,940 --> 00:05:09,000
+Okay, let's move on. How may we transform
+
+101
+00:05:09,000 --> 00:05:11,699
+increments into trajectory of Wiener
+
+102
+00:05:11,699 --> 00:05:14,639
+process? We just should calculate
+
+103
+00:05:14,639 --> 00:05:19,020
+cumulative sum.  Let's get, let's
+
+104
+00:05:19,020 --> 00:05:20,820
+create new function,
+
+105
+00:05:20,820 --> 00:05:25,800
+get Wiener trajectory.
+
+106
+00:05:27,120 --> 00:05:29,820
+And this function takes T, that is one by
+
+107
+00:05:29,820 --> 00:05:32,759
+default, and N that is 1000 by default seed,
+
+108
+00:05:32,759 --> 00:05:35,880
+that is none by default.
+
+109
+00:05:35,880 --> 00:05:41,820
+And the first step we get and 
+
+110
+00:05:41,820 --> 00:05:45,000
+Brownian motion increments.
+
+111
+00:05:45,000 --> 00:05:48,560
+Delta V is
+
+112
+00:05:48,560 --> 00:05:52,680
+get Wiener increments.
+
+113
+00:05:52,680 --> 00:05:57,139
+Okay, I will just copy this code
+
+114
+00:05:58,039 --> 00:06:02,639
+seed, is seed tea is provided by the user,
+
+115
+00:06:02,639 --> 00:06:05,699
+and N is provided by the user.
+
+116
+00:06:05,699 --> 00:06:09,720
+And what about W's? So, we create the
+
+117
+00:06:09,720 --> 00:06:13,680
+vector of W's. Let it be numpy zeros,
+
+118
+00:06:13,680 --> 00:06:17,699
+we calculate, we just should have N plus 1
+
+119
+00:06:17,699 --> 00:06:21,300
+points for N increments. The first one
+
+120
+00:06:21,300 --> 00:06:22,819
+should be zero.
+
+121
+00:06:22,819 --> 00:06:28,520
+And VW from first to the last
+
+122
+00:06:28,520 --> 00:06:31,979
+should be just equal the accumulative
+
+123
+00:06:31,979 --> 00:06:33,060
+sum.
+
+124
+00:06:33,060 --> 00:06:36,900
+So we add them, and accumulate the sum
+
+125
+00:06:36,900 --> 00:06:39,539
+of
+
+126
+00:06:39,539 --> 00:06:44,639
+delta V, delta W, and we return this
+
+127
+00:06:44,639 --> 00:06:50,460
+generated vector of Wiener process
+
+128
+00:06:50,460 --> 00:06:53,360
+trajectory.
+
+129
+00:06:53,759 --> 00:06:56,160
+Okay, let's check, that our new function
+
+130
+00:06:56,160 --> 00:06:58,880
+works. Let's calculate,
+
+131
+00:06:58,880 --> 00:07:03,440
+get Wiener
+
+132
+00:07:03,660 --> 00:07:07,319
+trajectory. We may supply T, we
+
+133
+00:07:07,319 --> 00:07:09,419
+may supply N,
+
+134
+00:07:09,419 --> 00:07:12,199
+and we may emit seed to make
+
+135
+00:07:12,199 --> 00:07:15,539
+absolutely random trajectory.
+
+136
+00:07:15,539 --> 00:07:19,940
+Okay, now we may plot it already. We can
+
+137
+00:07:19,940 --> 00:07:24,240
+get our first plot SNS. Let's use a line
+
+138
+00:07:24,240 --> 00:07:26,400
+plot,
+
+139
+00:07:26,400 --> 00:07:30,979
+and let's use, as X we will get time.
+
+140
+00:07:30,979 --> 00:07:35,819
+And for Y we will get trajectory,
+
+141
+00:07:35,819 --> 00:07:40,560
+that should be our first plot.
+
+142
+00:07:40,560 --> 00:07:43,139
+Okay, that is the plot of a Wiener
+
+143
+00:07:43,139 --> 00:07:46,139
+process. And now, as we can freely
+
+144
+00:07:46,139 --> 00:07:48,300
+generate many trajectories,
+
+145
+00:07:48,300 --> 00:07:52,039
+we can study its properties. For example,
+
+146
+00:07:52,039 --> 00:07:55,319
+let's calculate the probability, that
+
+147
+00:07:55,319 --> 00:07:59,039
+this random trajectory will
+
+148
+00:07:59,039 --> 00:08:03,300
+hit the value of 2 before time moment
+
+149
+00:08:03,300 --> 00:08:04,800
+three.
+
+150
+00:08:04,800 --> 00:08:07,819
+Okay, let's
+
+151
+00:08:07,819 --> 00:08:10,560
+calculate the probability,
+
+152
+00:08:10,560 --> 00:08:14,280
+that WT
+
+153
+00:08:14,280 --> 00:08:21,560
+will hit 3 before T equal to 2.
+
+154
+00:08:22,860 --> 00:08:26,419
+Okay, let's move on.
+
+155
+00:08:26,419 --> 00:08:30,300
+We will simulate many trajectories, and
+
+156
+00:08:30,300 --> 00:08:33,559
+we will count trajectories for, which
+
+157
+00:08:33,559 --> 00:08:36,599
+the highest value of Wiener process
+
+158
+00:08:36,599 --> 00:08:39,240
+was higher than three.
+
+159
+00:08:39,240 --> 00:08:43,020
+Okay, let's introduce a new concept 
+
+160
+00:08:43,020 --> 00:08:46,740
+number of simulations, that be the number
+
+161
+00:08:46,740 --> 00:08:50,519
+of simulations equal to ten thousands.
+
+162
+00:08:50,519 --> 00:08:54,400
+Okay, and 
+
+163
+00:08:54,400 --> 00:08:56,339
+
+
+164
+00:08:56,339 --> 00:08:59,700
+in the beginning, we have zero good
+
+165
+00:08:59,700 --> 00:09:03,899
+trajectories. 
+
+166
+00:09:03,899 --> 00:09:06,779
+And we will count good trajectories, we
+
+167
+00:09:06,779 --> 00:09:09,060
+will add plus one for every trajectory,
+
+168
+00:09:09,060 --> 00:09:12,180
+that hits free before time moment T
+
+169
+00:09:12,180 --> 00:09:13,560
+equal to two.
+
+170
+00:09:13,560 --> 00:09:16,500
+Okay, so,
+
+171
+00:09:16,500 --> 00:09:21,660
+let's say I in range and scene. What
+
+172
+00:09:21,660 --> 00:09:24,720
+shall we do? We shall create a random
+
+173
+00:09:24,720 --> 00:09:31,140
+trajectory. W will be get Wiener
+
+174
+00:09:31,519 --> 00:09:34,740
+trajectory of TN.
+
+175
+00:09:34,740 --> 00:09:40,200
+Let it be T equal to 2, and will be
+
+176
+00:09:40,200 --> 00:09:43,680
+equal to one thousand. Okay, we get the
+
+177
+00:09:43,680 --> 00:09:45,899
+Wiener process trajectory.
+
+178
+00:09:45,899 --> 00:09:49,440
+Then we will 
+
+179
+00:09:49,440 --> 00:09:53,420
+add plus one for every trajectory, that
+
+180
+00:09:53,420 --> 00:09:57,660
+has a maximum value higher than three.
+
+181
+00:09:57,660 --> 00:10:03,959
+Okay, if  maximal value of W is
+
+182
+00:10:03,959 --> 00:10:07,320
+higher than 3, we should add plus 1 to
+
+183
+00:10:07,320 --> 00:10:09,600
+the number of good trajectories. So, we
+
+184
+00:10:09,600 --> 00:10:11,420
+say good
+
+185
+00:10:11,420 --> 00:10:12,959
+trajectories.
+
+186
+00:10:12,959 --> 00:10:16,580
+Let's say this plus enter will increase
+
+187
+00:10:16,580 --> 00:10:21,720
+our variable  good trajectory. So, we
+
+188
+00:10:21,720 --> 00:10:24,980
+increase it by plus one.
+
+189
+00:10:26,240 --> 00:10:31,320
+And then, after this cycle, we should just
+
+190
+00:10:31,320 --> 00:10:34,100
+divide the number of good trajectories
+
+191
+00:10:34,100 --> 00:10:37,320
+by the number of  the total
+
+192
+00:10:37,320 --> 00:10:39,300
+number of all trajectories. And the total
+
+193
+00:10:39,300 --> 00:10:41,160
+number of volt reject resist number of
+
+194
+00:10:41,160 --> 00:10:42,899
+simulations
+
+195
+00:10:42,899 --> 00:10:44,040
+together,
+
+196
+00:10:44,040 --> 00:10:46,560
+and we wait a little bit.
+
+197
+00:10:46,560 --> 00:10:49,680
+And we see  the probability, that
+
+198
+00:10:49,680 --> 00:10:54,839
+Wiener process will hit this border, is
+
+199
+00:10:54,839 --> 00:10:57,899
+equal to zero zero three. We should
+
+200
+00:10:57,899 --> 00:10:59,760
+understand, that this is the empirical
+
+201
+00:10:59,760 --> 00:11:04,740
+value. And to obtain this value with
+
+202
+00:11:04,740 --> 00:11:07,440
+higher precision, we should make the
+
+203
+00:11:07,440 --> 00:11:09,660
+number of divisions,
+
+204
+00:11:09,660 --> 00:11:12,360
+and number of intervals, as high as
+
+205
+00:11:12,360 --> 00:11:15,000
+possible. The number of simulations, as
+
+206
+00:11:15,000 --> 00:11:16,440
+high as possible.
+
+207
+00:11:16,440 --> 00:11:19,500
+And, honestly speaking, only infinite
+
+208
+00:11:19,500 --> 00:11:21,779
+values will give us the true probability,
+
+209
+00:11:21,779 --> 00:11:25,980
+but, if we will put infinity in N or in
+
+210
+00:11:25,980 --> 00:11:28,380
+number of simulations, we will weight
+
+211
+00:11:28,380 --> 00:11:32,220
+infinite amount of time. So, we may just
+
+212
+00:11:32,220 --> 00:11:34,920
+experiment and check, whether
+
+213
+00:11:34,920 --> 00:11:38,160
+it is stable or not. So, let's launch the
+
+214
+00:11:38,160 --> 00:11:40,440
+second time. And we see, whether the
+
+215
+00:11:40,440 --> 00:11:43,560
+answer is  different, the answer is
+
+216
+00:11:43,560 --> 00:11:45,600
+more or less the same. We may check,
+
+217
+00:11:45,600 --> 00:11:47,880
+whether it will change with a high value
+
+218
+00:11:47,880 --> 00:11:50,880
+of N, because, honestly speaking, we have
+
+219
+00:11:50,880 --> 00:11:54,019
+replaced continuous time process with
+
+220
+00:11:54,019 --> 00:11:57,540
+discrete process with five or one
+
+221
+00:11:57,540 --> 00:12:01,140
+thousand observations.
+
+222
+00:12:01,200 --> 00:12:02,760
+Let's check.
+
+223
+00:12:02,760 --> 00:12:05,279
+And we see, basically, that the result is
+
+224
+00:12:05,279 --> 00:12:08,040
+stable, so, there is a good estimate of a
+
+225
+00:12:08,040 --> 00:12:11,459
+probability, that WT will hit 3 Before
+
+226
+00:12:11,459 --> 00:12:15,680
+time moment T equal to 2.
+
+227
+00:12:16,660 --> 00:12:22,659
+[Music]
+

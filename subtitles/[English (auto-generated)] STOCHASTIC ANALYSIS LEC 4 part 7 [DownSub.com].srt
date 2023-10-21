@@ -1,0 +1,365 @@
+
+2
+00:00:01,760 --> 00:00:03,840
+[Music]
+
+3
+00:00:03,840 --> 00:00:06,540
+Let's calculate the price of an asset in
+
+4
+00:00:06,540 --> 00:00:10,760
+the framework of Black and Scholes model in this video.
+
+6
+00:00:10,320 --> 00:00:15,920
+We will use our previous results.
+
+8
+00:00:15,540 --> 00:00:20,080
+And then let's describe a contractor of a European type.
+
+10
+00:00:20,640 --> 00:00:23,760
+So, the contract pays you St. So, basically,
+
+11
+00:00:23,760 --> 00:00:27,240
+you receive one share, if as the price of
+
+12
+00:00:27,240 --> 00:00:33,420
+a share Su was never before 120
+
+13
+00:00:33,440 --> 00:00:36,960
+before time moment big T. And the
+
+14
+00:00:36,960 --> 00:00:39,899
+initial values are the following: as zero
+
+15
+00:00:39,899 --> 00:00:45,059
+the initial price of a share is 100, are
+
+16
+00:00:45,059 --> 00:00:48,480
+the risk-free interest rate is 0 0 5
+
+17
+00:00:48,480 --> 00:00:54,860
+sigma, the volatility is equal to 01
+
+19
+00:00:54,600 --> 00:00:57,600
+And the T, the final moment of time is
+
+20
+00:00:57,600 --> 00:01:00,840
+three. So, basically here is the problem.
+
+21
+00:01:00,840 --> 00:01:04,619
+We have an asset, that pays you St,
+
+22
+00:01:04,619 --> 00:01:07,200
+basically, gives you a share under some
+
+23
+00:01:07,200 --> 00:01:09,420
+conditions, not always you may receive
+
+24
+00:01:09,420 --> 00:01:11,340
+zero, you may receive one share, you may
+
+25
+00:01:11,340 --> 00:01:14,900
+receive Sd or you may receive zero. Okay,
+
+26
+00:01:14,900 --> 00:01:22,979
+and let's do experiments to solve this pricing problem.
+
+28
+00:01:22,259 --> 00:01:25,680
+Okay, let's subdivide the time interval
+
+29
+00:01:25,680 --> 00:01:29,340
+from 0 to T into 1000 smaller time
+
+30
+00:01:29,340 --> 00:01:31,680
+intervals. We will consider a discrete
+
+31
+00:01:31,680 --> 00:01:35,159
+version of our continuous time process.
+
+32
+00:01:35,159 --> 00:01:39,040
+Then we will specify the number of simulations.
+
+34
+00:01:39,920 --> 00:01:46,060
+Let us have ten thousands of simulations.
+
+36
+00:01:46,560 --> 00:01:50,159
+And let's calculate the final price of
+
+37
+00:01:50,159 --> 00:01:54,000
+our asset in every simulation. So, we will
+
+38
+00:01:54,000 --> 00:01:57,960
+keep track of final price of our asset.
+
+39
+00:01:57,960 --> 00:02:01,979
+So, we will reserve memory, so, we will
+
+40
+00:02:01,979 --> 00:02:05,399
+say numpty zeros, and we will reserve
+
+41
+00:02:05,399 --> 00:02:11,459
+space for N number of simulation values.
+
+42
+00:02:11,459 --> 00:02:16,080
+Okay, now the cycle.
+
+44
+00:02:16,160 --> 00:02:22,920
+For I in range and sim, so, that means I
+
+45
+00:02:22,920 --> 00:02:26,099
+will repeat this and same times.
+
+46
+00:02:26,099 --> 00:02:29,580
+First, I will calculate the trajectory of
+
+47
+00:02:29,580 --> 00:02:31,560
+Wiener process, I will calculate the
+
+48
+00:02:31,560 --> 00:02:34,800
+trajectory of share price, I will
+
+49
+00:02:34,800 --> 00:02:36,840
+calculate the final price of my asset,
+
+50
+00:02:36,840 --> 00:02:41,220
+and I just keep track of the final price.
+
+51
+00:02:41,220 --> 00:02:44,640
+Okay, so, let's create that trajectory of
+
+52
+00:02:44,640 --> 00:02:51,459
+our Wiener process get, Wiener trajectory.
+
+54
+00:02:51,300 --> 00:02:56,819
+We say T equal to T here and equal to N.
+
+55
+00:02:56,819 --> 00:03:01,540
+Okay, then we get that trajectory of timestamps.
+
+57
+00:03:01,920 --> 00:03:09,500
+And get time T equal to T and equal to N.
+
+58
+00:03:09,780 --> 00:03:12,000
+Then we create the trajectory of share
+
+59
+00:03:12,000 --> 00:03:22,200
+price. S will be equal to S0 times exponent of
+
+61
+00:03:22,159 --> 00:03:31,400
+here we have R minus sigma square root over two
+
+64
+00:03:31,200 --> 00:03:38,300
+times Te plus sigma times W. So, that's the
+
+66
+00:03:38,040 --> 00:03:42,140
+trajectory of share price in the Black and Scholes model.
+
+68
+00:03:43,260 --> 00:03:45,140
+Then we just calculate final price.
+
+69
+00:03:45,140 --> 00:03:50,640
+Now final price number I
+
+70
+00:03:50,640 --> 00:03:58,319
+is equal to S. The last value will have number n.
+
+72
+00:03:59,099 --> 00:04:01,920
+And the final price is equal to this
+
+73
+00:04:01,920 --> 00:04:06,980
+N only under the condition, that
+
+74
+00:04:06,980 --> 00:04:20,920
+maximal value of S is below 120.
+
+77
+00:04:21,139 --> 00:04:25,199
+Okay, basically, that's all we launch our
+
+78
+00:04:25,199 --> 00:04:29,720
+cycle, we wait a little bit.
+
+79
+00:04:31,259 --> 00:04:35,400
+And we need to calculate the discounted
+
+80
+00:04:35,400 --> 00:04:42,840
+expected value. So, we just calculate the discounted average.
+
+82
+00:04:42,840 --> 00:04:45,900
+In our terms, that would be exponent
+
+83
+00:04:45,900 --> 00:04:56,660
+of minus R times t, times mean value of our final prices.
+
+85
+00:04:59,419 --> 00:05:03,300
+And here we are. We have calculated the
+
+86
+00:05:03,300 --> 00:05:07,500
+fair price, the non-arbitrage price in
+
+87
+00:05:07,500 --> 00:05:10,500
+the framework of Black and Scholes model.
+
+88
+00:05:10,500 --> 00:05:13,320
+We should also check, whether our
+
+89
+00:05:13,320 --> 00:05:15,960
+experiments are stable or not. Let's just
+
+90
+00:05:15,960 --> 00:05:23,380
+relaunch this once again and see, if the price will fluctuate a lot.
+
+92
+00:05:23,699 --> 00:05:29,220
+Okay, we repeat our experiment, we check,
+
+93
+00:05:29,220 --> 00:05:32,039
+that, yeah, that's roughly the same value.
+
+94
+00:05:32,039 --> 00:05:35,280
+If we'd like to increase precision, we
+
+95
+00:05:35,280 --> 00:05:37,740
+should consider bigger value of N and
+
+96
+00:05:37,740 --> 00:05:39,560
+bigger value of number of simulations,
+
+97
+00:05:39,560 --> 00:05:42,539
+but, basically, our conclusion, that the
+
+98
+00:05:42,539 --> 00:05:46,380
+fair price of this asset is 38. Let's
+
+99
+00:05:46,380 --> 00:05:49,680
+analyze a little bit. How the
+
+100
+00:05:49,680 --> 00:05:52,320
+volatility of the share price will
+
+101
+00:05:52,320 --> 00:05:56,220
+influence the price of our asset? So,
+
+102
+00:05:56,220 --> 00:06:01,560
+let's, for example, increase the volatility of a share price.
+
+104
+00:06:01,320 --> 00:06:04,380
+So, let's edit to here, what will happen
+
+105
+00:06:04,380 --> 00:06:06,600
+with the price of our asset? Will it go
+
+106
+00:06:06,600 --> 00:06:09,120
+down, will it go up?
+
+107
+00:06:09,120 --> 00:06:15,160
+Okay, we just redo our experiments.
+
+109
+00:06:17,039 --> 00:06:21,180
+The previous value was roughly 38.
+
+110
+00:06:21,180 --> 00:06:27,240
+And now we got 23. So, when we increase at
+
+111
+00:06:27,240 --> 00:06:29,639
+least, that for these values, we have
+
+112
+00:06:29,639 --> 00:06:31,560
+considered. When we increase the
+
+113
+00:06:31,560 --> 00:06:34,500
+volatility of a share price, we see, that
+
+114
+00:06:34,500 --> 00:06:38,880
+the price of our asset goes down.
+
+116
+00:06:40,740 --> 00:06:46,740
+[Music]
+
